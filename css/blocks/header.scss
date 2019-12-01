@@ -1,0 +1,62 @@
+.header {
+    position: absolute;
+    width: 100vw;
+    padding-top: rem(20px);
+    z-index: $z-fixed-menu;
+    @include tablets {
+        padding-top: rem(12px);
+    }
+    @include phones {
+        padding: 4%;
+    }
+    &__container {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+  }
+
+.logo {
+    color: $white;
+    font-family: 'Museo Sans';
+    font-size: rem(24px);
+    text-transform: uppercase;
+    &__top {
+        margin-bottom: -20%;
+    }
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    &__link {
+        position: relative; 
+        font-size: rem(24px);
+        color: $white;
+        font-weight: 400;
+        &--green {
+            color: $bluegreen;
+            font-size: rem(21px);
+            font-weight: 400;
+            text-transform: uppercase;
+        }    
+    }
+    &__svg {
+        fill: $white;
+        margin-right: 5px;
+        &--green {
+            fill: $green;  
+        }
+    }
+    @include tablets {
+        display: none;
+    }
+    &-footer {
+        @include tablets {
+            display: block;
+        }
+        @include tablets {
+            display: block;
+        }
+    }
+   
+}    

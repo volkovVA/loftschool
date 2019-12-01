@@ -1,0 +1,31 @@
+.pagination {
+    &__list {
+        position:fixed;
+        top: 40%;
+        right: 5%;
+        z-index: 20;
+    }
+    &__link {
+    display: block;
+    height: rem(17px);
+    width: rem(17px);
+    border-radius: 50%;
+    border: 1px solid transparent;
+    margin-bottom: 30%;
+    position: relative;
+        &--active {
+        border-color: $white;
+        }    
+        &:before {
+        content: '';
+        width: rem(6px);
+        height: rem(6px);
+        background-color: $white;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+    }    
+}

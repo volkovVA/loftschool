@@ -1,0 +1,137 @@
+.section-why {
+    background-image: url(../../img/why/grey_leaf.png);
+    background-repeat: no-repeat;
+    background-position-y: 25%;
+    background-size: rem(250px);
+    position: relative;
+    @include tablets {
+        background-size: rem(150px);
+        padding: 8% 0;
+    }
+    &__container {
+        position: relative;
+        height: 100vh;
+        min-height: rem(650px);
+        @include tablets {
+            height: auto;
+            min-height: auto;
+        }
+    }
+    &__text {
+        width: 43%;
+        text-align: center;
+        color: $grey;
+        font-size: rem(18px);
+        font-weight: 400;
+        margin-bottom: 6%;
+        @include tablets {
+            width: 100%;
+            margin-bottom: 3%;
+        }
+        @include phones {
+            width: 100%;
+            line-height: rem(20px);
+            margin-bottom: 11%;
+        }
+    }
+
+.why {
+    display: flex;
+    @include tablets {
+        flex-direction: column;
+    }
+    &__item {
+        margin-right: 7%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 1%;
+        &:last-child {
+            margin-right: 0;
+            &::after {
+                display: none;
+            }   
+        }
+        @include tablets {
+            margin-right: 0;
+        }
+        @include phones {
+            flex-direction: row;
+            padding-left: 6%;
+            margin-bottom: 8%;
+        } 
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(../../img/why/points.png);
+            background-repeat: no-repeat;
+            top: 20%;
+            left: 100%;
+            @include tablets {
+                display: none;
+            }  
+        }
+    }
+    &__logo {
+        width: rem(125px);
+        height: rem(125px);
+        background-color: $why_grey;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__desc {
+        text-align: center;
+        @include phones {
+            padding: 0 8%;
+        }
+    }
+    &__svg {
+        width: rem(70px);
+        height: rem(70px);
+        fill: none;
+        stroke: $black;
+        stroke-width: 0.5;
+        stroke-miterlimit: 10;
+    }
+    &__title {
+        color: $black;
+        margin-top: 3%;
+        font-size: rem(27px);
+        font-weight: 700;
+        @include phones {
+            
+        }
+    }
+    &__text {
+        margin-top: 8%;
+        color: $grey;
+        font-size: rem(18px);
+        font-weight: 300;
+        text-align: center;
+        @include tablets {
+            margin-top: 0;
+            width: 100%;
+        }
+        @include phones {
+            width: 100%;
+            margin-top: 2%;
+        }
+    }     
+    &__raspberry {
+        position: absolute;
+        left: 0;
+        bottom: -12%;
+            @include tablets {
+                width: 20%;
+                bottom: -7%;
+            }
+        }
+    }   
+}

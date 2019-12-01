@@ -1,0 +1,43 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    width: 156px;
+    height: 58px;
+    font-family: "Alegreya Sans";
+    font-size: 1.125rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    &-white {
+        @extend .btn;
+        color: $bluegreen;
+        background-color: $white;
+        margin: 0 auto;
+    }
+    &-bar {
+        margin-top: 0;
+        background-color: $green;
+        color: $white;
+    }
+    &-clear { 
+        color: $green;
+        font-size: 1.125rem;
+        font-weight: 500;
+        background: none;
+        border: none;
+        margin-left: -50px;
+        @include tablets {
+            margin-left: 0;
+        }
+    } 
+}
+
+
+
+
+  
+

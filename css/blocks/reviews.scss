@@ -1,0 +1,162 @@
+.section-reviews {
+    @include tablets {
+       padding: 8% 17%;
+    }
+    @include phones {
+        padding: 8% 3%;
+    }
+    position: relative;
+    &__container {
+        position: relative;
+        height: 100vh;
+        min-height: 650px;
+        @include tablets {
+            height: auto;
+        }
+    }
+    &__strawberry {
+        position: absolute;
+        top: 15%;
+        right: -5%;
+        @include tablets {
+            top: -5%;
+            right: -40%;
+        }
+        @include phones {
+            width: 25%;
+            right: -5%;
+            top: 0;
+        }
+    }
+    &__berries_teams {
+        position: absolute;
+        left: 0;
+        bottom: -15%;
+        z-index: 10;
+        @include phones {
+            width: 20%;
+        }
+    }
+}    
+
+.review {    
+    &-wrapper {
+        position: relative;
+        margin-top: 5%;
+        background-color: $lightblue;
+        padding: 5% 20% 5% 5%;
+        background-image: url(../../img/reviews/bg_berries.png);
+        background-repeat: no-repeat;
+        background-position: right top;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: rem(90px);
+            height: rem(90px);
+            border-radius: 50%;
+            background-color: $white;
+            top: -18%;
+            left: 50%;
+            transform: translateX(-50%);
+            @include tablets {
+                top: -10%;
+            }
+        }
+        @include tablets {
+            padding: 5%;
+        }
+    }
+    &__item {
+        display: flex;
+        @include tablets {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__photo {
+        width: rem(254px);
+        margin-right: 7%;
+        @include tablets {
+           margin-top: 15%; 
+           margin-right: 0;
+        }
+    }
+    &__img {
+        object-fit: cover;
+        object-position: center;
+        @include tablets {
+            width: rem(210px);
+            height: rem(210px); 
+        }
+    }
+    &__description {
+        @include tablets {
+            margin-top: 3%;
+        }
+    }
+    &__title {     
+        color: $lightgrey;
+        font-size: rem(30px);
+        font-weight: 500;
+        @include tablets {
+            text-align: center;
+            
+        }
+    }
+    &__text {
+        margin-top: 5%; 
+        color: $grey;
+        font-size: rem(18px);
+        font-weight: 400;
+        line-height: rem(22px);
+        @include tablets {
+            text-align: center;
+            margin-top: 3%;
+        }
+    }
+    &__name {
+        margin-top: 5%;
+        @extend .review__text;
+        font-weight: 500;
+    }
+    &__list-bottom {
+        margin-top: 2%;
+        display: flex;
+        justify-content: center;
+        @include tablets {
+            margin-top: 12%;
+        }
+    }
+    &__item-bottom {
+        margin-right: 5%;
+        cursor: pointer;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__photo-bottom {
+        display: block;
+        width: rem(68px);
+        height: rem(68px);
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid transparent;
+        &:hover {
+            border: 5px solid $green;  
+        }
+        @include tablets {
+            width: rem(84px);
+            height: rem(84px);
+        }
+    }
+    &__img-bottom {
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+   
+   

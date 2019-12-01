@@ -1,0 +1,185 @@
+.section-slider {
+    background-color: $lightblue;
+    &__container {
+        min-height: rem(650px);
+        height: 100vh;
+        @include tablets {
+            height: auto;
+            padding: 10% 0;
+        }
+    }  
+}
+
+.slider {
+    &__item {
+        display: flex;
+        position: relative;
+        @include tablets {
+            flex-direction: column;
+        }
+    }    
+    &__col {
+        flex: 1;
+        &--right {
+            padding: 7% 0 0 10%;
+            @include tablets {
+                padding: 0;
+            }
+        }
+        position: relative;
+    }
+    &__img {
+        width: 100%;
+        text-align: center;
+        &>img {
+            @include tablets {
+            width: 55%;
+            }
+        }
+    }
+    &__title {
+        margin-top: 4%;
+        color: $darkgrey;
+        font-size: rem(30px);
+        font-weight: 700;
+        text-transform: uppercase;
+        @include tablets {
+            padding-top: 1%;
+            width: 60%;
+            margin: 0 auto;
+            line-height: rem(36px);
+            text-align: center;
+        }
+    }
+    &__description {
+        margin-top: 3%;
+        color: $grey;
+        font-size: rem(18px);
+        font-weight: 400;
+        @include tablets {
+            padding-top: 2%;
+            width: 75%;
+            margin: 0 auto;
+        }
+        @include phones {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &__features {
+        margin-top: 5%;
+        display: flex;
+        @include tablets {
+            justify-content: center;
+            margin-top: 1%;
+        }
+    }
+    &__price {
+        color: $lightgrey;
+        font-size: rem(18px);
+        font-weight: 400;
+    }
+    &__calorific {
+        color: $black;
+        &>span {
+            display: block;
+            font-weight: 700;
+        }
+        margin-right: 12%;
+    }
+    &__weight {
+        color: $black;
+        &>span {
+            display: block;
+            font-weight: 700;
+        }
+    }
+    &__order {
+        margin-top: 5%;
+        display: flex;
+        @include tablets {
+            justify-content: center;
+            margin-top: 6%;
+        }
+    }
+    &__price {
+        margin-right: 5%;  
+        color: $darkgrey;
+        font-size: rem(60px);
+        font-weight: 300;
+        line-height: rem(60px);
+        text-transform: uppercase;
+    }
+}
+
+.composition {
+    position: absolute;
+    left: 60.5%;
+    top: -5%;
+    z-index: 1;
+    &:hover .composition__drop-table {
+        opacity: 1;
+    }
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: rem(90px);
+        height: rem(90px);
+        background-color: $blue;
+        border-radius: 5px;
+        cursor: pointer;
+        &>svg {
+            fill: $white;
+        }        
+    }
+    &__title {
+        color: $white;
+        font-size: rem(14px);
+        font-weight: 700;
+        font-style: italic;
+        text-transform: uppercase;
+    }
+    &__drop-table {
+        position: absolute;
+        top: 0;
+        left: 90px;
+        opacity: 0;
+        transition: opacity .3s;
+        background-color: rgba(255,255,255,0.8);
+        border-radius: 10px;
+        @include tablets {
+            left: -278%;
+        }
+    }
+    &__list {
+        display: table;
+        padding: 5%;
+    }
+    &__item {
+        display: table-row;
+    }
+    &__icon, &__text, &__weight {
+        display: table-cell;
+        vertical-align: middle;
+        height: 50px;
+        padding: 10px;
+    }
+    &__text, &__weight {     
+        color: $lightgrey;
+        font-size: rem(16px);
+        font-weight: 500;
+    }     
+    @include tablets {
+        position: absolute;
+        bottom: 177%;
+        left: 89%;
+    }
+    @include phones {
+        position: absolute;
+        bottom: 177%;
+        left: 80%;
+    }
+    
+}    

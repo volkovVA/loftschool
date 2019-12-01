@@ -1,0 +1,60 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+	left: 0;
+    right: 0;
+    background-color: $white;
+    padding: 25px 0;
+    &__container {
+        flex-direction: row;
+        @include phones {
+            flex-direction: column;
+        }
+    }
+}
+
+.address {
+    width: 50%;
+    @include phones {
+       width: 100%;
+       text-align: center;
+    }
+    &__text {  
+        color: $darkgrey;
+        font-size: rem(21px);
+        font-weight: 500;
+    }
+}
+
+.network {
+    width: 50%;
+    @include phones {
+        width: 100%;
+    }
+    &__list {
+        display: flex;
+        justify-content: flex-end;
+        @include phones {
+            justify-content: center;
+        }
+    }
+   &__item {
+       margin-right: 5%;
+       &:last-child {
+        margin-right: 0;
+    }
+   }
+    &__link {
+        display: block;
+        width: rem(20px);
+        height: rem(20px);
+    }
+    &__svg {
+        width: rem(20px);
+        height: rem(20px);
+        fill: $network_grey;
+        &--active {
+            fill: $black;
+        }
+    }
+}

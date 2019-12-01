@@ -1,0 +1,92 @@
+.section-menu {
+    background-image: url(../../img/menu/bg_menu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    position: relative;
+    height: 100vh;
+    @include phones {
+        height: 70vh;
+    }
+}
+
+.title-menu {
+    color: $white;
+    padding-top: 6%;
+    padding-left: 4%;
+    @include tablets {
+        padding-top: 12%;
+        padding-left: 5%;
+    } 
+}
+
+.accordeon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    &__list {
+        display: flex;
+    }
+    &__item {
+        display: flex;
+        &--active {
+            .accordeon__content {
+                max-width: rem(430px);
+            }
+        }
+    }
+    &__content {
+        overflow: hidden;
+        max-width: 0;
+        background-color: rgba(0,0,0,0.6);
+        transition: max-width .3s;
+        @include tablets {
+            display: none;
+        }
+        @include phones {
+            display: block;
+        }
+    }
+    &__btn {
+        width: rem(95px);
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include phones {
+            width: rem(80px);
+        }
+    }
+    &__title {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: rotate(-90deg) translateY(-50%);
+        transform-origin: 0 0;
+        white-space: nowrap;
+        margin-top: -30%;
+        color: $white;
+        font-size: rem(48px);
+        font-weight: 500;
+        @include tablets {
+           
+        }
+    }
+    &__text {
+        color: $white;
+        font-size: rem(16px);
+        font-weight: 400;
+        width: rem(430px);
+        padding: 12% 7%;
+        @include phones {
+            width: 100%;
+        }
+    }
+}
+
+
+
+
