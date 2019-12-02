@@ -5,10 +5,6 @@
     background-position: center;
     display: block;
     position: relative;
-    height: 100vh;
-    @include phones {
-        height: 70vh;
-    }
 }
 
 .title-menu {
@@ -71,9 +67,6 @@
         color: $white;
         font-size: rem(48px);
         font-weight: 500;
-        @include tablets {
-           
-        }
     }
     &__text {
         color: $white;

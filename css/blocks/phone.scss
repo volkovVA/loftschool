@@ -1,0 +1,35 @@
+.phone {
+    display: flex;
+    align-items: center;
+    &__link {
+        position: relative; 
+        font-size: rem(24px);
+        color: $white;
+        font-weight: 400;
+        &--green {
+            color: $bluegreen;
+            font-size: rem(21px);
+            font-weight: 400;
+            text-transform: uppercase;
+        }    
+    }
+    &__svg {
+        fill: $white;
+        margin-right: 5px;
+        &--green {
+            fill: $green;  
+        }
+    }
+    @include tablets {
+        display: none;
+    }
+    &-footer {
+        @include tablets {
+            display: block;
+        }
+        @include tablets {
+            display: block;
+        }
+    } 
+}  
+  

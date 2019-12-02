@@ -1,10 +1,9 @@
 .btn {
     display: flex;
     align-items: center;
-    justify-content: center;    
-    width: 156px;
-    height: 58px;
-    font-family: "Alegreya Sans";
+    justify-content: center;
+    width: rem(160px); 
+    padding: 1rem 0;   
     font-size: 1.125rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -13,13 +12,10 @@
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
     &-white {
-        @extend .btn;
         color: $bluegreen;
-        background-color: $white;
-        margin: 0 auto;
+        background-color: $white; 
     }
     &-bar {
-        margin-top: 0;
         background-color: $green;
         color: $white;
     }

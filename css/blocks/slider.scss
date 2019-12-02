@@ -1,10 +1,7 @@
 .section-slider {
     background-color: $lightblue;
     &__container {
-        min-height: rem(650px);
-        height: 100vh;
         @include tablets {
-            height: auto;
             padding: 10% 0;
         }
     }  
@@ -21,7 +18,7 @@
     &__col {
         flex: 1;
         &--right {
-            padding: 7% 0 0 10%;
+            padding: 8% 0 0 8%;
             @include tablets {
                 padding: 0;
             }
@@ -38,11 +35,12 @@
         }
     }
     &__title {
-        margin-top: 4%;
         color: $darkgrey;
-        font-size: rem(30px);
+        font-size: rem(34px);
         font-weight: 700;
+        line-height: rem(45px);
         text-transform: uppercase;
+        margin-bottom: 3%;
         @include tablets {
             padding-top: 1%;
             width: 60%;
@@ -51,11 +49,13 @@
             text-align: center;
         }
     }
-    &__description {
-        margin-top: 3%;
+    &__text {
         color: $grey;
         font-size: rem(18px);
         font-weight: 400;
+        line-height: rem(24px);
+        margin-right: 25%;
+        margin-bottom: 7%;
         @include tablets {
             padding-top: 2%;
             width: 75%;
@@ -67,8 +67,8 @@
         }
     }
     &__features {
-        margin-top: 5%;
         display: flex;
+        margin-bottom: 8%;
         @include tablets {
             justify-content: center;
             margin-top: 1%;
@@ -81,11 +81,11 @@
     }
     &__calorific {
         color: $black;
+        margin-right: 16%;
         &>span {
             display: block;
             font-weight: 700;
         }
-        margin-right: 12%;
     }
     &__weight {
         color: $black;
@@ -95,15 +95,14 @@
         }
     }
     &__order {
-        margin-top: 5%;
         display: flex;
         @include tablets {
             justify-content: center;
-            margin-top: 6%;
+            margin-top: 5%;
         }
     }
     &__price {
-        margin-right: 5%;  
+        margin-right: 8%;  
         color: $darkgrey;
         font-size: rem(60px);
         font-weight: 300;
@@ -114,8 +113,8 @@
 
 .composition {
     position: absolute;
-    left: 60.5%;
-    top: -5%;
+    left: 57.5%;
+    top: -8%;
     z-index: 1;
     &:hover .composition__drop-table {
         opacity: 1;
@@ -130,10 +129,11 @@
         background-color: $blue;
         border-radius: 5px;
         cursor: pointer;
-        &>svg {
-            fill: $white;
-        }        
     }
+    &__svg {
+            fill: $white;
+            margin-bottom: 6px;
+    }        
     &__title {
         color: $white;
         font-size: rem(14px);

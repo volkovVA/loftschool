@@ -50,15 +50,27 @@ footer {
     width: 100%;
 }
 
-// .section {    
-//     width: 100vw;
-//     height: 100vh;
-//     min-height: rem(650px);
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-// }
+ .section {    
+    width: 100vw;
+    height: 100vh;
+    min-height: rem(650px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
 
+ .container {
+    position: relative;
+    margin: 0 auto;
+    max-width: rem(960px);
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ 
 .title {  
     color: $darkgrey;
     font-size: rem(48px);
@@ -71,17 +83,6 @@ footer {
     }
 } 
  
-.container {
-    position: relative;
-    margin: 0 auto;
-    max-width: rem(960px);
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 .wrapper {
     position: relative;
     width: 100%;

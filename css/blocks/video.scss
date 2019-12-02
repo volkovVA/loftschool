@@ -6,16 +6,10 @@
     }
     &__container {
         flex-direction: column;
-        height: 100vh;
-        min-height: rem(650px);
         position: relative;
-        @include tablets {
-            height: auto;
-            min-height: auto;
-        }
     }
     &__wrapper {
-        margin-top: 6%;
+        margin-top: 5%;
         @include tablets {
             text-align: center;
         }
@@ -31,7 +25,7 @@
     }
     &__leaf {
         position: absolute;
-        top: 20%;
+        top: 8%;
         right: 0;
         @include tablets {
             width: 10%;
@@ -40,7 +34,7 @@
     &__leaf-two {
         position: absolute;
         left: 0;
-        bottom: 20%;
+        bottom: -14%;
         @include tablets {
             width: 7%;
         }    

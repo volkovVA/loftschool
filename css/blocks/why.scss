@@ -10,26 +10,21 @@
     }
     &__container {
         position: relative;
-        height: 100vh;
-        min-height: rem(650px);
         @include tablets {
-            height: auto;
             min-height: auto;
         }
     }
     &__text {
-        width: 43%;
         text-align: center;
         color: $grey;
         font-size: rem(18px);
         font-weight: 400;
-        margin-bottom: 6%;
-        @include tablets {
-            width: 100%;
+        margin-bottom: 5%;
+        padding: 0 28%;
+        @include tablets {   
             margin-bottom: 3%;
         }
         @include phones {
-            width: 100%;
             line-height: rem(20px);
             margin-bottom: 11%;
         }
@@ -41,13 +36,11 @@
         flex-direction: column;
     }
     &__item {
-        margin-right: 7%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: relative;
-        padding: 1%;
+        position: relative; 
         &:last-child {
             margin-right: 0;
             &::after {
@@ -71,7 +64,7 @@
             background-image: url(../../img/why/points.png);
             background-repeat: no-repeat;
             top: 20%;
-            left: 100%;
+            left: 88%;
             @include tablets {
                 display: none;
             }  
@@ -80,6 +73,7 @@
     &__logo {
         width: rem(125px);
         height: rem(125px);
+        margin-bottom: 8%;
         background-color: $why_grey;
         border-radius: 50%;
         display: flex;
@@ -101,26 +95,21 @@
         stroke-miterlimit: 10;
     }
     &__title {
+        margin-bottom: 5%;
         color: $black;
-        margin-top: 3%;
         font-size: rem(27px);
         font-weight: 700;
-        @include phones {
-            
-        }
     }
     &__text {
-        margin-top: 8%;
         color: $grey;
         font-size: rem(18px);
         font-weight: 300;
         text-align: center;
+        padding: 0 7%;
         @include tablets {
             margin-top: 0;
-            width: 100%;
         }
         @include phones {
-            width: 100%;
             margin-top: 2%;
         }
     }     

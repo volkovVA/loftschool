@@ -8,16 +8,11 @@
     position: relative;
     &__container {
         position: relative;
-        height: 100vh;
-        min-height: 650px;
-        @include tablets {
-            height: auto;
-        }
     }
     &__strawberry {
         position: absolute;
-        top: 15%;
-        right: -5%;
+        top: 0;
+        right: -6%;
         @include tablets {
             top: -5%;
             right: -40%;
@@ -31,7 +26,7 @@
     &__berries_teams {
         position: absolute;
         left: 0;
-        bottom: -15%;
+        bottom: -17%;
         z-index: 10;
         @include phones {
             width: 20%;
@@ -42,9 +37,9 @@
 .review {    
     &-wrapper {
         position: relative;
-        margin-top: 5%;
+        margin: 3% 0;
         background-color: $lightblue;
-        padding: 5% 20% 5% 5%;
+        padding: 5% 20% 5% 6%;
         background-image: url(../../img/reviews/bg_berries.png);
         background-repeat: no-repeat;
         background-position: right top;
@@ -76,7 +71,7 @@
     }
     &__photo {
         width: rem(254px);
-        margin-right: 7%;
+        margin-right: 2.5%;
         @include tablets {
            margin-top: 15%; 
            margin-right: 0;
@@ -99,13 +94,14 @@
         color: $lightgrey;
         font-size: rem(30px);
         font-weight: 500;
+        margin-bottom: 5%;
         @include tablets {
             text-align: center;
             
         }
     }
     &__text {
-        margin-top: 5%; 
+        margin-bottom: 5%;
         color: $grey;
         font-size: rem(18px);
         font-weight: 400;
@@ -116,12 +112,10 @@
         }
     }
     &__name {
-        margin-top: 5%;
         @extend .review__text;
         font-weight: 500;
     }
     &__list-bottom {
-        margin-top: 2%;
         display: flex;
         justify-content: center;
         @include tablets {
@@ -137,8 +131,8 @@
     }
     &__photo-bottom {
         display: block;
-        width: rem(68px);
-        height: rem(68px);
+        width: rem(70px);
+        height: rem(70px);
         border-radius: 50%;
         overflow: hidden;
         border: 5px solid transparent;

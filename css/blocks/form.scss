@@ -11,17 +11,12 @@
         }
     &__container {
         flex-direction: column;
-        height: 100vh;
-        min-height: rem(650px);
         position: relative;
-        @include tablets {
-            height: auto;
-        }
     }
     &__blueberry {
         position: absolute;
         left: -7%;
-        top: 73%;
+        top: 88%;
         @include tablets {
             display: none;
         }
@@ -29,7 +24,7 @@
     &__leaf {
         position: absolute;
         right: -7%;
-        top: 55%;
+        top: 63%;
         @include tablets {
             display: none;
         }
@@ -39,7 +34,7 @@
 .title {
     &-form {
         color: $green;
-        margin-bottom: 6%;
+        margin-bottom: 5%;
         @include phones {
             text-align: center;
         }
@@ -54,12 +49,12 @@
     }
     &__col {
         flex: 1;
-        padding: 0 2%;
+        padding: 0 1.5%;
     }
     &__row {
         display: flex;
         margin: 0 -2%;
-        margin-bottom: 2%;
+        margin-bottom: 3%;
         &--btn {
             margin-top: 10%;
             align-items: center;
@@ -79,13 +74,13 @@
         display: block;
         width: 100%;
         background-color: $white;
-        padding: rem(10px);
-        font-size: rem(14px);
+        padding: rem(16px);
+        font-size: rem(16px);
         outline: none;
     }
     &__textarea {
         width: 100%;
-        height: rem(165px);
+        height: rem(160px);
         padding: 2%;
         font-size: rem(14px);
         resize: none;
@@ -116,16 +111,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: rem(16px);
-        height: rem(16px);
+        width: rem(24px);
+        height: rem(24px);
         border-radius: 50%;
         background-color: $white;
         margin-right: 10px;
         &::after {
             content: "";
             display: block;
-            width: rem(8px);
-            height: rem(8px);
+            width: rem(12px);
+            height: rem(12px);
             background-color: $green;
             border-radius: 50%;
             transition: .3s;
@@ -147,8 +142,8 @@
     }
     &__btn {
         position: relative;
-        width: rem(16px);
-        height: rem(16px);
+        width: rem(24px);
+        height: rem(24px);
         background-color: $white;
         margin-right: 2%;
         img {

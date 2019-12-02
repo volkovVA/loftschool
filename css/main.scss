@@ -34,9 +34,10 @@ $tablets: 768px;
 // blocks
 @import "./blocks/header.scss";
 @import "./blocks/nav.scss";
+@import "./blocks/phone.scss";
 @import "./blocks/first-screen.scss";
 @import "./blocks/why.scss";
-@import "./blocks/candybar.scss";
+@import "./blocks/slider.scss";
 @import "./blocks/pagination.scss";
 @import "./blocks/button.scss";
 @import "./blocks/team.scss";

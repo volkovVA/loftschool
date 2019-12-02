@@ -3,13 +3,6 @@
     @include tablets {
         padding: 6% 0 8%;
     }
-    &__container {
-        height: 100vh;
-        min-height: rem(650px);
-        @include tablets {
-            height: auto;
-        }
-    }
     &__blueberry {
         position: absolute;
         right: 0;
