@@ -9,7 +9,7 @@
         position: relative;
     }
     &__wrapper {
-        margin-top: 5%;
+        margin-top: 4%;
         @include tablets {
             text-align: center;
         }
@@ -21,6 +21,9 @@
         @include tablets {
             width: 15%;
             bottom: -15%;
+        }
+        @include phones {
+            bottom: -5%;
         }
     }
     &__leaf {

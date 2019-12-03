@@ -30,7 +30,8 @@
         display: flex;
         &--active {
             .accordeon__content {
-                max-width: rem(430px);
+                max-width: rem(400px);
+                
             }
         }
     }
@@ -39,12 +40,6 @@
         max-width: 0;
         background-color: rgba(0,0,0,0.6);
         transition: max-width .3s;
-        @include tablets {
-            display: none;
-        }
-        @include phones {
-            display: block;
-        }
     }
     &__btn {
         width: rem(95px);
@@ -52,9 +47,6 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        @include phones {
-            width: rem(80px);
-        }
     }
     &__title {
         position: absolute;
@@ -72,11 +64,7 @@
         color: $white;
         font-size: rem(16px);
         font-weight: 400;
-        width: rem(430px);
-        padding: 12% 7%;
-        @include phones {
-            width: 100%;
-        }
+        padding: 5%;
     }
 }
 

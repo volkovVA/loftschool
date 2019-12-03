@@ -1,10 +1,5 @@
 .section-slider {
-    background-color: $lightblue;
-    &__container {
-        @include tablets {
-            padding: 10% 0;
-        }
-    }  
+    background-color: $lightblue; 
 }
 
 .slider {
@@ -18,19 +13,21 @@
     &__col {
         flex: 1;
         &--right {
-            padding: 8% 0 0 8%;
+            padding: 9% 0 0 8%;
             @include tablets {
+                padding: 5%;
+            }
+            @include phones {
                 padding: 0;
             }
         }
         position: relative;
     }
     &__img {
-        width: 100%;
         text-align: center;
         &>img {
-            @include tablets {
-            width: 55%;
+            @include phones {
+                width: 80%;
             }
         }
     }
@@ -40,13 +37,13 @@
         font-weight: 700;
         line-height: rem(45px);
         text-transform: uppercase;
-        margin-bottom: 3%;
         @include tablets {
-            padding-top: 1%;
-            width: 60%;
-            margin: 0 auto;
+            padding: 0 20%;
             line-height: rem(36px);
             text-align: center;
+        }
+        @include phones {
+            padding: 0;
         }
     }
     &__text {
@@ -57,13 +54,12 @@
         margin-right: 25%;
         margin-bottom: 7%;
         @include tablets {
-            padding-top: 2%;
-            width: 75%;
-            margin: 0 auto;
+            padding: 0 10%;
+            text-align: center;
+            margin: 5% auto;
         }
         @include phones {
-            width: 100%;
-            text-align: center;
+            padding: 0;
         }
     }
     &__features {
@@ -71,7 +67,6 @@
         margin-bottom: 8%;
         @include tablets {
             justify-content: center;
-            margin-top: 1%;
         }
     }
     &__price {
@@ -98,7 +93,6 @@
         display: flex;
         @include tablets {
             justify-content: center;
-            margin-top: 5%;
         }
     }
     &__price {
@@ -116,6 +110,15 @@
     left: 57.5%;
     top: -8%;
     z-index: 1;
+    @include tablets {
+        position: absolute;
+        left: 86%;
+    }
+    @include phones {
+        position: absolute;
+        left: 73%;
+        top: -4%
+    }
     &:hover .composition__drop-table {
         opacity: 1;
     }
@@ -129,10 +132,12 @@
         background-color: $blue;
         border-radius: 5px;
         cursor: pointer;
+        &:hover {
+            background-color:$darkblue;
+        }
     }
     &__svg {
-            fill: $white;
-            margin-bottom: 6px;
+        fill: $white;
     }        
     &__title {
         color: $white;
@@ -170,16 +175,5 @@
         color: $lightgrey;
         font-size: rem(16px);
         font-weight: 500;
-    }     
-    @include tablets {
-        position: absolute;
-        bottom: 177%;
-        left: 89%;
-    }
-    @include phones {
-        position: absolute;
-        bottom: 177%;
-        left: 80%;
-    }
-    
+    }    
 }    

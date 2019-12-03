@@ -4,7 +4,7 @@
     background-position: center center;
     background-size: cover;
         @include tablets {
-            padding: 8% 10%;
+            padding: 0 17%;
         }
         @include phones {
             padding: 5% 0;
@@ -15,8 +15,8 @@
     }
     &__blueberry {
         position: absolute;
-        left: -7%;
-        top: 88%;
+        left: -5%;
+        top: 91%;
         @include tablets {
             display: none;
         }
@@ -36,7 +36,9 @@
         color: $green;
         margin-bottom: 5%;
         @include phones {
-            text-align: center;
+            font-size: rem(34px);
+            line-height: rem(36px);
+
         }
     }
 }
@@ -56,8 +58,11 @@
         margin: 0 -2%;
         margin-bottom: 3%;
         &--btn {
-            margin-top: 10%;
+            margin-top: 15%;
             align-items: center;
+            @include tablets { 
+                margin: 10%;
+            }
         }
     }
 }
@@ -76,7 +81,13 @@
         background-color: $white;
         padding: rem(16px);
         font-size: rem(16px);
-        outline: none;
+        border: none;
+        &:focus{
+            outline: 3px solid $lightgreen;
+        }
+        @include phones {
+            padding: rem(10px);
+        }
     }
     &__textarea {
         width: 100%;
@@ -84,7 +95,13 @@
         padding: 2%;
         font-size: rem(14px);
         resize: none;
-        outline: none;
+        border: none;
+        &:focus{
+            outline: 3px solid $lightgreen;
+        }
+        @include phones {
+            height: rem(100px);
+        }
     }
 }
 

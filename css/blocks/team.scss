@@ -1,14 +1,14 @@
 .section-team {
     position: relative;
-    @include tablets {
-        padding: 6% 0 8%;
-    }
     &__blueberry {
         position: absolute;
         right: 0;
         top: -27%;
         @include tablets {
             width: 20%;
+        }
+        @include phones {
+            top: -15%;
         }
     }
     &__berry {
@@ -33,10 +33,10 @@
         justify-content: space-between;
         @include tablets {
             flex-wrap: wrap;
-            padding: 0 18%;
+            padding: 0 25%;
         }
         @include phones {
-            padding: 0 32%;
+            padding: 0 35%;
         }
     &__item {
         display: flex;
@@ -45,16 +45,30 @@
         align-items: center;
         text-align: center;
         @include tablets {
-            width: 50%;
+            width: 45%;
         }
     }
-    &__photo {   
+    &__photo { 
+        margin-bottom: 7%;
         overflow: hidden; 
         width: rem(220px);
         height: rem(290px);
+        position: relative;
+        padding: 4%;
         @include phones {
-            width: rem(150px);
-            height: rem(180px);
+            width: rem(130px);
+            height: rem(171px);
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: 2%;
+            left: 3%;
+            right: 3%;
+            bottom: 4.2%;
+            background-color: $blue;
+            transform: skew(2deg, 2deg);
+            z-index: -1;
         }
     }
     &__img {
@@ -62,22 +76,23 @@
         object-fit: cover;
         object-position: center;
         transition: .5s;
-        &:hover {
-            transform: scale(1.3); 
-        }
     }
     &__post {
         position: absolute;
         height: 0;
         overflow: hidden; 
-        
+        @include phones {
+            line-height: rem(23px);
+        }
     }
     &__name {
-        margin-top: 7%;
         color: $lightgrey;
         font-size: rem(21px);
         font-weight: 500;
         position: relative;
+        @include phones {
+            line-height: rem(23px);
+        }
         &--active {
             .team__svg--down {
                 display: inline;

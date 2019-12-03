@@ -3,7 +3,7 @@
        padding: 8% 17%;
     }
     @include phones {
-        padding: 8% 3%;
+        padding: 0;
     }
     position: relative;
     &__container {
@@ -14,8 +14,8 @@
         top: 0;
         right: -6%;
         @include tablets {
-            top: -5%;
-            right: -40%;
+            top: -2%;
+            right: -25%;
         }
         @include phones {
             width: 25%;
@@ -39,7 +39,7 @@
         position: relative;
         margin: 3% 0;
         background-color: $lightblue;
-        padding: 5% 20% 5% 6%;
+        padding: 5% 20% 3% 6%;
         background-image: url(../../img/reviews/bg_berries.png);
         background-repeat: no-repeat;
         background-position: right top;
@@ -57,9 +57,17 @@
             @include tablets {
                 top: -10%;
             }
+            @include phones {
+                width: rem(60px);
+                height: rem(60px);
+            }
         }
         @include tablets {
             padding: 5%;
+            margin: 7% 0;
+        }
+        @include phones {
+            padding: 10% 0 7%;
         }
     }
     &__item {
@@ -73,21 +81,21 @@
         width: rem(254px);
         margin-right: 2.5%;
         @include tablets {
-           margin-top: 15%; 
-           margin-right: 0;
+           margin: 8% 0; 
+           width: auto;
         }
+        @include phones {
+            margin: 0;
+        }    
     }
     &__img {
         object-fit: cover;
         object-position: center;
         @include tablets {
             width: rem(210px);
-            height: rem(210px); 
         }
-    }
-    &__description {
-        @include tablets {
-            margin-top: 3%;
+        @include phones {
+            width: rem(120px);
         }
     }
     &__title {     
@@ -97,7 +105,10 @@
         margin-bottom: 5%;
         @include tablets {
             text-align: center;
-            
+        }
+        @include phones {
+            font-size: rem(26px);
+            line-height: rem(26px);
         }
     }
     &__text {
@@ -108,7 +119,9 @@
         line-height: rem(22px);
         @include tablets {
             text-align: center;
-            margin-top: 3%;
+        }
+        @include phones {
+            margin-bottom: 2%;
         }
     }
     &__name {
@@ -118,9 +131,6 @@
     &__list-bottom {
         display: flex;
         justify-content: center;
-        @include tablets {
-            margin-top: 12%;
-        }
     }
     &__item-bottom {
         margin-right: 5%;
@@ -131,8 +141,8 @@
     }
     &__photo-bottom {
         display: block;
-        width: rem(70px);
-        height: rem(70px);
+        width: rem(75px);
+        height: rem(75px);
         border-radius: 50%;
         overflow: hidden;
         border: 5px solid transparent;

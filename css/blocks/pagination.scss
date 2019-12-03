@@ -4,6 +4,9 @@
         top: 40%;
         right: 5%;
         z-index: 20;
+        @include phones {
+            right: 2%;
+        }
     }
     &__link {
     display: block;

@@ -4,38 +4,28 @@
     background-repeat: no-repeat;
     background-position: center right;
     background-size: contain;
-    @include tablets {
-        padding: 4% 0;
-    }
-    @include phones {
-        padding: 0 0;
-    }
     &__container {  
         flex-direction: row;
         position: relative;
         @include tablets {
             flex-direction: column;
-            height: auto;
         }
     }
     &__column-left {
         position: relative;
         @include tablets {
             order: 2;
-            height: 50%;
-            padding-top: 7%;
+            padding-top: 8%;
         }
         @include phones {
-            padding-top: 12%;
+            padding-top: 17%;
         }
-        
     }
     &__column-right {
         position: relative;
         @include tablets {
             order: 1;
             text-align: center;
-            padding-top: 4%;
         }
     }
     &__heading {
@@ -47,12 +37,11 @@
         text-transform: uppercase;
         @include tablets {
             text-align: center;
-            margin-bottom: 1%;
+            margin-bottom: 0;  
         }
         @include phones {
             font-size: rem(45px);
             line-height: rem(42px);
-            margin-bottom: 0;
         }
     }
     &__slogan {
@@ -62,12 +51,14 @@
         font-size: rem(20px);
         font-weight: 400;
         @include tablets {
+            padding: 0 25%;
             margin: 0 auto;
-            margin-bottom: 4%;
+            margin-bottom: 7%;
+            text-align: center;
         }
         @include phones {
             line-height: rem(24px);
-            margin-bottom: 5%;
+            padding: 0 5%;
         }
     }
     &__list {
@@ -80,8 +71,8 @@
             padding: 0 7% 3%;
         }
         @include phones {
-            margin-top: 10%;
-            padding: 0 0 13%;
+            margin-top: 3%;
+            padding: 0;
         }
     }
     &__item {
@@ -97,6 +88,10 @@
         stroke: $logo_blue;
         stroke-width: 0.7;
         stroke-miterlimit: 10;
+        @include phones {
+            width: rem(50px);
+            height: rem(50px);
+        }
     }
     &__text {
         margin-right: 7%;
@@ -104,6 +99,10 @@
         font-size: rem(16px);
         font-weight: 400;
         line-height: rem(18px);
+        @include phones {
+            margin-right: 0;
+            font-size: rem(14px);
+        }
     }
     &__blackberry {
         position: absolute;
@@ -139,7 +138,8 @@
         bottom: 24%;
         @include tablets {
             width: 60%;
-            left: 45%;
+            left: 44%;
+            bottom:6%;
         }
     }
     &__blueberry {
@@ -156,10 +156,11 @@
         margin-left: 10%;
         @include tablets {
             width: 80%;
-            height: auto;
+            margin-bottom: 0;
+            margin-left: 0;
         }
         @include phones {
-            width: 70%;
+            width: 60%;
         }
     }
 }

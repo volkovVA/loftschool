@@ -6,13 +6,9 @@
     position: relative;
     @include tablets {
         background-size: rem(150px);
-        padding: 8% 0;
     }
     &__container {
         position: relative;
-        @include tablets {
-            min-height: auto;
-        }
     }
     &__text {
         text-align: center;
@@ -22,11 +18,11 @@
         margin-bottom: 5%;
         padding: 0 28%;
         @include tablets {   
-            margin-bottom: 3%;
+            margin-bottom: 2%;
+            padding: 0 20%;
         }
         @include phones {
-            line-height: rem(20px);
-            margin-bottom: 11%;
+            padding: 0;
         }
     }
 
@@ -48,11 +44,10 @@
             }   
         }
         @include tablets {
-            margin-right: 0;
+            margin-bottom: 4%;
         }
         @include phones {
             flex-direction: row;
-            padding-left: 6%;
             margin-bottom: 8%;
         } 
         &:after {
@@ -79,11 +74,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include tablets {
+            margin-bottom: 4%;
+        }
+        @include phones {
+            width: rem(80px);
+            height: rem(80px);
+            margin-bottom: 0;
+        } 
     }
     &__desc {
         text-align: center;
         @include phones {
-            padding: 0 8%;
+           width: 80%;
         }
     }
     &__svg {
@@ -93,12 +96,19 @@
         stroke: $black;
         stroke-width: 0.5;
         stroke-miterlimit: 10;
+        @include phones {
+            width: rem(50px);
+            height: rem(50px);
+        }
     }
     &__title {
         margin-bottom: 5%;
         color: $black;
         font-size: rem(27px);
         font-weight: 700;
+        @include tablets {
+            margin-bottom: 0;
+        } 
     }
     &__text {
         color: $grey;
@@ -107,10 +117,10 @@
         text-align: center;
         padding: 0 7%;
         @include tablets {
-            margin-top: 0;
+            padding: 0 23%;
         }
         @include phones {
-            margin-top: 2%;
+            padding: 0 5%;
         }
     }     
     &__raspberry {

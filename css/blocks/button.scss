@@ -2,22 +2,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: rem(160px); 
-    padding: 1rem 0;   
+    width: rem(160px);  
     font-size: 1.125rem;
     font-weight: 800;
     text-transform: uppercase;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    background-color: $white;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    &-white {
-        color: $bluegreen;
-        background-color: $white; 
-    }
-    &-bar {
+    margin: 0 auto;
+    &-green {
         background-color: $green;
+        margin: 0;
+    }
+    &__link {
+        color: $green;
+        padding: 1rem 0;
+        &--white {
+            color: $white;
+        } 
+    }
+    &-footer {
+        padding: 1rem 0;
         color: $white;
+        background-color: $green;
     }
     &-clear { 
         color: $green;

@@ -53,7 +53,7 @@
         width: rem(20px);
         height: rem(20px);
         fill: $network_grey;
-        &--active {
+        &:hover {
             fill: $black;
         }
     }
