@@ -689,7 +689,7 @@ button:focus {
 
 .section-firstscreen {
   background-color: #61c4d9;
-  background-image: url(../../img/firstscreen/fern.png);
+  background-image: url(../img/firstscreen/fern.png);
   background-repeat: no-repeat;
   background-position: center right;
   background-size: contain; }
@@ -859,7 +859,7 @@ button:focus {
         width: 60%; } }
 
 .section-why {
-  background-image: url(../../img/why/grey_leaf.png);
+  background-image: url(../img/why/grey_leaf.png);
   background-repeat: no-repeat;
   background-position-y: 25%;
   background-size: 15.625rem;
@@ -928,7 +928,7 @@ button:focus {
         display: block;
         width: 100%;
         height: 100%;
-        background-image: url(../../img/why/points.png);
+        background-image: url(../img/why/points.png);
         background-repeat: no-repeat;
         top: 20%;
         left: 88%; }
@@ -1322,7 +1322,7 @@ button:focus {
     display: none; }
 
 .section-menu {
-  background-image: url(../../img/menu/bg_menu.png);
+  background-image: url(../img/menu/bg_menu.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1427,7 +1427,7 @@ button:focus {
   margin: 3% 0;
   background-color: #f8faf9;
   padding: 5% 20% 3% 6%;
-  background-image: url(../../img/reviews/bg_berries.png);
+  background-image: url(../img/reviews/bg_berries.png);
   background-repeat: no-repeat;
   background-position: right top; }
   .review-wrapper::before {
@@ -1608,7 +1608,7 @@ button:focus {
     height: 85%; } }
 
 .section-form {
-  background-image: url(../../img/form/bg_form.png);
+  background-image: url(../img/form/bg_form.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; }
