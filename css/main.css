@@ -1696,7 +1696,7 @@ button:focus {
   font-size: 1rem;
   border: none; }
   .label__input:focus {
-    outline: 3px solid #080807; }
+    outline: 3px solid #dde3bd; }
   @media screen and (max-width: 480px) {
     .label__input {
       padding: 0.625rem; } }
@@ -1709,7 +1709,7 @@ button:focus {
   resize: none;
   border: none; }
   .label__textarea:focus {
-    outline: 3px solid #080807; }
+    outline: 3px solid #dde3bd; }
   @media screen and (max-width: 480px) {
     .label__textarea {
       height: 6.25rem; } }
