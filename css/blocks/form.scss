@@ -61,7 +61,10 @@
             margin-top: 15%;
             align-items: center;
             @include tablets { 
-                margin: 10%;
+                margin: 10% 15%;
+            }
+            @include phones { 
+                margin: 5%;
             }
         }
     }

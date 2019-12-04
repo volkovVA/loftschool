@@ -2,23 +2,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: rem(160px);  
+    width: rem(160px);
+    height: rem(60px);  
     font-size: 1.125rem;
     font-weight: 800;
     text-transform: uppercase;
-    border: none;
+    background-color: $white;
     border-radius: 50px;
     cursor: pointer;
-    background-color: $white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    margin: 0 auto;
+    border:1px solid $darkblue;
+	text-shadow:0 -1px 1px rgba(0,0,0,.3);
+	background: linear-gradient(180deg, $white 0%, $blue 100%);
+    box-shadow:0 1px 2px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.3);
+    &:hover, &:focus{
+        box-shadow:0 1px 0 rgba(255,255,255,.6), inset 0 1px 0 rgba(255,255,255,.3);
+    }
+    &:active{
+        box-shadow:0 1px 1px rgba(255,255,255,.5), inset 0 2px 5px rgba(25,163,214,.7);
+    }
+    @include tablets {
+        margin: 0 auto;
+    }
     &-green {
-        background-color: $green;
-        margin: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(15,90,71,1) 100%);
+        border:1px solid $green;
+        &:hover, &:focus{
+            box-shadow:0 1px 0 $black, inset 0 1px 0 rgba(255,255,255,.3);
+        }
+        &:active{
+            box-shadow:0 1px 1px rgba(255,255,255,.5), inset 0 2px 5px rgba(29,92,51,.5);
+        }
+        @include tablets {
+            margin: 0;
+        }
     }
     &__link {
         color: $green;
-        padding: 1rem 0;
+        padding: rem(18px) rem(34px) rem(14px);
         &--white {
             color: $white;
         } 
@@ -36,7 +56,10 @@
         border: none;
         margin-left: -50px;
         @include tablets {
-            margin-left: 0;
+            margin-left: 35%;
+        }
+        @include phones {
+            margin-left: 20%;
         }
     } 
 }
