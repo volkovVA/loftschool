@@ -32,7 +32,6 @@ $tablets: 768px;
 // blocks
 @import "./blocks/header.scss";
 @import "./blocks/pagination.scss";
-@import "./blocks/nav.scss";
 @import "./blocks/phone.scss";
 @import "./blocks/button.scss";
 @import "./blocks/first-screen.scss";
@@ -46,3 +45,6 @@ $tablets: 768px;
 @import "./blocks/map.scss";
 @import "./blocks/footer.scss";
 
+// setups
+@import "./slick/slick-theme.scss";
+@import "./slick/slick.scss";

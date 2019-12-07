@@ -1,8 +1,31 @@
 .section-slider {
-    background-color: $lightblue; 
+    background-color: $lightblue;
+    &__container {
+        align-items: stretch;
+    } 
 }
 
 .slider {
+    position: relative;
+    &__svg {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        &--left {
+            top: 50%;
+            left: -10%;
+            transform: rotate(90deg);
+        }
+        &--right {
+            top: 50%;
+            right: -10%;
+            transform: rotate(-90deg);
+        }
+    }
+    &__link {
+        display: inline-block;
+        cursor: pointer;
+    }
     &__item {
         display: flex;
         position: relative;
@@ -102,6 +125,9 @@
         font-weight: 300;
         line-height: rem(60px);
         text-transform: uppercase;
+        span {
+            font-size: rem(36px);
+        }
     }
 }
 
@@ -119,8 +145,18 @@
         left: 73%;
         top: -4%
     }
-    &:hover .composition__drop-table {
-        opacity: 1;
+    &__drop-table {
+        position: absolute;
+        top: 0;
+        left: 90px;
+        opacity: 0;
+        transition: opacity .3s;
+        background-color: rgba(255,255,255,0.8);
+        border-radius: 10px;
+        @include tablets {
+            left: -278%;
+        }
+        
     }
     &__logo {
         display: flex;
@@ -133,6 +169,9 @@
         border-radius: 5px;
         cursor: pointer;
         &:hover {
+            ~ .composition__drop-table {
+                opacity: 1;
+            }
             background-color:$darkblue;
         }
     }
@@ -146,18 +185,6 @@
         font-style: italic;
         text-transform: uppercase;
     }
-    &__drop-table {
-        position: absolute;
-        top: 0;
-        left: 90px;
-        opacity: 0;
-        transition: opacity .3s;
-        background-color: rgba(255,255,255,0.8);
-        border-radius: 10px;
-        @include tablets {
-            left: -278%;
-        }
-    }
     &__list {
         display: table;
         padding: 5%;
@@ -170,6 +197,7 @@
         vertical-align: middle;
         height: 50px;
         padding: 10px;
+        white-space: nowrap;
     }
     &__text, &__weight {     
         color: $lightgrey;

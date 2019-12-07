@@ -52,6 +52,9 @@
     &__col {
         flex: 1;
         padding: 0 1.5%;
+        &--btn {
+            display: flex;
+        }
     }
     &__row {
         display: flex;
@@ -59,7 +62,6 @@
         margin-bottom: 3%;
         &--btn {
             margin-top: 15%;
-            align-items: center;
             @include tablets { 
                 margin: 10% 15%;
             }
