@@ -22,12 +22,17 @@
             transform: rotate(-90deg);
         }
     }
+    &__list {
+        .slick-list {
+            padding: 35px 0 !important;
+        }
+    }
     &__link {
         display: inline-block;
         cursor: pointer;
     }
     &__item {
-        display: flex;
+        display: flex !important;
         position: relative;
         @include tablets {
             flex-direction: column;

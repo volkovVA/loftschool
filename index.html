@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=0ea76c10-14e3-40ac-9630-59c4b4c80f70&lang=ru_RU" type="text/javascript">
+    </script>
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/slick.min.js"></script>
     <script async src="./js/main.js"></script>
@@ -60,6 +62,35 @@
                     </svg>
                     <a class="phone__link" href="tel:+88009039090">8&nbsp;800&nbsp;903&nbsp;90&nbsp;90</a>
                 </div>
+                <div class="nav-mobile nav-mobile--active">
+                        <a href="#" class="nav-burger">
+                            <div class="nav-burger__icon"></div>
+                        </a>
+                        <ul class="nav-mobile__list">
+                            <li class="nav-mobile__item">
+                                <a href="#" class="nav-mobile__link">О нас</a>
+                            </li>
+                            <li class="nav-mobile__item">
+                                <a href="#" class="nav-mobile__link">Батончики</a>
+                            </li>
+                            <li class="nav-mobile__item">
+                                <a href="#" class="nav-mobile__link">Команда</a>
+                            </li>
+                            <li class="nav-mobile__item">
+                                <a href="#" class="nav-mobile__link">Меню</a>
+                            </li>
+                            <li class="nav-mobile__item">
+                                <a href="#" class="nav-mobile__link">Отзывы</a>
+                            </li>
+                            <li class="nav-mobile__item">
+                                <a href="#" class="nav-mobile__link">Как мы работаем</a>
+                            </li>
+                            <li class="nav-mobile__item">
+                                <a href="#" class="nav-mobile__link">Контакты</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
             </div>
         </header>   
         <div class="pagination">
@@ -190,7 +221,16 @@
             <div class="container section-slider__container">
                 <div class="slider">
                     <div class="slider__arrows">
-                      
+                        <a class="slider__link">
+                            <svg class="slider__svg slider__svg--left">
+                                <use xlink:href="./img/sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
+                        <a class="slider__link">
+                            <svg class="slider__svg slider__svg--right">
+                                <use xlink:href="./img/sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
                     </div>
                     <ul class="slider__list">
                         <li class="slider__item">
@@ -523,59 +563,59 @@
         </section>
         <section class="section section-reviews">
             <div class="container section-reviews__container">
-                <h2 class="title">отзывы</h2>
+                <h2 class="title section-reviews__title">отзывы</h2>
                 <img class="section-reviews__strawberry" src="./img/reviews/strawberry.png" alt="клубника"> 
-                    <div class="review-wrapper">
-                        <ul class="review">
-                            <!-- <li class="review__item revies__item--active">
-                                <div class="review__photo">
-                                    <img class="review__img" src="./img/reviews/alena.png" alt="аватарка">
+                <div class="review-wrapper">
+                    <ul class="review">
+                        <li class="review__item revies__item--active">
+                            <div class="review__photo">
+                                <img class="review__img" src="./img/reviews/alena.png" alt="аватарка">
+                            </div>
+                            <div class="review__description">
+                                <div class="review__title">Лучший перекус</div>
+                                <div class="review__text">
+                                    <p>Я ем порциями, но часто. Это повышает мою продуктивность в разы.
+                                    В течении дня сижу за компьютером и часто отхождить в кафе или на
+                                    кухню просто не могу себе позволить. А батончик - он всегда под рукой.
+                                    Это приятно и удобно.   
+                                    </p>
                                 </div>
-                                <div class="review__description">
-                                    <div class="review__title">Лучший перекус</div>
-                                    <div class="review__text">
-                                        <p>Я ем порциями, но часто. Это повышает мою продуктивность в разы.
-                                        В течении дня сижу за компьютером и часто отхождить в кафе или на
-                                        кухню просто не могу себе позволить. А батончик - он всегда под рукой.
-                                        Это приятно и удобно.   
-                                        </p>
-                                    </div>
-                                    <div class="review__name">Алёна Хмельницкая</div>
+                                <div class="review__name">Алёна Хмельницкая</div>
+                            </div>
+                        </li>
+                        <li class="review__item">
+                            <div class="review__photo">
+                                <img class="review__img" src="./img/reviews/vadim.png" alt="аватарка">
+                            </div>
+                            <div class="review__description">
+                                <div class="review__title">Идеально подходит для спортсменов</div>
+                                <div class="review__text">
+                                    <p>После тренировок всегда хочется быстро закинуться чем-то белковым,
+                                    потому что до дома ещё нужно доехать. А кушать хочется. Протеиновые
+                                    батончики всегда выручают в этом плане. Спасибо производителю за этот 
+                                    качественный и экологичный продукт.  
+                                    </p>
                                 </div>
-                            </li> -->
-                            <!-- <li class="review__item">
-                                <div class="review__photo">
-                                    <img class="review__img" src="./img/reviews/vadim.png" alt="аватарка">
+                                <div class="review__name">Вадим Грачев</div>
+                            </div>
+                        </li>
+                        <li class="review__item">
+                            <div class="review__photo">
+                                <img class="review__img" src="./img/reviews/maria.png" alt="аватарка">
+                            </div>
+                            <div class="review__description">
+                                <div class="review__title">Лучшие батончики премиум уровня</div>
+                                <div class="review__text">
+                                    <p>Батончики понравились. На мой взгляд слегка завышена цена 
+                                    по сравнению с конкурентами, однако, как говорится – оно того 
+                                    стоит. Нравится носить с собой, нравится держать в руке. Ну и конечно же, кушать. Идеально утоляют голод, хоть и не надолго. Через час уже ем ещё один. Но это скорее плюс, чем минус.   
+                                    </p>
                                 </div>
-                                <div class="review__description">
-                                    <div class="review__title">Идеально подходит для спортсменов</div>
-                                    <div class="review__text">
-                                        <p>После тренировок всегда хочется быстро закинуться чем-то белковым,
-                                        потому что до дома ещё нужно доехать. А кушать хочется. Протеиновые
-                                        батончики всегда выручают в этом плане. Спасибо производителю за этот 
-                                        качественный и экологичный продукт.  
-                                        </p>
-                                    </div>
-                                    <div class="review__name">Вадим Грачев</div>
-                                </div>
-                            </li>  -->
-                            <li class="review__item">
-                                <div class="review__photo">
-                                    <img class="review__img" src="./img/reviews/maria.png" alt="аватарка">
-                                </div>
-                                <div class="review__description">
-                                    <div class="review__title">Лучшие батончики премиум уровня</div>
-                                    <div class="review__text">
-                                        <p>Батончики понравились. На мой взгляд слегка завышена цена 
-                                        по сравнению с конкурентами, однако, как говорится – оно того 
-                                        стоит. Нравится носить с собой, нравится держать в руке. Ну и конечно же, кушать. Идеально утоляют голод, хоть и не надолго. Через час уже ем ещё один. Но это скорее плюс, чем минус.   
-                                        </p>
-                                    </div>
-                                    <div class="review__name">Мария Орлова</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                                <div class="review__name">Мария Орлова</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                     <ul class="review__list-bottom">
                         <li class="review__item-bottom">
                             <a class="review__photo-bottom review__photo-bottom--active">
@@ -717,8 +757,8 @@
                 </form>
             </div>
         </section>
-        <section class="section map">
-            <img class="map__img" src="./img/map.png" alt="">
+        <section class="section section-map">
+                <div id="map" class="map"></div>
         </section>
         <footer class="footer">
             <div class="container footer__container">

@@ -19,7 +19,6 @@
     overflow: hidden;
     display: block;
     margin: 0;
-    padding: 35px 0;
 
     &:focus {
         outline: none;
@@ -46,7 +45,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-
     &:before,
     &:after {
         content: "";
@@ -75,15 +73,15 @@
         display: none;
     }
 
-    // display: none;
+    display: none;
 
     &.dragging img {
         pointer-events: none;
     }
 
-    // .slick-initialized & {
-    //     display: block;
-    // }
+    .slick-initialized & {
+          display: block;
+    }
 
     .slick-loading & {
         visibility: hidden;

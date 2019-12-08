@@ -8,6 +8,10 @@
     position: relative;
     &__container {
         position: relative;
+        align-items: stretch;
+    }
+    &__title {
+        margin: 0 auto;
     }
     &__strawberry {
         position: absolute;
@@ -71,7 +75,7 @@
         }
     }
     &__item {
-        display: flex;
+        display: flex !important;
         @include tablets {
             flex-direction: column;
             align-items: center;
@@ -129,15 +133,11 @@
         font-weight: 500;
     }
     &__list-bottom {
-        display: flex;
-        justify-content: center;
+        margin: 0 auto;
     }
     &__item-bottom {
-        margin-right: 5%;
         cursor: pointer;
-        &:last-child {
-            margin-right: 0;
-        }
+        margin: 0 5px;
     }
     &__photo-bottom {
         display: block;
@@ -159,6 +159,19 @@
         object-fit: cover;
         object-position: center;
     }
+}
+
+.review__list-bottom .slick-track {
+    transform: none !important;
+    width: auto !important;
+}
+
+.review__list-bottom .slick-list {
+     padding: 0 !important;
+}
+
+.review__item-bottom .slick-slide {
+    width: auto !important;
 }
 
 

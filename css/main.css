@@ -551,6 +551,37 @@ button:focus {
   .nav {
     display: none; } }
 
+.nav-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  top: -100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  font-size: 2.25rem;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+  .nav-mobile--active {
+    top: 0;
+    opacity: 1; }
+  .nav-mobile__link {
+    color: #fff; }
+
 .pagination__list {
   position: fixed;
   top: 40%;
@@ -1024,13 +1055,15 @@ button:focus {
       -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
       transform: rotate(-90deg); }
+  .slider__list .slick-list {
+    padding: 35px 0 !important; }
   .slider__link {
     display: inline-block;
     cursor: pointer; }
   .slider__item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
     position: relative; }
     @media screen and (max-width: 768px) {
       .slider__item {
@@ -1413,7 +1446,12 @@ button:focus {
     .section-reviews {
       padding: 0; } }
   .section-reviews__container {
-    position: relative; }
+    position: relative;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch; }
+  .section-reviews__title {
+    margin: 0 auto; }
   .section-reviews__strawberry {
     position: absolute;
     top: 0;
@@ -1473,9 +1511,9 @@ button:focus {
       padding: 10% 0 7%; } }
 
 .review__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
   @media screen and (max-width: 768px) {
     .review__item {
       -webkit-box-orient: vertical;
@@ -1539,18 +1577,11 @@ button:focus {
   font-weight: 500; }
 
 .review__list-bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  margin: 0 auto; }
 
 .review__item-bottom {
-  margin-right: 5%;
-  cursor: pointer; }
-  .review__item-bottom:last-child {
-    margin-right: 0; }
+  cursor: pointer;
+  margin: 0 5px; }
 
 .review__photo-bottom {
   display: block;
@@ -1572,6 +1603,18 @@ button:focus {
   object-fit: cover;
   -o-object-position: center;
   object-position: center; }
+
+.review__list-bottom .slick-track {
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+  width: auto !important; }
+
+.review__list-bottom .slick-list {
+  padding: 0 !important; }
+
+.review__item-bottom .slick-slide {
+  width: auto !important; }
 
 .section-video {
   background-color: #f8faf9;
@@ -1823,13 +1866,9 @@ button:focus {
 .checkbox__text {
   color: #0f5a47; }
 
-.map__img {
+.map {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: top center;
-  object-position: top center; }
+  height: 100%; }
 
 .footer {
   position: absolute;
@@ -2052,8 +2091,7 @@ button:focus {
   position: relative;
   overflow: hidden;
   display: block;
-  margin: 0;
-  padding: 35px 0; }
+  margin: 0; }
   .slick-list:focus {
     outline: none; }
   .slick-list.dragging {
@@ -2086,7 +2124,8 @@ button:focus {
 .slick-slide {
   float: left;
   height: 100%;
-  min-height: 1px; }
+  min-height: 1px;
+  display: none; }
   [dir="rtl"] .slick-slide {
     float: right; }
   .slick-slide img {
@@ -2095,6 +2134,8 @@ button:focus {
     display: none; }
   .slick-slide.dragging img {
     pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
   .slick-loading .slick-slide {
     visibility: hidden; }
   .slick-vertical .slick-slide {
