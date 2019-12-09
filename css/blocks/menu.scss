@@ -30,8 +30,7 @@
         display: flex;
         &--active {
             .accordeon__content {
-                max-width: rem(400px);
-                
+                max-width: rem(400px); 
             }
         }
     }

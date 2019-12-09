@@ -90,8 +90,19 @@ ymaps.ready(function () {
 
 const navItem = document.querySelectorAll('.nav-mobile__item');
 const checkBox = document.querySelector('#checkbox');
-for (let i = 0; i < navItem.length; i++) {
-    navItem[i].addEventListener ('click', function(){
-        checkBox.checked = false;
-    });
-}
+    for (let i = 0; i < navItem.length; i++) {
+        navItem[i].addEventListener ('click', function(){
+            checkBox.checked = false;
+        });
+    }
+
+/*===== ACCORDEON =====*/
+
+const accBtn = document.querySelectorAll(".accordeon__btn");
+const accItem = document.querySelectorAll(".accordeon__item");
+    for (let i = 0; i < accBtn.length; i++){
+        accBtn[i].addEventListener('click', function(){
+            event.preventDefault();
+            accItem[i].classList.toggle("accordeon__item--active");
+        })
+    }
