@@ -1,3 +1,5 @@
+/*===== SLIDER =====*/
+
 $('.slider__list').slick({
     arrows: true,
     appendArrows: $('.slider__arrows'),
@@ -21,6 +23,8 @@ $('.review').slick({
     centerMode: true,
     focusOnSelect: true,
     });
+
+/*===== YANDEX MAP =====*/
 
 ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
@@ -81,3 +85,13 @@ ymaps.ready(function () {
         .add(myPlacemark3)
         .add(myPlacemark4);
 });
+
+/*===== BURGER-MENU =====*/
+
+const navItem = document.querySelectorAll('.nav-mobile__item');
+const checkBox = document.querySelector('#checkbox');
+for (let i = 0; i < navItem.length; i++) {
+    navItem[i].addEventListener ('click', function(){
+        checkBox.checked = false;
+    });
+}

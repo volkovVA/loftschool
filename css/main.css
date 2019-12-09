@@ -552,35 +552,130 @@ button:focus {
     display: none; } }
 
 .nav-mobile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  position: fixed;
+  display: none;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: fixed;
-  top: -100%;
-  bottom: 0;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 0 16px;
+  top: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 100;
-  font-size: 2.25rem;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  transition: opacity 0.3s; }
-  .nav-mobile--active {
+  height: 50px;
+  z-index: 9999999; }
+  @media screen and (max-width: 768px) {
+    .nav-mobile {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
+  .nav-mobile__btn {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    z-index: 101; }
+  .nav-mobile__icon {
+    display: block;
+    position: relative;
+    background: white;
+    width: 90%;
+    height: 4px;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s; }
+    .nav-mobile__icon::after, .nav-mobile__icon::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: white;
+      width: 100%;
+      height: 4px;
+      -webkit-transition: .4s;
+      -o-transition: .4s;
+      transition: .4s; }
+    .nav-mobile__icon::after {
+      top: 8px; }
+    .nav-mobile__icon::before {
+      top: -8px; }
+  .nav-mobile__container {
+    position: fixed;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     top: 0;
-    opacity: 1; }
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 0;
+    opacity: 1;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-delay: .2s;
+    -o-transition-delay: .2s;
+    transition-delay: .2s;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); }
+  .nav-mobile__list {
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-delay: .5s;
+    -o-transition-delay: .5s;
+    transition-delay: .5s;
+    list-style: none;
+    padding-left: 0;
+    margin-top: -50px; }
+  .nav-mobile__item {
+    font-size: 2.25rem; }
   .nav-mobile__link {
     color: #fff; }
+  .nav-mobile__checkbox {
+    display: none; }
+    .nav-mobile__checkbox:checked ~ .nav-mobile__nav {
+      opacity: 1;
+      -webkit-transition-delay: 0s;
+      -o-transition-delay: 0s;
+      transition-delay: 0s; }
+    .nav-mobile__checkbox:checked ~ .nav-mobile__container {
+      height: 100%;
+      -webkit-transition-delay: 0s;
+      -o-transition-delay: 0s;
+      transition-delay: 0s; }
+    .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon {
+      background: transparent; }
+      .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon::before, .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon::after {
+        top: 0; }
+      .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon::after {
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg); }
+      .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon::before {
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg); }
 
 .pagination__list {
   position: fixed;

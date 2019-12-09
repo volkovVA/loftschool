@@ -62,36 +62,38 @@
                     </svg>
                     <a class="phone__link" href="tel:+88009039090">8&nbsp;800&nbsp;903&nbsp;90&nbsp;90</a>
                 </div>
-                <div class="nav-mobile nav-mobile--active">
-                        <a href="#" class="nav-burger">
-                            <div class="nav-burger__icon"></div>
-                        </a>
-                        <ul class="nav-mobile__list">
-                            <li class="nav-mobile__item">
-                                <a href="#" class="nav-mobile__link">О нас</a>
-                            </li>
-                            <li class="nav-mobile__item">
-                                <a href="#" class="nav-mobile__link">Батончики</a>
-                            </li>
-                            <li class="nav-mobile__item">
-                                <a href="#" class="nav-mobile__link">Команда</a>
-                            </li>
-                            <li class="nav-mobile__item">
-                                <a href="#" class="nav-mobile__link">Меню</a>
-                            </li>
-                            <li class="nav-mobile__item">
-                                <a href="#" class="nav-mobile__link">Отзывы</a>
-                            </li>
-                            <li class="nav-mobile__item">
-                                <a href="#" class="nav-mobile__link">Как мы работаем</a>
-                            </li>
-                            <li class="nav-mobile__item">
-                                <a href="#" class="nav-mobile__link">Контакты</a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-            </div>
+                <nav class="nav-mobile">
+                        <input type="checkbox" id="checkbox" class="nav-mobile__checkbox">
+                        <label for="checkbox" class="nav-mobile__btn">
+                            <div class="nav-mobile__icon"></div>
+                        </label>
+                        <div class="nav-mobile__container">
+                            <ul class="nav-mobile__list">
+                                <li class="nav-mobile__item">
+                                    <a href="#section-why" class="nav-mobile__link">О нас</a>
+                                </li>
+                                <li class="nav-mobile__item">
+                                    <a href="#section-slider" class="nav-mobile__link">Батончики</a>
+                                </li>
+                                <li class="nav-mobile__item">
+                                    <a href="#section-team" class="nav-mobile__link">Команда</a>
+                                </li>
+                                <li class="nav-mobile__item">
+                                    <a href="#section-menu" class="nav-mobile__link">Меню</a>
+                                </li>
+                                <li class="nav-mobile__item">
+                                    <a href="#section-reviews" class="nav-mobile__link">Отзывы</a>
+                                </li>
+                                <li class="nav-mobile__item">
+                                    <a href="#section-video" class="nav-mobile__link">Как мы работаем</a>
+                                </li>
+                                <li class="nav-mobile__item">
+                                    <a href="#footer" class="nav-mobile__link">Контакты</a>
+                                </li>
+                            </ul>
+                        </div>
+                </nav>
+            </div> 
         </header>   
         <div class="pagination">
             <ul class="pagination__list">
@@ -165,7 +167,7 @@
                 </div>        
             </div>
         </section>
-        <section class="section section-why">
+        <section class="section section-why" id="section-why">
             <div class="container section-why__container">
                 <h2 class="title">почему chocco?</h2>
                 <div class="section-why__text">В нашем мире все происходит очень быстро,
@@ -217,7 +219,7 @@
             </div>
              <img class="why__raspberry" src="./img/why/raspberry.png" alt="малина">
         </section>
-        <section class="section section-slider">
+        <section class="section section-slider" id="section-slider">
             <div class="container section-slider__container">
                 <div class="slider">
                     <div class="slider__arrows">
@@ -426,7 +428,7 @@
                 </div> 
             </div>
         </section>
-        <section class="section section-team">
+        <section class="section section-team" id="section-team">
             <div class="container section-team__container">
                 <h2 class="title">команда</h2>
                 <div class="section-team__wrapper">
@@ -509,7 +511,7 @@
             <img class="section-team__blueberry" src="./img/teams/blueberry.png" alt="черника">
             <img class="section-team__berry" src="./img/teams/berry.png" alt="малина">
         </section>
-        <section class="section section-menu">
+        <section class="section section-menu" id="section-menu">
             <h2 class="title title-menu">меню</h2>
             <div class="accordeon">
                 <ul class="accordeon__list">
@@ -561,7 +563,7 @@
                 </ul>
             </div>
         </section>
-        <section class="section section-reviews">
+        <section class="section section-reviews" id="section-reviews">
             <div class="container section-reviews__container">
                 <h2 class="title section-reviews__title">отзывы</h2>
                 <img class="section-reviews__strawberry" src="./img/reviews/strawberry.png" alt="клубника"> 
@@ -636,7 +638,7 @@
             </div>
             <img class="section-reviews__berries_teams" src="./img/reviews/berries_teams.png" alt="ягоды">
         </section>
-        <section class="section section-video">
+        <section class="section section-video" id="section-video">
             <div class="container section-video__container">
                 <h2 class="title">как мы работаем</h2>
                 <div class="section-video__wrapper">
@@ -760,7 +762,7 @@
         <section class="section section-map">
                 <div id="map" class="map"></div>
         </section>
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="container footer__container">
                 <address class="address">
                     <div class="address__text">
