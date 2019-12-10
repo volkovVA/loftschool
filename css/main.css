@@ -1433,7 +1433,8 @@ button:focus {
     color: #323232;
     font-size: 1.3125rem;
     font-weight: 500;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     @media screen and (max-width: 480px) {
       .team__name {
         line-height: 1.4375rem; } }

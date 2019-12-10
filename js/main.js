@@ -84,6 +84,8 @@ ymaps.ready(function () {
         .add(myPlacemark2)
         .add(myPlacemark3)
         .add(myPlacemark4);
+
+    myMap.behaviors.disable('scrollZoom');    
 });
 
 /*===== BURGER-MENU =====*/
@@ -98,11 +100,23 @@ const checkBox = document.querySelector('#checkbox');
 
 /*===== ACCORDEON =====*/
 
-const accBtn = document.querySelectorAll(".accordeon__btn");
 const accItem = document.querySelectorAll(".accordeon__item");
-    for (let i = 0; i < accBtn.length; i++){
-        accBtn[i].addEventListener('click', function(){
-            event.preventDefault();
-            accItem[i].classList.toggle("accordeon__item--active");
-        })
-    }
+for (var i = 0; i < accItem.length; i++) {
+    accItem[i].addEventListener('click', function(){
+        event.preventDefault();
+        for (var i = 0; i < accItem.length; i++) {
+            accItem[i].classList.remove('accordeon__item--active');
+        }
+        this.classList.add('accordeon__item--active');  
+    });    
+}        
+
+/*===== TEAM =====*/
+
+const teamName = document.querySelectorAll('.team__name');
+for (var i = 0; i < teamName.length; i++) {
+    teamName[i].addEventListener('click', function() {
+        event.preventDefault();
+        this.classList.toggle('team__name--active');
+    });
+}

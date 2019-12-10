@@ -90,6 +90,7 @@
         font-size: rem(21px);
         font-weight: 500;
         position: relative;
+        cursor: pointer;
         @include phones {
             line-height: rem(23px);
         }
