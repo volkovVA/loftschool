@@ -589,6 +589,23 @@ button:focus {
     -o-transition: .4s;
     transition: .4s;
     z-index: 101; }
+    .nav-mobile__btn--active ~ .nav-mobile__container {
+      height: 100%;
+      -webkit-transition-delay: 0s;
+      -o-transition-delay: 0s;
+      transition-delay: 0s; }
+    .nav-mobile__btn--active .nav-mobile__icon {
+      background: transparent; }
+      .nav-mobile__btn--active .nav-mobile__icon::before, .nav-mobile__btn--active .nav-mobile__icon::after {
+        top: 0; }
+      .nav-mobile__btn--active .nav-mobile__icon::after {
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg); }
+      .nav-mobile__btn--active .nav-mobile__icon::before {
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg); }
   .nav-mobile__icon {
     display: block;
     position: relative;
@@ -597,7 +614,9 @@ button:focus {
     height: 4px;
     -webkit-transition: .4s;
     -o-transition: .4s;
-    transition: .4s; }
+    transition: .4s;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000; }
     .nav-mobile__icon::after, .nav-mobile__icon::before {
       content: "";
       display: block;
@@ -607,7 +626,9 @@ button:focus {
       height: 4px;
       -webkit-transition: .4s;
       -o-transition: .4s;
-      transition: .4s; }
+      transition: .4s;
+      -webkit-box-shadow: 0 0 5px #000;
+      box-shadow: 0 0 5px #000; }
     .nav-mobile__icon::after {
       top: 8px; }
     .nav-mobile__icon::before {
@@ -652,30 +673,6 @@ button:focus {
     font-size: 2.25rem; }
   .nav-mobile__link {
     color: #fff; }
-  .nav-mobile__checkbox {
-    display: none; }
-    .nav-mobile__checkbox:checked ~ .nav-mobile__nav {
-      opacity: 1;
-      -webkit-transition-delay: 0s;
-      -o-transition-delay: 0s;
-      transition-delay: 0s; }
-    .nav-mobile__checkbox:checked ~ .nav-mobile__container {
-      height: 100%;
-      -webkit-transition-delay: 0s;
-      -o-transition-delay: 0s;
-      transition-delay: 0s; }
-    .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon {
-      background: transparent; }
-      .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon::before, .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon::after {
-        top: 0; }
-      .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon::after {
-        -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg); }
-      .nav-mobile__checkbox:checked ~ .nav-mobile__btn .nav-mobile__icon::before {
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg); }
 
 .pagination__list {
   position: fixed;

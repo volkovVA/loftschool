@@ -71,6 +71,33 @@
         cursor: pointer;
         transition: .4s;
         z-index: 101;
+        &--active ~ {
+            .nav-mobile {
+                &__container {
+                    height: 100%;
+                    transition-delay: 0s;
+                }
+            }   
+        }
+        &--active  {
+            .nav-mobile {
+                &__icon {
+                    background: transparent;
+                    &::before,
+                    &::after {
+                        top: 0;
+                    }
+                    &::after {
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    }
+                    &::before {
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    }
+                }    
+            }
+        }
     }
     &__icon {
         display: block;
@@ -79,6 +106,7 @@
         width: 90%;
         height: 4px;
         transition: .4s;
+        box-shadow: 0 0 5px $black;
         &::after,
         &::before {
             content: "";
@@ -88,6 +116,7 @@
             width: 100%;
             height: 4px;
             transition: .4s;
+            box-shadow: 0 0 5px $black;
         }
         &::after {
           top: 8px;
@@ -125,38 +154,6 @@
     }
     &__link {
         color: $white;
-    }
-    &__checkbox {
-        display: none;
-        &:checked ~ {
-            .nav-mobile {
-                &__nav {
-                  opacity: 1;
-                  transition-delay: 0s;
-                }
-                &__container {
-                  height: 100%;
-                  transition-delay: 0s;
-                }
-                &__btn {
-                    .nav-mobile__icon {
-                        background: transparent;
-                        &::before,
-                        &::after {
-                            top: 0;
-                        }
-                        &::after {
-                        transform: rotate(-45deg);
-                        -webkit-transform: rotate(-45deg);
-                        }
-                        &::before {
-                        transform: rotate(45deg);
-                        -webkit-transform: rotate(45deg);
-                        }
-                    }
-                }
-            }
-        }
-    }
+    }  
 } 
   

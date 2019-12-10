@@ -90,13 +90,17 @@ ymaps.ready(function () {
 
 /*===== BURGER-MENU =====*/
 
-const navItem = document.querySelectorAll('.nav-mobile__item');
-const checkBox = document.querySelector('#checkbox');
-    for (let i = 0; i < navItem.length; i++) {
-        navItem[i].addEventListener ('click', function(){
-            checkBox.checked = false;
-        });
-    }
+const navMobBtn = document.querySelector('.nav-mobile__btn');
+    navMobBtn.addEventListener('click', function(){
+        navMobBtn.classList.toggle('nav-mobile__btn--active');
+    });
+
+const navMobItem = document.querySelectorAll('.nav-mobile__item');
+for (var i = 0; i < navMobItem.length; i++) {
+    navMobItem[i].addEventListener('click', function() {
+        navMobBtn.classList.remove('nav-mobile__btn--active');
+    })
+}
 
 /*===== ACCORDEON =====*/
 
