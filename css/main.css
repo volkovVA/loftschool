@@ -552,7 +552,7 @@ button:focus {
     display: none; } }
 
 .nav-mobile {
-  position: fixed;
+  position: absolute;
   display: none;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -561,9 +561,9 @@ button:focus {
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 0 16px;
-  top: 0;
+  top: -7px;
   left: 0;
-  right: 0;
+  right: -17px;
   height: 50px;
   z-index: 9999999; }
   @media screen and (max-width: 768px) {
@@ -1495,7 +1495,13 @@ button:focus {
     display: -ms-flexbox;
     display: flex; }
     .accordeon__item--active .accordeon__content {
-      max-width: 25rem; }
+      max-width: 50vh; }
+      @media screen and (max-width: 768px) {
+        .accordeon__item--active .accordeon__content {
+          max-width: 45vh; } }
+    @media screen and (max-width: 480px) {
+      .accordeon__item--none {
+        display: none; } }
   .accordeon__content {
     overflow: hidden;
     max-width: 0;
@@ -1504,11 +1510,14 @@ button:focus {
     -o-transition: max-width .3s;
     transition: max-width .3s; }
   .accordeon__btn {
-    width: 5.9375rem;
+    width: 10vh;
     position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; }
+    @media screen and (max-width: 480px) {
+      .accordeon__btn {
+        width: 12vh; } }
   .accordeon__title {
     position: absolute;
     top: 100%;
@@ -1529,6 +1538,34 @@ button:focus {
     font-size: 1rem;
     font-weight: 400;
     padding: 5%; }
+  .accordeon__close {
+    display: block;
+    position: relative;
+    background: white;
+    width: 30px;
+    margin: 10% 5% 15% auto;
+    z-index: 1000; }
+    .accordeon__close::after, .accordeon__close::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: white;
+      width: 100%;
+      height: 4px;
+      -webkit-transition: .4s;
+      -o-transition: .4s;
+      transition: .4s;
+      -webkit-box-shadow: 0 0 5px #000;
+      box-shadow: 0 0 5px #000;
+      top: 0; }
+    .accordeon__close::after {
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg); }
+    .accordeon__close::before {
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg); }
 
 .section-reviews {
   position: relative; }

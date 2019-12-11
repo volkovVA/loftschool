@@ -110,10 +110,30 @@ for (var i = 0; i < accItem.length; i++) {
         event.preventDefault();
         for (var i = 0; i < accItem.length; i++) {
             accItem[i].classList.remove('accordeon__item--active');
+            accItem[i].classList.add('accordeon__item--none');
         }
-        this.classList.add('accordeon__item--active');  
+        this.classList.add('accordeon__item--active');
+        this.classList.remove('accordeon__item--none');
     });    
-}        
+}
+
+for (var i = 0; i < accItem.length; i++) {
+    if (accItem[i].classList.contains('accordeon__item--active')) {
+        accItem[i].classList.add('accordeon__item--none');
+    }
+}
+
+const accClose = document.querySelectorAll('.accordeon__close');
+for (var i = 0; i < accClose.length; i++) {
+    accClose[i].addEventListener('click', function(){
+        event.preventDefault();
+        event.stopPropagation();
+        for (var i = 0; i < accItem.length; i++) {
+        accItem[i].classList.remove('accordeon__item--active');
+        accItem[i].classList.remove('accordeon__item--none');
+        }
+    })
+}
 
 /*===== TEAM =====*/
 
