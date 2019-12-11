@@ -141,6 +141,9 @@ const teamName = document.querySelectorAll('.team__name');
 for (var i = 0; i < teamName.length; i++) {
     teamName[i].addEventListener('click', function() {
         event.preventDefault();
-        this.classList.toggle('team__name--active');
+        for (var i = 0; i < teamName.length; i++) {
+            teamName[i].classList.remove('team__name--active');
+        }
+        this.classList.add('team__name--active')
     });
 }

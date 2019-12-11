@@ -7,13 +7,13 @@
     &__container {  
         flex-direction: row;
         position: relative;
-        @include tablets {
+        @include ipadpro {
             flex-direction: column;
         }
     }
     &__column-left {
         position: relative;
-        @include tablets {
+        @include ipadpro {
             order: 2;
             padding-top: 8%;
         }
@@ -23,7 +23,7 @@
     }
     &__column-right {
         position: relative;
-        @include tablets {
+        @include ipadpro {
             order: 1;
             text-align: center;
         }
@@ -35,7 +35,7 @@
         font-weight: 700;
         line-height: rem(60px);
         text-transform: uppercase;
-        @include tablets {
+        @include ipadpro {
             text-align: center;
             margin-bottom: 0;  
         }
@@ -50,7 +50,7 @@
         color: $white;
         font-size: rem(20px);
         font-weight: 400;
-        @include tablets {
+        @include ipadpro {
             padding: 0 25%;
             margin: 0 auto;
             margin-bottom: 7%;
@@ -66,7 +66,7 @@
         display: flex;
         justify-content: space-between;
         text-align: center;
-        @include tablets {
+        @include ipadpro {
             margin-top: 5%;
             padding: 0 7% 3%;
         }
@@ -108,7 +108,7 @@
         position: absolute;
         top: 107%;
         right: 12%;  
-        @include tablets {
+        @include ipadpro {
             top: 80%;
             width: 57%;
             left: 35%;
@@ -116,7 +116,7 @@
     }
     &__greenleaf {
         display: none;
-        @include tablets {
+        @include ipadpro {
             display: block;
             position: absolute;
             width: 10%;
@@ -128,7 +128,7 @@
         position: absolute;
         bottom: -60%;
         left: -15%;
-        @include tablets {
+        @include ipadpro {
             display: none;
         }
     }
@@ -136,7 +136,7 @@
         position: absolute;
         left: 52%;
         bottom: 24%;
-        @include tablets {
+        @include ipadpro {
             width: 60%;
             left: 44%;
             bottom:6%;
@@ -146,7 +146,7 @@
         position: absolute;
         left: 20%;
         bottom: 15%;
-        @include tablets {
+        @include ipadpro {
             bottom: 50%;
             left: 12%;
         }

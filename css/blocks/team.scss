@@ -31,6 +31,7 @@
         width: rem(940px);
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         @include tablets {
             flex-wrap: wrap;
             padding: 0 25%;

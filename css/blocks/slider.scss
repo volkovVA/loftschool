@@ -24,7 +24,7 @@
     }
     &__list {
         .slick-list {
-            padding: 35px 0 !important;
+            padding: rem(50px) 0 !important;
         }
     }
     &__link {
@@ -139,7 +139,7 @@
 .composition {
     position: absolute;
     left: 57.5%;
-    top: -8%;
+    top: -5%;
     z-index: 1;
     @include tablets {
         position: absolute;
@@ -210,3 +210,7 @@
         font-weight: 500;
     }    
 }    
+
+ .slick-slide img {
+    margin: 0 auto;
+}
