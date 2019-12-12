@@ -1495,6 +1495,13 @@ button:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    @media screen and (max-width: 480px) {
+      .accordeon__list--active .accordeon__item {
+        display: none; } }
+    .accordeon__list--active .accordeon__item--active {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
   .accordeon__item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1504,9 +1511,6 @@ button:focus {
       @media screen and (max-width: 768px) {
         .accordeon__item--active .accordeon__content {
           max-width: 45vh; } }
-    @media screen and (max-width: 480px) {
-      .accordeon__item--none {
-        display: none; } }
   .accordeon__content {
     overflow: hidden;
     max-width: 0;

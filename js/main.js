@@ -93,45 +93,41 @@ ymaps.ready(function () {
 const navMobBtn = document.querySelector('.nav-mobile__btn');
     navMobBtn.addEventListener('click', function(){
         navMobBtn.classList.toggle('nav-mobile__btn--active');
+        window.addEventListener('scroll', noScroll); 
     });
 
 const navMobItem = document.querySelectorAll('.nav-mobile__item');
 for (var i = 0; i < navMobItem.length; i++) {
     navMobItem[i].addEventListener('click', function() {
         navMobBtn.classList.remove('nav-mobile__btn--active');
+        window.removeEventListener('scroll', noScroll);
     })
 }
 
 /*===== ACCORDEON =====*/
 
 const accItem = document.querySelectorAll(".accordeon__item");
+const accList = document.querySelector(".accordeon__list");
+
 for (var i = 0; i < accItem.length; i++) {
     accItem[i].addEventListener('click', function(){
         event.preventDefault();
         for (var i = 0; i < accItem.length; i++) {
-            accItem[i].classList.remove('accordeon__item--active');
-            accItem[i].classList.add('accordeon__item--none');
+             accItem[i].classList.remove('accordeon__item--active');
         }
         this.classList.add('accordeon__item--active');
-        this.classList.remove('accordeon__item--none');
+        accList.classList.add('accordeon__list--active');   
     });    
-}
-
-for (var i = 0; i < accItem.length; i++) {
-    if (accItem[i].classList.contains('accordeon__item--active')) {
-        accItem[i].classList.add('accordeon__item--none');
-    }
 }
 
 const accClose = document.querySelectorAll('.accordeon__close');
 for (var i = 0; i < accClose.length; i++) {
-    accClose[i].addEventListener('click', function(){
+    accClose[i].addEventListener('click', function(event){
         event.preventDefault();
         event.stopPropagation();
-        for (var i = 0; i < accItem.length; i++) {
-        accItem[i].classList.remove('accordeon__item--active');
-        accItem[i].classList.remove('accordeon__item--none');
-        }
+        event.target.closest('.accordeon__item').classList.remove('accordeon__item--active');
+        event.target.closest('.accordeon__list').classList.remove('accordeon__list--active');
+            
     })
 }
 
@@ -147,3 +143,19 @@ for (var i = 0; i < teamName.length; i++) {
         this.classList.add('team__name--active')
     });
 }
+
+/*===== WINDOW SCROLL =====*/
+
+function noScroll() {
+    window.scrollTo(0, 0);
+}
+
+/*===== FORM =====*/
+
+const loadButton = document.querySelector('#btn');
+loadButton.addEventListener('click', function(){
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+    xhr.send();
+    
+})

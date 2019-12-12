@@ -25,7 +25,16 @@
     bottom: 0;
     &__list {
         display: flex;
-        
+        &--active {
+            .accordeon__item {
+                @include phones {
+                    display: none;
+                }
+            }
+            .accordeon__item--active {
+                display: flex;
+            }
+        }
     }
     
     &__item {
@@ -37,12 +46,7 @@
                     max-width: 45vh;;
                }    
             }
-        }
-        &--none {
-            @include phones {
-                display: none;
-           } 
-        }   
+        }          
     }
     &__content {
         overflow: hidden;
