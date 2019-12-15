@@ -27,3 +27,19 @@ menuClose.addEventListener('click', function() {
 sideMenuLink.addEventListener('click', function() {
     sideMenuLink.classList.add("side__link--active");
 });
+
+/*===== TEAMS =====*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elem = document.querySelectorAll('.elem');
+    console.log(elem);
+    function onClickElem(e) {
+        for(let i = 0; i < elem.length; i++) {
+            elem[i].classList.remove('active');
+        }
+        e.target.classList.add('active');
+    }
+    for(let i = 0; i < elem.length; i++) {
+        elem[i].addEventListener('click', onClickElem)
+    }
+});

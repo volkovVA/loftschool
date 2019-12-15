@@ -146,6 +146,7 @@
         border-radius: 50%;
         overflow: hidden;
         border: 5px solid transparent;
+        outline: none;
         &:hover {
             border: 5px solid $green;  
         }
