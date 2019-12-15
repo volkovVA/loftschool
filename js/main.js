@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadButton.addEventListener('click', sendForm);
 
-});
+
 
 /*====== POPUP =====*/
 
@@ -231,6 +231,7 @@ closeBtn.addEventListener("click", function(e) {
   popup.style.display = "none";
 });
 
+});
 // overlayElement.addEventListener("click", function(e) {
 //   if (e.target === overlayElement) {
 //     closeElement.click();
