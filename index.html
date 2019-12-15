@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=0ea76c10-14e3-40ac-9630-59c4b4c80f70&lang=ru_RU" type="text/javascript">
     </script>
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/slick.min.js"></script>
-    <script async src="./js/main.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/slick.min.js"></script>
+    
     <title>Chocco</title>
 </head>
 <body>
@@ -664,7 +664,7 @@
                 <img class="section-form__blueberry" src="./img/form/form_blueberry.png" alt="черника">
                 <img class="section-form__leaf" src="./img/form/form_leaf.png" alt="листок">
                 <h2 class="title title-form">закажите доставку</h2>
-                <form class="form">
+                <form class="form" id="myform" enctype="multipart/form-data">
                     <div class="form__col">
                         <div class="form__row">
                             <div class="form__col">
@@ -672,57 +672,64 @@
                                     <span class="label__text">Имя</span>
                                     <input required name="name" type="text" class="label__input">
                                 </label>
+                                <div class="form__error"></div>
                             </div>
                             <div class="form__col">
                                 <label class="label">
                                     <span class="label__text">Телефон</span>
                                     <input required name="phone" type="text" class="label__input">
                                 </label>
+                                <div class="form__error"></div>
                             </div>
                         </div>
                         <div class="form__row">
                             <div class="form__col">
                                 <label class="label">
                                     <span class="label__text">Улица</span>
-                                    <input required name="street" type="text" class="label__input">
+                                    <input name="street" type="text" class="label__input">
                                 </label>
+                                <div class="form__error"></div>
                             </div>    
                         </div>
                         <div class="form__row">
                             <div class="form__col">
                                 <label class="label">
                                     <span class="label__text">Дом</span>
-                                    <input required name="house" type="text" class="label__input">
+                                    <input name="house" type="text" class="label__input">
                                 </label>
+                                <div class="form__error"></div>
                             </div>
                             <div class="form__col">
                                 <label class="label">
                                     <span class="label__text">Корпус</span>
-                                    <input required name="housing" type="text" class="label__input">
+                                    <input name="housing" type="text" class="label__input">
                                 </label>
+                                <div class="form__error"></div>
                             </div>
                             <div class="form__col">
                                 <label class="label">
                                     <span class="label__text">Квартира</span>
-                                    <input required name="apartment" type="text" class="label__input">
+                                    <input name="apartment" type="text" class="label__input">
                             </label>
+                            <div class="form__error"></div>
                             </div>
                             <div class="form__col">
                                 <label class="label">
                                     <span class="label__text">Этаж</span>
-                                    <input required name="floor" type="text" class="label__input">
+                                    <input name="floor" type="text" class="label__input">
                             </label>
+                            <div class="form__error"></div>
                             </div>
                         </div>
                     </div>
                     <div class="form__col">
                         <div class="form__row">
-                                <div class="form__col">
-                                    <label class="label">
-                                        <span class="label__text">Комментарий</span>
-                                        <textarea name="comment" class="label__textarea"></textarea>
-                                    </label>
-                                </div>     
+                            <div class="form__col">
+                                <label class="label">
+                                    <span class="label__text">Комментарий</span>
+                                    <textarea name="comment" class="label__textarea"></textarea>
+                                </label>
+                            </div>     
                         </div>
                         <div class="form__row">
                             <div class="form__col">
@@ -765,6 +772,12 @@
                         </div>
                     </div>     
                 </form>
+                <div class="popup">
+                    <div class="popup__container">
+                        <div class="popup__content">Сообщение отправлено</div>
+                        <a href="#" class="popup__close btn btn-green btn__link--white">Закрыть</a>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section section-map">
@@ -830,5 +843,6 @@
             </div>
         </footer>
     </div>
+    <script src="/js/main.js"></script>
 </body>
 </html>
