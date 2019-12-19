@@ -24,6 +24,14 @@ $('.review').slick({
     focusOnSelect: true,
     });
 
+/*===== FULLPAGE =====*/    
+
+$(document).ready(function() {
+	$('#fullpage').fullpage({
+        menu: '#pagination__list',
+    });
+});
+
 /*===== YANDEX MAP =====*/
 
 ymaps.ready(function () {
@@ -111,19 +119,24 @@ function noScroll() {
     window.scrollTo(0, 0);
 }
 
+/*===== REMOVE FUNCTION =====*/
+
+function removeClass (elem, classname) {
+    for (var i = 0; i < elem.length; i++) {
+        elem[i].classList.remove(classname);
+    }
+}
+
 /*===== ACCORDEON =====*/
 
 document.addEventListener('DOMContentLoaded', function() {
     const accItem = document.querySelectorAll(".accordeon__item");
-    const accList = document.querySelector(".accordeon__list");
     for (var i = 0; i < accItem.length; i++) {
         accItem[i].addEventListener('click', function(){
             event.preventDefault();
-            for (var i = 0; i < accItem.length; i++) {
-                accItem[i].classList.remove('accordeon__item--active');
-            }
+            removeClass(accItem, 'accordeon__item--active');
             this.classList.add('accordeon__item--active');
-            accList.classList.add('accordeon__list--active');   
+            this.parentNode.classList.add('accordeon__list--active');   
         });    
     }
     const accClose = document.querySelectorAll('.accordeon__close');
@@ -143,11 +156,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const teamName = document.querySelectorAll('.team__name');
     for (var i = 0; i < teamName.length; i++) {
         teamName[i].addEventListener('click', function() {
-            event.preventDefault();
-            for (var i = 0; i < teamName.length; i++) {
-                teamName[i].classList.remove('team__name--active');
-            }
-            this.classList.add('team__name--active')
+            removeClass(teamName, 'team__name--active');
+            this.classList.add('team__name--active'); 
         });
     }
 });
@@ -157,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const loadButton = document.querySelector('#btn');
     const myForm = document.querySelector('#myform');
+    const modalWindow = document.querySelector('.popup__content');
 
     function sendForm() {
         event.preventDefault();
@@ -170,16 +181,17 @@ document.addEventListener('DOMContentLoaded', function() {
             var formData = new FormData(myForm);
             formData.append('to', 'emaill@mail.com');
             const xhr = new XMLHttpRequest();
-            xhr.responseType = 'json';
-            xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail', true);
-            xhr.send(JSON.stringify(formData));
+            xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+            xhr.send(formData);
             xhr.addEventListener('load', function() {
                 if (xhr.response) {
                     popup.classList.add('popup-active');
-                    
-                }
-                console.log(xhr.responseType);
-                popup.classList.add('popup-active');
+                    modalWindow.innerText = 'Сообщение отправлено';
+                    console.log(JSON.parse(xhr.response));
+                } else {
+                    popup.classList.add('popup-active');
+                    modalWindow.innerText = 'Сообщение не отправлено';
+                } 
             });
         };
     }
@@ -220,8 +232,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadButton.addEventListener('click', sendForm);
 
-
-
 /*====== POPUP =====*/
 
 const popup = document.querySelector(".popup");
@@ -230,13 +240,13 @@ closeBtn.addEventListener("click", function(e) {
   e.preventDefault();
   popup.style.display = "none";
 });
-
+popup.addEventListener("click", function(e) {
+    if (e.target === popup) {
+      closeBtn.click();
+    }
+  });
+  
 });
-// overlayElement.addEventListener("click", function(e) {
-//   if (e.target === overlayElement) {
-//     closeElement.click();
-//   }
-// });
 
 
 
