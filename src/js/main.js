@@ -252,9 +252,88 @@ popup.addEventListener("click", function(e) {
       closeBtn.click();
     }
   });
-  
 });
 
+/*===== VIDEO PLAYER =====*/
 
+    let playBtn = document.querySelector('.player__start'),
+        video = document.querySelector('.player__video'),
+        player = document.querySelector('.player__wrapper'),
+        duration = document.querySelector('.player__duration-estimate'),
+        compleated = document.querySelector('.player__duration-completed'),
+        progress = document.querySelector('#progress'),
+        volumeControl = document.querySelector('#volume'),
+        volumeIcon = document.querySelector('.player__volume--icon');
+
+    playBtn.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+            this.classList.add('paused');
+            
+        } else {
+            video.pause();
+            this.classList.remove('paused');
+        }
+    });
+
+    player.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+            playBtn.classList.add('paused');
+            this.classList.add('active');
+        } else {
+            video.pause();
+            playBtn.classList.remove('paused');
+        }
+    })
+
+    function progressVideo() {
+        video.currentTime = Math.floor((video.duration/100) * progress.value);
+    }
+    progress.addEventListener('input', progressVideo);  
+    
+    video.addEventListener("timeupdate", function() {
+        let percent = Math.floor((100 / video.duration) * video.currentTime);
+        progress.value = percent;
+        const compleatedSec = video.currentTime;
+        compleated.innerText = formatTime(compleatedSec);
+    });
+
+    video.addEventListener('canplay', function() {
+        let durationSec = video.duration;
+        duration.innerText = formatTime(durationSec);
+    });   
+
+    function volumeVideoControl () {
+            video.volume = volumeControl.value / 100;
+        }
+    volumeControl.addEventListener('input' , volumeVideoControl);
+    volumeControl.addEventListener('input', function(){
+        if (video.volume == 0) {
+        volumeIcon.classList.add('muted');
+        } if (video.volume > 0) {
+            volumeIcon.classList.remove('muted');
+        }
+    })    
+    
+    volumeIcon.addEventListener('click', function() {
+        if (this.classList.contains('muted')) {
+            video.volume = 1;
+            volumeControl.value = 100;
+            this.classList.remove('muted');
+        } else {
+            this.classList.add('muted');
+            video.volume = 0;
+            volumeControl.value = 0;
+        };      
+    })
+
+    function formatTime(timeSec) {
+        const roundTime = Math.round(timeSec);
+        const minutes = Math.floor(roundTime / 60);
+        const seconds = roundTime - minutes * 60;
+        const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+        return minutes + ' : ' + formattedSeconds ;
+    };
 
 
