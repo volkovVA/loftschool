@@ -2,7 +2,7 @@
 	@return $px / 16px + 0rem;
   }
 
-// medi
+// media
 
 @mixin ipadpro {
 	@media screen and (max-width: $ipadpro) {

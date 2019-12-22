@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=0ea76c10-14e3-40ac-9630-59c4b4c80f70&lang=ru_RU" type="text/javascript">
     </script>
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/slick.min.js"></script>
-    <script src="./js/fullpage.min.js"></script>  
     <title>Chocco</title>
 </head>
 <body>
@@ -114,19 +111,8 @@
                         </ul>
                     </nav>
                     <div class="phone">
-                        <svg class="phone__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        width="11px" height="11px" viewBox="0 0 11 11" enable-background="new 0 0 11 11" xml:space="preserve">
-                        <g>
-                        <path d="M10.758,9.774c-0.164,0.383-0.602,0.633-0.953,0.828C9.344,10.852,8.875,11,8.352,11
-                            c-0.727,0-1.383-0.297-2.047-0.539c-0.477-0.172-0.938-0.383-1.367-0.648c-1.328-0.82-2.93-2.422-3.75-3.75
-                            C0.922,5.633,0.711,5.172,0.54,4.695C0.297,4.031,0,3.375,0,2.648c0-0.523,0.148-0.992,0.398-1.453
-                            c0.196-0.352,0.446-0.789,0.829-0.953C1.485,0.125,2.032,0,2.313,0c0.055,0,0.109,0,0.164,0.023
-                            c0.164,0.055,0.336,0.438,0.414,0.594c0.25,0.445,0.492,0.898,0.75,1.336C3.766,2.156,4,2.406,4,2.648
-                            C4,3.125,2.586,3.82,2.586,4.242c0,0.211,0.195,0.484,0.305,0.672C3.68,6.336,4.665,7.321,6.086,8.11
-                            c0.188,0.109,0.461,0.305,0.672,0.305C7.18,8.415,7.875,7,8.352,7C8.594,7,8.844,7.235,9.047,7.36
-                            c0.438,0.258,0.891,0.5,1.336,0.75c0.156,0.078,0.539,0.25,0.594,0.414C11,8.579,11,8.633,11,8.688
-                            C11,8.969,10.875,9.516,10.758,9.774z"/>
-                        </g>
+                        <svg class="phone__svg">
+                            <use xlink:href="./img/sprite.svg#phone"></use>
                         </svg>
                         <a class="phone__link" href="tel:+88009039090">8&nbsp;800&nbsp;903&nbsp;90&nbsp;90</a>
                     </div>
@@ -657,14 +643,84 @@
             <section class="section section-video" data-anchor="section-video">
                 <div class="container section-video__container">
                     <h2 class="title">как мы работаем</h2>
-                    <div class="section-video__wrapper">
-                        <video class="video" width="660" height="400" controls="controls">   
-                            <source src="./video/video.mp4" type='video/mp4'>
-                        </video>
-                    </div>
+                    <div class="player">
+                        <div class="player__wrapper">
+                          <div id="player__box">
+                            <video muted class="player__video" width="660" height="400">   
+                                <source src="./video/video.mp4" type='video/mp4'>
+                            </video>
+                          </div>
+                          <div class="player__splash"></div>
+                        </div>
+                        <div class="player__controls">
+                          <button class="player__start"></button>
+                        <div class="controls__progress">
+                            <input id="progress" value="0" max="100" min="0" class="progress" type="range">
+                        </div>
+                          <!-- <div class="player__playback">
+                            <button class="player__playback-button"></button>
+                          </div> -->
+                          <div class="player__duration">
+                            <span class="player__duration-completed">0:00</span> -
+                            <span class="player__duration-estimate">0:00</span>
+                          </div>
+                          <div class="player__volume">
+                                <button class="player__volume--icon"></button>
+                
+                                    <input id="volume" value="100" max="100" min="0" type="range" class="player__volume--progress">
+                                
+                              <!-- <button class="player__volume--button"></button> -->
+                          </div>
+                        </div>
+                      </div>
                     <img class="section-video__leaf" src="./img/video/video_leaf.png" alt="листок">
                     <img class="section-video__leaf-two" src="./img/video/video_leaf2.png" alt="листок">
                 </div>
+                <script>
+                    let playBtn = document.querySelector('.player__start'),
+                        video = document.querySelector('.player__video'),
+                        duration = document.querySelector('.player__duration-estimate'),
+                        compleated = document.querySelector('.player__duration-completed'),
+                        playbackBtn = document.querySelector('.player__playback-button'),
+                        progress = document.querySelector('#progress');
+                        playBtn.addEventListener('click', function () {
+                            if (video.paused) {
+                                video.play();
+                                this.classList.add('paused');
+                                
+                            } else {
+                                video.pause();
+                                this.classList.remove('paused');
+                            }
+                        });
+
+                    function progressVideo() {
+                        video.currentTime = Math.floor((video.duration/100) * progress.value);
+                    }
+
+                    progress.addEventListener('input', progressVideo);  
+                    
+                    video.addEventListener("timeupdate", function() {
+                        let percent = Math.floor((100 / video.duration) * video.currentTime);
+                        progress.value = percent;
+                        const compleatedSec = video.currentTime;
+                        compleated.innerText = formatTime(compleatedSec);
+                    });
+
+                    video.addEventListener('canplay', function() {
+                        let durationSec = video.duration;
+                        duration.innerText = formatTime(durationSec);
+                    });   
+                    
+                    function formatTime(timeSec) {
+                        const roundTime = Math.round(timeSec);
+                        const minutes = Math.floor(roundTime / 60);
+                        const seconds = roundTime - minutes * 60;
+                        const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+                        return minutes + ' : ' + formattedSeconds ;
+                    };
+
+                </script>
                 <img class="section-video__blackberry" src="./img/video/video_blackberry.png" alt="ягоды">
             </section>
             <section class="section section-form" data-anchor="section-form">
@@ -793,19 +849,8 @@
                             Москва, ул.Новый Арбат, д.31/12
                         </div>
                         <div class="phone phone-footer">
-                            <svg class="phone__svg phone__svg--green" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            width="11px" height="11px" viewBox="0 0 11 11" enable-background="new 0 0 11 11" xml:space="preserve">
-                            <g>
-                                <path d="M10.758,9.774c-0.164,0.383-0.602,0.633-0.953,0.828C9.344,10.852,8.875,11,8.352,11
-                                    c-0.727,0-1.383-0.297-2.047-0.539c-0.477-0.172-0.938-0.383-1.367-0.648c-1.328-0.82-2.93-2.422-3.75-3.75
-                                    C0.922,5.633,0.711,5.172,0.54,4.695C0.297,4.031,0,3.375,0,2.648c0-0.523,0.148-0.992,0.398-1.453
-                                    c0.196-0.352,0.446-0.789,0.829-0.953C1.485,0.125,2.032,0,2.313,0c0.055,0,0.109,0,0.164,0.023
-                                    c0.164,0.055,0.336,0.438,0.414,0.594c0.25,0.445,0.492,0.898,0.75,1.336C3.766,2.156,4,2.406,4,2.648
-                                    C4,3.125,2.586,3.82,2.586,4.242c0,0.211,0.195,0.484,0.305,0.672C3.68,6.336,4.665,7.321,6.086,8.11
-                                    c0.188,0.109,0.461,0.305,0.672,0.305C7.18,8.415,7.875,7,8.352,7C8.594,7,8.844,7.235,9.047,7.36
-                                    c0.438,0.258,0.891,0.5,1.336,0.75c0.156,0.078,0.539,0.25,0.594,0.414C11,8.579,11,8.633,11,8.688
-                                    C11,8.969,10.875,9.516,10.758,9.774z"/>
-                            </g>
+                            <svg class="phone__svg phone__svg--green">
+                                <use xlink:href="./img/sprite.svg#phone"></use>
                             </svg>
                             <a class="phone__link phone__link--green" href="tel:+88009039090">8&nbsp;800&nbsp;903&nbsp;90&nbsp;90</a>
                         </div>
@@ -846,6 +891,7 @@
             </footer>
         </div>    
     </div>
+    <script src="js/vendors.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

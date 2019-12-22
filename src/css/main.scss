@@ -1,0 +1,27 @@
+//colors
+$white: #fff;
+$black:  #000;
+$darkgrey: #0d0d0d;
+$grey: #666;
+$lightgrey: #323232;
+$network_grey: #b3b3b3;
+$why_grey: #f2f5f4;
+$green: #0f5a47;
+$lightgreen: #dde3bd;
+$blue: #61c4d9;
+$darkblue: #00accf;
+$logo_blue: #b0f7ff;
+$lightblue:#f8faf9;
+
+$z-fixed-menu: 100;
+
+// resolutions
+$phones: 480px;
+$tablets: 768px;
+$ipadpro: 1024px;
+
+//layout
+@import "./layout/*.scss";
+
+// blocks
+@import "./blocks/*.scss";

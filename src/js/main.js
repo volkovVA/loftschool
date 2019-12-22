@@ -42,11 +42,6 @@ ymaps.ready(function () {
             searchControlProvider: 'yandex#search'
         }),
 
-        // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-        ),
-
         myPlacemark = new ymaps.Placemark( [55.77, 37.57], {
             // hintContent: 'Собственный значок метки',
             // balloonContent: 'Это красивая метка'
@@ -57,7 +52,7 @@ ymaps.ready(function () {
             iconImageOffset: [0, 0]
         }),
 
-        myPlacemark2 = new ymaps.Placemark([55.74, 37.62], {
+        myPlacemarkTwo = new ymaps.Placemark([55.74, 37.62], {
             // hintContent: 'Собственный значок метки с контентом',
             // balloonContent: 'А эта — новогодняя',
         }, {
@@ -65,52 +60,35 @@ ymaps.ready(function () {
             iconImageHref: 'img/mark.png',
             iconImageSize: [60, 75],
             iconImageOffset: [0, 0],
-        });
+        }),
 
-        myPlacemark3 = new ymaps.Placemark([55.75, 37.65], {
-            // hintContent: 'Собственный значок метки с контентом',
-            // balloonContent: 'А эта — новогодняя',
+         myPlacemarkThree = new ymaps.Placemark([55.75, 37.65], {
+               // hintContent: 'Собственный значок метки с контентом',
+               // balloonContent: 'А эта — новогодняя',
         }, {
             iconLayout: 'default#image',
             iconImageHref: 'img/mark.png',
             iconImageSize: [60, 75],
             iconImageOffset: [0, 0],
-        });
+        }),
 
-        myPlacemark4 = new ymaps.Placemark([55.77, 37.62], {
-            // hintContent: 'Собственный значок метки с контентом',
-            // balloonContent: 'А эта — новогодняя',
+         myPlacemarkFour = new ymaps.Placemark([55.77, 37.62], {
+             // hintContent: 'Собственный значок метки с контентом',
+             // balloonContent: 'А эта — новогодняя',
         }, {
             iconLayout: 'default#image',
             iconImageHref: 'img/mark.png',
             iconImageSize: [60, 75],
             iconImageOffset: [0, 0],
-        });
+        })
 
     myMap.geoObjects
         .add(myPlacemark)
-        .add(myPlacemark2)
-        .add(myPlacemark3)
-        .add(myPlacemark4);
+        .add(myPlacemarkTwo)
+        .add(myPlacemarkThree)
+        .add(myPlacemarkFour);
 
     myMap.behaviors.disable('scrollZoom');    
-});
-
-/*===== BURGER-MENU =====*/
-
-document.addEventListener('DOMContentLoaded', function(){
-    const navMobBtn = document.querySelector('.nav-mobile__btn');
-        navMobBtn.addEventListener('click', function(){
-            navMobBtn.classList.toggle('nav-mobile__btn--active');
-            window.addEventListener('scroll', noScroll); 
-        });
-    const navMobItem = document.querySelectorAll('.nav-mobile__item');
-    for (var i = 0; i < navMobItem.length; i++) {
-        navMobItem[i].addEventListener('click', function() {
-            navMobBtn.classList.remove('nav-mobile__btn--active');
-            window.removeEventListener('scroll', noScroll);
-        })
-    }
 });
 
 /*===== WINDOW SCROLL =====*/
@@ -118,6 +96,35 @@ document.addEventListener('DOMContentLoaded', function(){
 function noScroll() {
     window.scrollTo(0, 0);
 }
+
+/*===== BURGER-MENU =====*/
+
+var page = document.querySelector('#fullpage');
+document.addEventListener('DOMContentLoaded', function(){
+    const navMobBtn = document.querySelector('.nav-mobile__btn');
+        navMobBtn.addEventListener('click', function(){
+            if (navMobBtn.classList.contains('nav-mobile__btn--active')) {
+                navMobBtn.classList.remove('nav-mobile__btn--active');
+                $('#fullpage').fullpage({
+                    menu: '#pagination__list',
+                });
+            } else {
+                navMobBtn.classList.add('nav-mobile__btn--active');
+                window.addEventListener('scroll', noScroll);
+                fullpage_api.destroy('all'); 
+            }
+        });
+    const navMobItem = document.querySelectorAll('.nav-mobile__item');
+        for (var i = 0; i < navMobItem.length; i++) {
+            navMobItem[i].addEventListener('click', function() {
+                navMobBtn.classList.remove('nav-mobile__btn--active');
+                $('#fullpage').fullpage({
+                    menu: '#pagination__list',
+                });
+                window.removeEventListener('scroll', noScroll);
+            })
+        }
+});
 
 /*===== REMOVE FUNCTION =====*/
 
