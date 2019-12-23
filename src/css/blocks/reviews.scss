@@ -68,7 +68,7 @@
         }
         @include tablets {
             padding: 5%;
-            margin: 7% 0;
+            margin: 3% 0;
         }
         @include phones {
             padding: 10% 0 7%;
@@ -154,6 +154,9 @@
             width: rem(84px);
             height: rem(84px);
         }
+        &--active {
+            border: 5px solid $green;   
+        }
     }
     &__img-bottom {
         max-width: 100%;
@@ -168,7 +171,7 @@
 }
 
 .review__list-bottom .slick-list {
-     padding: 0 !important;
+     padding: 4px !important;
 }
 
 .review__item-bottom .slick-slide {

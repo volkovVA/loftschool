@@ -5,6 +5,9 @@
     right: 0;
     background-color: $white;
     padding: 1.8% 0;
+    @include phones {
+        padding-bottom: 5%;
+    }
     &__container {
         flex-direction: row;
         @include phones {

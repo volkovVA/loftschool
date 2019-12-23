@@ -18,7 +18,7 @@
         margin-bottom: 5%;
         padding: 0 28%;
         @include tablets {   
-            margin-bottom: 2%;
+            margin-bottom: 7%;
             padding: 0 20%;
         }
         @include phones {
@@ -121,6 +121,7 @@
         }
         @include phones {
             padding: 0 5%;
+            font-size: rem(16px);
         }
     }     
     &__raspberry {

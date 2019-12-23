@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 window.addEventListener('scroll', noScroll);
                 fullpage_api.destroy('all'); 
             }
+
         });
     const navMobItem = document.querySelectorAll('.nav-mobile__item');
         for (var i = 0; i < navMobItem.length; i++) {
@@ -269,6 +270,7 @@ popup.addEventListener("click", function(e) {
         if (video.paused) {
             video.play();
             this.classList.add('paused');
+            player.classList.add('active');
             
         } else {
             video.pause();
@@ -336,4 +338,15 @@ popup.addEventListener("click", function(e) {
         return minutes + ' : ' + formattedSeconds ;
     };
 
+/*===== REVIEWS =====*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    const reviewLink = document.querySelectorAll('.review__photo-bottom');
+    for (let i = 0; i < reviewLink.length; i++) {
+        reviewLink[i].addEventListener('click', function() {
+            removeClass(reviewLink, 'review__photo-bottom--active');
+            this.classList.add('review__photo-bottom--active'); 
+        });
+    }
+});
 

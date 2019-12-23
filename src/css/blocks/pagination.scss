@@ -1,4 +1,7 @@
 .pagination {
+	@include tablets {
+		display: none;
+    }
     &__item.active {
         .pagination {
             &__link {

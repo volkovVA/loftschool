@@ -2,6 +2,10 @@
   position: relative;
   display: inline-block;
   margin-top: 20px;
+  @include phones {
+    transform: scale(0.5);
+    margin-top: 0;
+}
   &__splash {
     content: "";
     position: absolute;
@@ -9,7 +13,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("../../img/video/video_bg.png");
+    background-image: url("../img/video/video_bg.png");
     background-position:  center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,16 +25,18 @@
     }
   }
   &__controls {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 35px;
-    background: $lightgrey;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14px;
+    height: 35px;
     padding: 0 25px;
+    background: $black;
+    background: -webkit-linear-gradient(to bottom, #434343, #000); 
+    background: linear-gradient(to bottom, #434343, #000);
   }
   &__start {
     width: 14px;

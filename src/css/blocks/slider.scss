@@ -2,6 +2,7 @@
     background-color: $lightblue;
     &__container {
         align-items: stretch;
+        height: 100vh;
     } 
 }
 
@@ -13,13 +14,23 @@
         position: absolute;
         &--left {
             top: 50%;
-            left: -10%;
+            left: 0;
             transform: rotate(90deg);
+            z-index: 1;
+            @include phones {
+                top: 25%;
+                left: -3%;
+            }
         }
         &--right {
             top: 50%;
-            right: -10%;
+            right: 0%;
             transform: rotate(-90deg);
+            z-index: 1;
+            @include phones {
+                top: 25%;
+                right: -3%;
+            }
         }
     }
     &__list {
@@ -148,7 +159,7 @@
     @include phones {
         position: absolute;
         left: 73%;
-        top: -4%
+        top: -6%
     }
     &__drop-table {
         position: absolute;
@@ -161,7 +172,6 @@
         @include tablets {
             left: -278%;
         }
-        
     }
     &__logo {
         display: flex;
