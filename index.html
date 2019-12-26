@@ -4,103 +4,89 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<script async src="js/main.js" type="text/javascript"></script>
-	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script async src="js/main.js"></script>
+	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<title>Калькулятор</title>
 </head>
 <body>	
-	<main>
-		<div class="container">
-			<div class="calc">
-				<div class="calc_header">
-					<div class="model">iCalc X</div>
-					<div class="apple">
-						<img src="img/apple.png" alt="apple">	
-					</div>
-				</div>	
-				<div class="calc_display">
-					<input disabled type="text" value="0" id="display" class="calc_display-input" placeholder="00000000000000000000">
+	<div class="container">
+		<div class="calc">
+			<div class="calc__header">
+				<div class="calc__model">iCalc Pro</div>
+				<div class="calc__logo">
+					<img class="calc__img" src="img/apple.png" alt="apple">	
 				</div>
-				<table class="calc_table">
-					<tr class="calc_button-row">
-						<td>
-							<button type="button" id="ce" class="clear_btn btn">ce</button>
-						</td>
-						<td>
-							<button type="button" id="c" class="clear_btn btn">c</button>
-							</td>
-						<td>
-							<button value="Деление" type="button" class="operation btn">/</button>
-						</td>
-						<td>
-							<button value="Умножение" type="button" class="operation btn">*</button>
-						</td>
-					</tr>
-					<tr class="calc_button-row">
-						<td>
-							<button type="button" class="number btn">7</button>
-						</td>
-						<td>
-							<button type="button" class="number btn">8</button>
-						</td>
-						<td>
-							<button type="button" class="number btn">9</button>
-						</td>
-						<td>
-							<button value="Вычитание" type="button" class="operation btn">-</button>
-						</td>
-					</tr>
-					<tr class="calc_button-row">
-						<td>
-							<button type="button" class="number btn">4</button>
-						</td>
-						<td>
-							<button type="button" class="number btn">5</button>
-						</td>
-						<td>
-							<button type="button" class="number btn">6</button>
-						</td>
-						<td>
-							<button value="Сложение" type="button" class=" operation btn">+</button>
-						</td>
-					</tr>
-					<tr class="calc_button-row">
-						<td>
-							<button type="button" class="number btn">1</button>
-						</td>
-						<td>
-							<button type="button" class="number btn">2</button>
-						</td>
-						<td>
-							<button type="button" class="number btn">3</button>
-						</td>
-						<td rowspan="2">
-							<button type="button" value="Результат" id="result" class="operation btn , btn_equal">=</button>
-						</td>
-					</tr>
-					<tr class="calc_button-row">
-						<td colspan="2">
-							<button type="button" class="number btn , btn_nul">0</button>
-						</td>
-						<td>
-							<button type="button" class="btn" id="decimal">.</button>
-						</td>
-					</tr>
-				</table>
+			</div>	
+			<div class="calc__display">
+				<input disabled type="text" value="0" id="display" class="calc__input" placeholder="00000000000000000000">
 			</div>
-			<div class="page_right">
-				<h1 class="title">
-					Калькулятор Apple
-				</h1>
-				<div class="about" id="howWorkBtn">
-					<span>Как это работает?</span>	
-				</div>
-				<div>
-					<ul id='operationsList'>
-					</ul>
-				</div>
-			</div>
-		</div>		
-	</main>
+			<table class="calc__table">
+				<tr class="calc__button-row">
+					<td>
+						<button type="button" id="ce" class="calc__btn calc__btn-clear">ce</button>
+					</td>
+					<td>
+						<button type="button" id="c" class="calc__btn calc__btn-clear">c</button>
+						</td>
+					<td>
+						<button value="Деление" type="button" class="operation calc__btn">/</button>
+					</td>
+					<td>
+						<button value="Умножение" type="button" class="operation calc__btn">*</button>
+					</td>
+				</tr>
+				<tr class="calc__button-row">
+					<td>
+						<button type="button" class="number calc__btn">7</button>
+					</td>
+					<td>
+						<button type="button" class="number calc__btn">8</button>
+					</td>
+					<td>
+						<button type="button" class="number calc__btn">9</button>
+					</td>
+					<td>
+						<button value="Вычитание" type="button" class="operation calc__btn">-</button>
+					</td>
+				</tr>
+				<tr class="calc__button-row">
+					<td>
+						<button type="button" class="number calc__btn">4</button>
+					</td>
+					<td>
+						<button type="button" class="number calc__btn">5</button>
+					</td>
+					<td>
+						<button type="button" class="number calc__btn">6</button>
+					</td>
+					<td>
+						<button value="Сложение" type="button" class="operation calc__btn">+</button>
+					</td>
+				</tr>
+				<tr class="calc__button-row">
+					<td>
+						<button type="button" class="number calc__btn">1</button>
+					</td>
+					<td>
+						<button type="button" class="number calc__btn">2</button>
+					</td>
+					<td>
+						<button type="button" class="number calc__btn">3</button>
+					</td>
+					<td rowspan="2">
+						<button type="button" value="Результат" id="result" class="operation calc__btn calc__btn-equal">=</button>
+					</td>
+				</tr>
+				<tr class="calc__button-row">
+					<td colspan="2">
+						<button type="button" class="calc__btn calc__btn-null">0</button>
+					</td>
+					<td>
+						<button type="button" class="calc__btn" id="decimal">.</button>
+					</td>
+				</tr>
+			</table>
+		</div>	
+	</div>		
 </body>
 </html>

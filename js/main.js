@@ -1,7 +1,7 @@
 var numbers = document.querySelectorAll('.number'),
     operations = document.querySelectorAll('.operation'),
     decimalBtn = document.getElementById('decimal'),
-    clearBtns = document.querySelectorAll('.clear_btn'),
+    clearBtns = document.querySelectorAll('.calc__btn-clear'),
     resultBtn = document.getElementById('result'),
     howWorkBtn = document.getElementById('howWorkBtn'),
     display = document.getElementById('display'),
