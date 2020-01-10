@@ -1,0 +1,46 @@
+.network__list {
+     display: flex;
+}
+
+.network__text {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+ .network__item {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background-color: #d2def3;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.network__item:hover {
+    background-color: #fff;
+}
+
+.network__vk, .network__facebook, .network__google, .network__twitter, .network__mail {
+    display:block;
+    height:20px;
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+.network__vk {
+    background-image:url('../../../img/vk.png');  
+}
+.network__facebook {
+    background-image:url('../../../img/fb.png');
+}
+.network__google {
+    background-image:url('../../../img/google.png');
+}
+.network__twitter {
+    background-image:url('../../../img/twitter.png');
+}
+.network__mail {
+    background-image:url('../../../img/mail.png');
+}

@@ -1,0 +1,25 @@
+.stewardess {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 205px;
+    width: 200px;
+    height: 750px;
+}
+
+.stewardess__pic {
+    width: auto;
+    height: 100%;
+}
+
+.stewardess__anim {
+    animation: slideRight 2s;
+    display: block;
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}   

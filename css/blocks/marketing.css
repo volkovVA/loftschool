@@ -1,0 +1,49 @@
+.marketing {
+    width: 90%;
+    margin-top: 150px;
+}
+
+.marketing__item {
+    height: 180px;
+    margin-top: 40px;
+}
+
+.marketing__item--vnukovo {
+    animation: slideRight 2s;
+}
+
+.marketing__item--domodedovo {
+    animation: slideRight 2.5s;
+}
+
+.marketing__item--duty {
+    animation: slideRight 3s;
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}   
+
+.marketing__link--vnukovo {
+    display:block;
+    width: auto;
+    height: 100%;
+    background:url('../../../img/vnukovo.jpg') no-repeat center;  
+}    
+
+.marketing__link--domodedovo {
+    display:block;
+    width: auto;
+    height: 100%;
+    background:url('../../../img/domodedovo.png') no-repeat left; 
+}
+
+.marketing__link--duty {
+    display:block;
+    width: auto;
+    height: 100%;
+    background:url('../../../img/dyuti-fri.png') no-repeat center/cover;
+}
