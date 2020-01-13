@@ -9,6 +9,41 @@ html(lang="ru")
     title Portfolio | main page
   body
     .wrapper
+      header.header
+        .container.header__container
+          .logo вв
+          nav.nav
+            ul.nav__list
+              li.nav__item Главная
+              li.nav__item Обо мне
+              li.nav__item Навыки
+              li.nav__item Работы
+              li.nav__item Отзывы
+              li.nav__item Связаться
+          ul.network
+            li.network__item
+              +image("content/header/instagram.png", "network__img")
+            li.network__item
+              +image("content/header/vk.png", "network__img")
+            li.network__item
+              +image("content/header/github.png", "network__img")
+      .welcome
+        .parallax
+          +image("content/firstscreen/paralax-train.png", "paralax__train")
+          +image("content/firstscreen/paralax-mountains.png", "paralax__mountains")
+        section.firstscreen
+          .container.firstscreen__container
+            .heading
+              .heading__name Вячеслав Волков
+              .heading__desc Личный сайт веб разработчика
+            .scroll
+              .scroll__text Скролл
+              +image("content/firstscreen/scroll.png", "scrool__img")
+        section.about  
+  
+        
+    
+     
       //- .maincontent
       //-   +image('content/user.jpg', 'user-pic')
       //-   +icon('link', 'link-class')

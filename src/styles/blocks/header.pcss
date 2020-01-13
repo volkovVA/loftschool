@@ -1,0 +1,49 @@
+.header {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    color: $text-color;
+    z-index: 1;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0;
+    }
+}
+
+.logo {
+    text-transform: uppercase;
+    font-weight: 800;  
+    font-size: 36px;
+}
+
+.nav {
+    &__list {
+        display: flex;
+    }
+    &__item {
+        margin-right: 60px;
+        font-size: 16px;
+        font-weight: 400;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.network {
+    display: flex;
+    &__item {
+        margin-right: 40px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__img {
+        width: auto;
+        height: 25px;
+    }
+}
+
+
