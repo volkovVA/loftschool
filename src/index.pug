@@ -14,22 +14,31 @@ html(lang="ru")
           .logo вв
           nav.nav
             ul.nav__list
-              li.nav__item Главная
-              li.nav__item Обо мне
-              li.nav__item Навыки
-              li.nav__item Работы
-              li.nav__item Отзывы
-              li.nav__item Связаться
+              li.nav__item 
+                a.nav__link(href="#") Главная
+              li.nav__item
+                a.nav__link(href="#") Обо мне
+              li.nav__item
+                a.nav__link(href="#") Навыки
+              li.nav__item
+                a.nav__link(href="#") Работы  
+              li.nav__item
+                a.nav__link(href="#") Отзывы
+              li.nav__item
+                a.nav__link(href="#") Связаться
           ul.network
             li.network__item
-              +image("content/header/instagram.png", "network__img")
+              a.network__link(href="#")
+                +icon("insta", "network__img")
             li.network__item
-              +image("content/header/vk.png", "network__img")
+              a.network__link(href="#")
+                +icon("vk", "network__img")
             li.network__item
-              +image("content/header/github.png", "network__img")
+              a.network__link(href="#")
+                +icon("github", "network__img")
       .main        
         .welcome
-          .parallax
+          .paralax
             +image("content/firstscreen/paralax-mountains.png", "paralax__mountains")
             +image("content/firstscreen/paralax-train.png", "paralax__train")
             +image("content/firstscreen/paralax-grass.png", "paralax__grass")
@@ -60,11 +69,34 @@ html(lang="ru")
                       ul.about__item_answer 5 февраля 1981
                 .about__text
                   .about__hello Привет, меня зовут
-                  h2.about__fio Вячеслав Волков
+                  h2.title.about__title Вячеслав Волков
                   .about__text_aboutme Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                   .about__text_aboutsite Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-    
-
+        section.myskills
+          .container.myskills__container
+            +image("content/skills/hands.png", "myskills__img")
+            h2.title.myskills__title Чем я могу быть полезен вам
+            .myskills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .skills
+              .skills__frontend
+                .skills__text Front-end
+                  ul.skills__list_frontend
+                    li.skills__item_frontend.skills__item_frontend--border
+                      .skills__desc HTML
+                    li.skills__item_frontend
+                      .skills__desc CSS3
+                    li.skills__item_frontend
+                      .skills__desc Javascript
+                    li.skills__item_frontend
+                      .skills__desc Jquery и Vue.js
+                .skills__text Workflow  
+                  ul.skills__list_workflow
+                    li.skills__item_workflow GIT
+                    li.skills__item_workflow Terminal
+                    li.skills__item_workflow Gulp
+                    li.skills__item_workflow Webpack
+              .skills__workflow
+      
         
     
      
