@@ -27,20 +27,44 @@ html(lang="ru")
               +image("content/header/vk.png", "network__img")
             li.network__item
               +image("content/header/github.png", "network__img")
-      .welcome
-        .parallax
-          +image("content/firstscreen/paralax-train.png", "paralax__train")
-          +image("content/firstscreen/paralax-mountains.png", "paralax__mountains")
-        section.firstscreen
-          .container.firstscreen__container
-            .heading
-              .heading__name Вячеслав Волков
-              .heading__desc Личный сайт веб разработчика
-            .scroll
-              .scroll__text Скролл
-              +image("content/firstscreen/scroll.png", "scrool__img")
-        section.about  
-  
+      .main        
+        .welcome
+          .parallax
+            +image("content/firstscreen/paralax-mountains.png", "paralax__mountains")
+            +image("content/firstscreen/paralax-train.png", "paralax__train")
+            +image("content/firstscreen/paralax-grass.png", "paralax__grass")
+            +image("content/firstscreen/paralax-rect.png", "paralax__rect")
+          section.firstscreen
+            .container.firstscreen__container
+              .heading
+                h1.heading__name Вячеслав Волков
+                .heading__desc Личный сайт веб разработчика
+              .scroll
+                .scroll__text Скролл
+                +image("content/firstscreen/scroll.png", "scrool__img")
+          section.aboutme
+            .container.aboutme__container
+              .about
+                .about__desc
+                  .about__avatar
+                    .about__foto
+                      +image("content/firstscreen/avatar.jpg", "about__img")
+                  .about__list
+                    li.about__list_question
+                      ul.about__item_question Проживаю:
+                      ul.about__item_question Возраст:
+                      ul.about__item_question Родился:
+                    li.about__list_answer  
+                      ul.about__item_answer Москва
+                      ul.about__item_answer 38 лет
+                      ul.about__item_answer 5 февраля 1981
+                .about__text
+                  .about__hello Привет, меня зовут
+                  h2.about__fio Вячеслав Волков
+                  .about__text_aboutme Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  .about__text_aboutsite Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    
+
         
     
      
