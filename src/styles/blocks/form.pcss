@@ -59,9 +59,13 @@
     }
     &__btn {
         padding: 27px 119px;
-        background-image: linear-gradient(to right, #d0731b 0%, #dc9322 100%);
+        background: linear-gradient(to right, #d0731b 0%, #dc9322 100%);
         font-size: 18px;
         font-weight: 700;
         text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            background-image: linear-gradient(to right, #925012 0%, #dc9322 100%);
+        }
     }
 }

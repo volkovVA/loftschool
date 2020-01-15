@@ -102,11 +102,11 @@ html(lang="ru")
             .works
               .works__preview
                 ul.works__list_preview
-                  li.works__item_preview.works__item_preview--snow
+                  li.works__item_preview
                     +image("content/works/preview-snow.png", "works__image")
-                  li.works__item_preview.works__item_preview--home
-                  li.works__item_preview.works__item_preview--car
-                  li.works__item_preview.works__item_preview--mountains
+                  li.works__item_preview
+                  li.works__item_preview
+                  li.works__item_preview
                 ul.works__list_miniature
                   li.works__item_miniature.works__item_miniature--active
                     +image("content/works/miniature-snow.png", "works__image")
@@ -146,6 +146,7 @@ html(lang="ru")
                         .reviews__user_fio Ковальчук Дмитрий
                         .reviews__user_position Основатель LoftSchool
                   li.reviews__item
+                    +icon("quote", "reviews__icon")
                     .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                     .reviews__user
                       .reviews__avatar
@@ -155,7 +156,7 @@ html(lang="ru")
                         .reviews__user_position Преподаватель
             section.section-form   
               h2.title.section-form__title Связаться со мной
-              form(action="", enctype="multipart/form-data").form#form
+              form(action="post", enctype="multipart/form-data").form#form
                 .form__col
                   .form__row
                     .form__col
@@ -177,7 +178,44 @@ html(lang="ru")
                   .form__row
                     .form__col
                       buttom.form__btn отправить
-                  
+        footer.footer
+          .container.footer__container
+            .footer__column_left
+              .footer__year &copy; 2020
+              .footer__name
+                .footer__fio вячеслав волков
+                .footer__desc Личный сайт веб-разработчика
+            .footer__column_right
+              nav.nav
+                ul.nav__list
+                  li.nav__item 
+                    a.nav__link(href="#") Главная
+                  li.nav__item
+                    a.nav__link(href="#") Обо мне
+                  li.nav__item
+                    a.nav__link(href="#") Навыки
+                  li.nav__item
+                    a.nav__link(href="#") Работы  
+                  li.nav__item
+                    a.nav__link(href="#") Отзывы
+                  li.nav__item
+                    a.nav__link(href="#") Связаться
+              .footer__content
+                .footer__content_left
+                  .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                  ul.network
+                    li.network__item.network__item--footer
+                      a.network__link.network__link--border(href="#")
+                        +icon("insta", "network__img")
+                    li.network__item.network__item--footer
+                      a.network__link.network__link--border(href="#")
+                        +icon("vk", "network__img")
+                    li.network__item.network__item--footer
+                      a.network__link.network__link--border(href="#")
+                        +icon("github", "network__img")
+                .footer__content_right
+                  .footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  .footer__quote_author Martin Golding
 
           
     
