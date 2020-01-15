@@ -54,7 +54,7 @@ html(lang="ru")
           section.aboutme
             .container.aboutme__container
               .about
-                .about__desc
+                .about__column_left
                   .about__avatar
                     .about__foto
                       +image("content/firstscreen/avatar.jpg", "about__img")
@@ -67,7 +67,7 @@ html(lang="ru")
                       ul.about__item_answer Москва
                       ul.about__item_answer 38 лет
                       ul.about__item_answer 5 февраля 1981
-                .about__text
+                .about__column_right        
                   .about__hello Привет, меня зовут
                   h2.title.about__title Вячеслав Волков
                   .about__text_aboutme Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
@@ -96,7 +96,40 @@ html(lang="ru")
                     li.skills__item_workflow Gulp
                     li.skills__item_workflow Webpack
               .skills__workflow
-      
+        section.myworks
+          .container.myworks__container
+            h2.title.myworks__title Мои работы
+            .works
+              .works__preview
+                ul.works__list_preview
+                  li.works__item_preview.works__item_preview--snow
+                    +image("content/works/preview-snow.png", "works__image")
+                  li.works__item_preview.works__item_preview--home
+                  li.works__item_preview.works__item_preview--car
+                  li.works__item_preview.works__item_preview--mountains
+                ul.works__list_miniature
+                  li.works__item_miniature.works__item_miniature--active
+                    +image("content/works/miniature-snow.png", "works__image")
+                  li.works__item_miniature
+                    +image("content/works/miniature-home.png", "works__image")
+                  li.works__item_miniature
+                    +image("content/works/miniature-car.png", "works__image")
+                  li.works__item_miniature
+                    +image("content/works/miniature-mountains.png", "works__image")
+              .works__desc
+                ul.works__list_skills
+                  li.works__item_skills
+                    .works__item_text HTML
+                  li.works__item_skills
+                    .works__item_text CSS
+                  li.works__item_skills
+                    .works__item_text Javascript
+                .works__subtitle Сайт школы образования
+                .works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.works__link(href="#")
+                  +icon("link", "works__link_icon")
+                  .works__link_text Посмотреть сайт
+          
         
     
      

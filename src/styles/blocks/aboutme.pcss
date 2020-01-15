@@ -9,15 +9,19 @@
     width: 960px;
     color: $text-color;
     z-index: 1;
-    &__desc {
-        margin-right: 138px;
+    &__column_left {
+        width: 40%;
+        
+    }
+    &__column_right {
+        width: 60%;
+        padding-left: 50px;
     }
     &__avatar {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 70px;
-        padding-left: 58px;
     }
     &__foto {
         width: 200px;
@@ -54,20 +58,22 @@
         width: 518px;
     }
     &__hello,  &__text_aboutme {
-        margin-bottom: 27px;      
+        margin-bottom: 15px;      
         opacity: 0.5;
         font-size: 16px;
         font-weight: 400;
     }
     &__text_aboutme {
-        margin-bottom: 100px;
+        margin-bottom: 95px;
+        line-height: 30px;
     }
     &__title {
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
     &__text_aboutsite {      
         opacity: 0.5;
         font-size: 16px;
         font-style: italic;
+        line-height: 30px;
     }
 }
