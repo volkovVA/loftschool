@@ -129,8 +129,34 @@ html(lang="ru")
                 a.works__link(href="#")
                   +icon("link", "works__link_icon")
                   .works__link_text Посмотреть сайт
+        .railway
+          .container.railway__container
+            .parallax-leaf
+            section.section-reviews
+              h2.title.section-reviews__title Что обо мне говорят
+              .reviews
+                ul.reviews__list
+                  li.reviews__item
+                    +icon("quote", "reviews__icon")
+                    .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .reviews__user
+                      .reviews__avatar
+                        +image("content/railway/dima.png", "reviews__image")
+                      .reviews__user_desc
+                        .reviews__user_fio Ковальчук Дмитрий
+                        .reviews__user_position Основатель LoftSchool
+                  li.reviews__item
+                    .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .reviews__user
+                      .reviews__avatar
+                        +image("content/railway/vladimir.png", "reviews__image")
+                      .reviews__user_desc
+                        .reviews__user_fio Владимир Сабанцев
+                        .reviews__user_position Преподаватель
+            
+                  
+
           
-        
     
      
       //- .maincontent
