@@ -153,7 +153,30 @@ html(lang="ru")
                       .reviews__user_desc
                         .reviews__user_fio Владимир Сабанцев
                         .reviews__user_position Преподаватель
-            
+            section.section-form   
+              h2.title.section-form__title Связаться со мной
+              form(action="", enctype="multipart/form-data").form#form
+                .form__col
+                  .form__row
+                    .form__col
+                      +icon("user", "form__icon")
+                      label.form__label
+                        span.form__text Введите ваше имя
+                        input(required, name="name", type="text").form__input       
+                    .form__col
+                      +icon("envelope", "form__icon")
+                      label.label
+                        span.form__text Введите ваше email
+                        input(required, name="email", type="email").form__input 
+                  .form__row.form__row--textarea
+                    .form__col
+                      +icon("message", "form__icon form__icon--textarea")
+                      label.label
+                        span.form__text.form__text--textarea Сообщение к письму
+                        textarea(name="message", type="text").form__textarea.form__input  
+                  .form__row
+                    .form__col
+                      buttom.form__btn отправить
                   
 
           

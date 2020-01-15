@@ -1,0 +1,67 @@
+.section-form {
+    &__title {
+        margin-bottom: 80px;
+    }
+}
+
+.form {
+    width: 1000px;
+    &__col {
+        flex: 1;
+        position: relative;
+        margin-right: 65px;
+    }
+    &__row {
+        display: flex;
+        margin-bottom: 37px;
+        &--textarea {
+            margin-bottom: 87px;
+        }
+    }
+    &__text {
+        display: block;     
+        opacity: 0.3;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 24px;
+        padding-left: 50px;
+        &--textarea {
+            margin-bottom: 42px;
+        }
+    }
+    &__input {
+        display: block;
+        width: 100%;
+        position: relative;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #716b66;
+        background: none; 
+        padding: 10px 0 10px 50px;     
+        color: $text-color;
+        font-size: 18px;
+        font-weight: 700;
+
+    }
+    &__textarea {
+        resize: vertical;
+    }
+    &__icon {
+        position: absolute; 
+        bottom: 15px;   
+        width: 30px;
+        height: 30px;
+        fill: #716b66;
+        z-index: 1;
+        &--textarea {
+            bottom: 52px;
+        }
+    }
+    &__btn {
+        padding: 27px 119px;
+        background-image: linear-gradient(to right, #d0731b 0%, #dc9322 100%);
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
