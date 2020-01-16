@@ -12,128 +12,118 @@ html(lang="ru")
       header.header
         .container.header__container
           .logo вв
-          nav.nav
-            ul.nav__list
-              li.nav__item 
-                a.nav__link(href="#") Главная
-              li.nav__item
-                a.nav__link(href="#") Обо мне
-              li.nav__item
-                a.nav__link(href="#") Навыки
-              li.nav__item
-                a.nav__link(href="#") Работы  
-              li.nav__item
-                a.nav__link(href="#") Отзывы
-              li.nav__item
-                a.nav__link(href="#") Связаться
-          ul.network
-            li.network__item
-              a.network__link(href="#")
-                +icon("insta", "network__img")
-            li.network__item
-              a.network__link(href="#")
-                +icon("vk", "network__img")
-            li.network__item
-              a.network__link(href="#")
-                +icon("github", "network__img")
+          +nav     
+          +socials("header")
       .main        
         .welcome
           .paralax
-            +image("content/firstscreen/paralax-mountains.png", "paralax__mountains")
-            +image("content/firstscreen/paralax-train.png", "paralax__train")
-            +image("content/firstscreen/paralax-grass.png", "paralax__grass")
-            +image("content/firstscreen/paralax-rect.png", "paralax__rect")
-          section.firstscreen
-            .container.firstscreen__container
+            +image("content/firstscreen/paralax-mountains.png", "paralax__mountains", "поезд")
+            +image("content/firstscreen/paralax-train.png", "paralax__train", "поезд")
+            +image("content/firstscreen/paralax-grass.png", "paralax__grass", "поезд")
+            +image("content/firstscreen/paralax-rect.png", "paralax__rect", "поезд")
+          section.firstscreen-section
+            .container.firstscreen-section__container
               .heading
                 h1.heading__name Вячеслав Волков
-                .heading__desc Личный сайт веб разработчика
+                .heading__desc Личный сайт веб-разработчика
               .scroll
                 .scroll__text Скролл
-                +image("content/firstscreen/scroll.png", "scrool__img")
-          section.aboutme
-            .container.aboutme__container
+                +image("content/firstscreen/scroll.png", "scrool__img", "скролл")
+          section.aboutme-section
+            .container.aboutme-section__container
               .about
                 .about__column_left
                   .about__avatar
                     .about__foto
-                      +image("content/firstscreen/avatar.jpg", "about__img")
+                      +image("content/firstscreen/avatar.jpg", "about__img", "аватарка")
                   .about__list
-                    li.about__list_question
-                      ul.about__item_question Проживаю:
-                      ul.about__item_question Возраст:
-                      ul.about__item_question Родился:
-                    li.about__list_answer  
-                      ul.about__item_answer Москва
-                      ul.about__item_answer 38 лет
-                      ul.about__item_answer 5 февраля 1981
+                    ul.about__list_question
+                      li.about__item_question Проживаю:
+                      li.about__item_question Возраст:
+                      li.about__item_question Родился:
+                    ul.about__list_answer  
+                      li.about__item_answer Москва
+                      li.about__item_answer 38 лет
+                      li.about__item_answer 5 февраля 1981
                 .about__column_right        
                   .about__hello Привет, меня зовут
                   h2.title.about__title Вячеслав Волков
                   .about__text_aboutme Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                   .about__text_aboutsite Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        section.myskills
-          .container.myskills__container
-            +image("content/skills/hands.png", "myskills__img")
-            h2.title.myskills__title Чем я могу быть полезен вам
-            .myskills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        section.skills-section
+          .container.skills-section__container
+            +image("content/skills/hands.png", "skills-section__img", "клавиатура")
+            h2.title.skills-section__title Чем я могу быть полезен вам
+            .skills-section__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .skills
-              .skills__frontend
-                .skills__text Front-end
-                  ul.skills__list_frontend
-                    li.skills__item_frontend.skills__item_frontend--border
-                      .skills__desc HTML
-                    li.skills__item_frontend
-                      .skills__desc CSS3
-                    li.skills__item_frontend
-                      .skills__desc Javascript
-                    li.skills__item_frontend
-                      .skills__desc Jquery и Vue.js
-                .skills__text Workflow  
-                  ul.skills__list_workflow
-                    li.skills__item_workflow GIT
-                    li.skills__item_workflow Terminal
-                    li.skills__item_workflow Gulp
-                    li.skills__item_workflow Webpack
-              .skills__workflow
-        section.myworks
-          .container.myworks__container
-            h2.title.myworks__title Мои работы
+              .skills__text Front-end
+                ul.skills__list
+                  li.skills__item.skills__item--html <!-- Не использовал миксин, т.к. в svg прописан обязательный id градиента, который не могу использовать в соседних элементах. id - уникален, ругается валидатор-->
+                    svg.skills__border
+                      circle(cx="70" cy="70" r="65").skills__circle
+                      circle(cx="70" cy="70" r="65").skills__circle
+                      linearGradient#linear-gradient
+                        stop(offset="0%" stop-color="#ffc62a")
+                        stop(offset="100%" stop-color="#d0731b")
+                    .skills__desc HTML
+                  +skills("css", "CSS")
+                  +skills("javascript", "Javascript")
+                  +skills("jquery", "Jquery и Vue.js")
+              .skills__text Workflow  
+                ul.skills__list
+                  +skills("git", "GIT")
+                  +skills("terminal", "Terminal")
+                  +skills("gulp", "Gulp")
+                  +skills("webpack", "Webpack")
+        section.works-section
+          .container.works-section__container
+            h2.title.works-section__title Мои работы
             .works
-              .works__preview
+              .works__column_left
                 ul.works__list_preview
                   li.works__item_preview
-                    +image("content/works/preview-snow.png", "works__image")
+                    +image("content/works/preview-snow.png", "works__image", "превью работы")
                   li.works__item_preview
                   li.works__item_preview
                   li.works__item_preview
                 ul.works__list_miniature
                   li.works__item_miniature.works__item_miniature--active
-                    +image("content/works/miniature-snow.png", "works__image")
+                    +image("content/works/miniature-snow.png", "works__image", "миниатюра")
                   li.works__item_miniature
-                    +image("content/works/miniature-home.png", "works__image")
+                    +image("content/works/miniature-home.png", "works__image", "миниатюра")
                   li.works__item_miniature
-                    +image("content/works/miniature-car.png", "works__image")
+                    +image("content/works/miniature-car.png", "works__image", "миниатюра")
                   li.works__item_miniature
-                    +image("content/works/miniature-mountains.png", "works__image")
-              .works__desc
-                ul.works__list_skills
-                  li.works__item_skills
-                    .works__item_text HTML
-                  li.works__item_skills
-                    .works__item_text CSS
-                  li.works__item_skills
-                    .works__item_text Javascript
-                .works__subtitle Сайт школы образования
-                .works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.works__link(href="#")
-                  +icon("link", "works__link_icon")
-                  .works__link_text Посмотреть сайт
+                    +image("content/works/miniature-mountains.png", "works__image", "миниатюра")
+              .works__column_right
+                .works__numbers
+                  ul.works__list_numbers
+                    li.works__item_numbers.works__item_numbers--active 1
+                    li.works__item_numbers 2
+                    li.works__item_numbers 3
+                    li.works__item_numbers 4
+                .works__desc
+                  ul.works__list_skills
+                    li.works__item_skills
+                      .works__item_text HTML
+                    li.works__item_skills
+                      .works__item_text CSS
+                    li.works__item_skills
+                      .works__item_text Javascript
+                  .works__subtitle Сайт школы образования
+                  .works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a.works__link(href="#")
+                    +icon("link", "works__link_icon")
+                    .works__link_text Посмотреть сайт
         .railway
           .container.railway__container
             .parallax-leaf
-            section.section-reviews
-              h2.title.section-reviews__title Что обо мне говорят
+              +image("content/railway/leaf-one.png", "paralax-leaf__leaf-one", "листок")
+              +image("content/railway/leaf-two.png", "paralax-leaf__leaf-two", "листок")
+              +image("content/railway/leaf-three.png", "paralax-leaf__leaf-three", "листок")
+              +image("content/railway/leaf-four.png", "paralax-leaf__leaf-four", "листок")
+            section.reviews-section
+              h2.title.reviews-section__title Что обо мне говорят
               .reviews
                 ul.reviews__list
                   li.reviews__item
@@ -141,7 +131,7 @@ html(lang="ru")
                     .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                     .reviews__user
                       .reviews__avatar
-                        +image("content/railway/dima.png", "reviews__image")
+                        +image("content/railway/dima.png", "reviews__image", "аватарка")
                       .reviews__user_desc
                         .reviews__user_fio Ковальчук Дмитрий
                         .reviews__user_position Основатель LoftSchool
@@ -150,12 +140,12 @@ html(lang="ru")
                     .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                     .reviews__user
                       .reviews__avatar
-                        +image("content/railway/vladimir.png", "reviews__image")
+                        +image("content/railway/vladimir.png", "reviews__image", "аватарка")
                       .reviews__user_desc
                         .reviews__user_fio Владимир Сабанцев
                         .reviews__user_position Преподаватель
-            section.section-form   
-              h2.title.section-form__title Связаться со мной
+            section.form-section   
+              h2.title.form-section__title Связаться со мной
               form(action="post", enctype="multipart/form-data").form#form
                 .form__col
                   .form__row
@@ -174,10 +164,10 @@ html(lang="ru")
                       +icon("message", "form__icon form__icon--textarea")
                       label.label
                         span.form__text.form__text--textarea Сообщение к письму
-                        textarea(name="message", type="text").form__textarea.form__input  
+                        textarea(name="message").form__textarea.form__input  
                   .form__row
                     .form__col
-                      buttom.form__btn отправить
+                      button.form__btn отправить
         footer.footer
           .container.footer__container
             .footer__column_left
@@ -186,42 +176,11 @@ html(lang="ru")
                 .footer__fio вячеслав волков
                 .footer__desc Личный сайт веб-разработчика
             .footer__column_right
-              nav.nav
-                ul.nav__list
-                  li.nav__item 
-                    a.nav__link(href="#") Главная
-                  li.nav__item
-                    a.nav__link(href="#") Обо мне
-                  li.nav__item
-                    a.nav__link(href="#") Навыки
-                  li.nav__item
-                    a.nav__link(href="#") Работы  
-                  li.nav__item
-                    a.nav__link(href="#") Отзывы
-                  li.nav__item
-                    a.nav__link(href="#") Связаться
+              +nav
               .footer__content
                 .footer__content_left
                   .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                  ul.network
-                    li.network__item.network__item--footer
-                      a.network__link.network__link--border(href="#")
-                        +icon("insta", "network__img")
-                    li.network__item.network__item--footer
-                      a.network__link.network__link--border(href="#")
-                        +icon("vk", "network__img")
-                    li.network__item.network__item--footer
-                      a.network__link.network__link--border(href="#")
-                        +icon("github", "network__img")
+                  +socials("footer")
                 .footer__content_right
                   .footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer__quote_author Martin Golding
-
-          
-    
-     
-      //- .maincontent
-      //-   +image('content/user.jpg', 'user-pic')
-      //-   +icon('link', 'link-class')
-      //-   .icon-bg
-        

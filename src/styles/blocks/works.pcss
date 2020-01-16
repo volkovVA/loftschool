@@ -1,6 +1,5 @@
-.myworks {
+.works-section {
     &__container {
-        height: 1085px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -16,14 +15,16 @@
     height: 549px;
     display: flex;
     width: 100%;
-    &__preview {
+    &__column_left {
         flex-basis: 66%;
         position: relative;
     }
-    &__desc {
+    &__column_right {
         flex-basis: 34%;
         color: #000;
-        padding-left: 155px;
+        display: flex;
+        padding-left: 157px;
+        position: relative;
     }
     &__image {
         object-fit: cover;
@@ -31,6 +32,7 @@
     }
     &__list_skills {
         display: flex;
+        margin-bottom: 37px;
     }
     &__item_skills {     
         display: flex;
@@ -42,7 +44,19 @@
         background-color: #f3f5f9;
         border-radius: 25%/50%;
         margin-right: 17px;
-        margin-bottom: 40px;
+    }
+    &__item_numbers {       
+        color: #e6e6e6;
+        font-size: 400px;
+        font-weight: 800;
+        position: absolute;
+        left: -28px;
+        top: -55px;
+        display: none;
+        z-index: -1;
+        &--active {
+            display: block;
+        }
     }
     &__subtitle {
         font-size: 30px;
@@ -58,7 +72,7 @@
         margin-bottom: 36px;
     }
     &__link { 
-        color: #586ed3;
+        color: $links-color;
         font-size: 18px;
         font-weight: 700;
         display: flex;
@@ -66,7 +80,7 @@
         &_icon {
             width: 15px;
             height: 15px;
-            fill:#586ed3;
+            fill: $links-color;
             margin-right: 23px;
         }
     }
@@ -79,7 +93,12 @@
     &__item_miniature {
         width: 178px;
         &--active {
-            border: 3px solid #dc9322;
+            outline: 3px solid #dc9322;
+            outline-offset: -3px;
+        }
+        &:hover {
+            outline: 3px solid #dc9322;
+            outline-offset: -3px;
         }
     }
     &__image {
