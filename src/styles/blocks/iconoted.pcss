@@ -1,0 +1,21 @@
+.iconend-link { 
+    color: $links-color;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        width: 15px;
+        height: 15px;
+        fill: $links-color;
+        margin-right: 23px;
+    }
+    
+    &:hover {
+        color: $content-color;
+        .iconend-link__icon {
+            fill: $content-color;
+        }
+    }
+}

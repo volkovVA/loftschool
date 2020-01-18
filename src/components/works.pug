@@ -1,56 +1,6 @@
-section.works-section#works-section
-    .container.works-section__container
-        h2.title.works-section__title Мои работы
-        .works-section__content
-            .slider
-                .slider__column_left
-                    ul.slider__list
-                        li.slider__item.slider__item--active
-                            +image("content/works/preview-snow.png", "slider__image", "превью работы")
-                        li.slider__item
-                            +image("content/works/preview-snow.png", "slider__image", "превью работы")
-                        li.slider__item
-                            +image("content/works/preview-snow.png", "slider__image", "превью работы")
-                        li.slider__item
-                            +image("content/works/preview-snow.png", "slider__image", "превью работы")
-                    .slider__miniature-wrapper  
-                        ul.slider-miniature
-                            li.slider-miniature__item.slider-miniature__item--active
-                                a.slider-miniature__link
-                                    +image("content/works/miniature-snow.png", "slider__image", "миниатюра")
-                            li.slider-miniature__item
-                                a.slider-miniature__link
-                                    +image("content/works/miniature-home.png", "slider__image", "миниатюра")
-                            li.slider-miniature__item
-                                a.slider-miniature__link
-                                    +image("content/works/miniature-car.png", "slider__image", "миниатюра")
-                            li.slider-miniature__item
-                                a.slider-miniature__link
-                                    +image("content/works/miniature-mountains.png", "works__image", "миниатюра")
-                    .slider__navigation
-                        .slider-button
-                            a.slider-button__link
-                                +icon("arrow-down", "arrow arrow--next")                  
-                            a.slider-button__link
-                                +icon("arrow-down", "arrow arrow--prev")                  
+section.works#works
+    .container.works__container
+        h2.title.works__title Мои работы
+        .works__content
+            include slider.pug
             
-                .slider__column_right
-                    .slider__numbers
-                        .slider-counter
-                            ul.slider-counter__list
-                                li.slide-counter__item.slide-counter__item--active 1
-                                li.slide-counter__item 2
-                                li.slide-counter__item 3
-                                li.slide-counter__item 4
-                    .slider__desc
-                        - var tags = ["HTML", "CSS", "Javascript"]
-                        ul.slider__list_skills
-                            each item in tags
-                                li.slider__item_skills
-                                    .slider__item_text #{item}
-                        h3.slider__subtitle Сайт школы образования
-                        .slider__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                        .slider__link
-                            a.iconend-link(href="#")
-                                +icon("link", "iconend-link__icon")
-                                .iconend-link__text Посмотреть сайт

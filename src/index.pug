@@ -9,15 +9,16 @@ html(lang="ru")
     title Portfolio | main page
   body
     .wrapper
-      .main        
+      include ./components/header.pug
+      main.main        
         .welcome
           include ./components/paralax.pug
-          include ./components/firstscreen.pug
-          include ./components/aboutme.pug       
+          include ./components/hero.pug
+          include ./components/about.pug       
         include ./components/skills.pug
         include ./components/works.pug
         .railway
           include ./components/paralax-leaf.pug
           include ./components/reviews.pug
           include ./components/form.pug
-        include ./components/footer.pug
+      include ./components/footer.pug

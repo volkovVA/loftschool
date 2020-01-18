@@ -1,7 +1,7 @@
-nav.navigation
+nav.nav
     - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-    - var link =["#", "#aboutme-section", "#skills-section", "#works-section", "#reviews-section", "#form-section"]
+    - var link =["#", "#about", "#skills", "#works", "#reviews", "#form-section"]
     ul.nav__list
         each item, index in menu
-            li.nav__item
+            li.nav__item.text
                 a(href=`${link[index]}`).nav__link #{item}

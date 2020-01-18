@@ -5,28 +5,26 @@ mixin skills(mod, modName)
             circle(cx="70" cy="70" r="65").skills__circle
         .skills__desc=modName    
 
-section.skills-section#skills-section
-    .container.skills-section__container
-        +image("content/skills/hands.png", "skills-section__img", "клавиатура")
-        h2.title.skills-section__title Чем я могу быть полезен вам
-        .skills-section__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво! 
-        .skills
-            .skills__text Front-end
-                ul.skills__list
-                    li.skills__item.skills__item--html <!-- Не использовал миксин, т.к. в svg прописан обязательный id градиента, который не могу использовать в соседних элементах. id - уникален, ругается валидатор-->
-                        svg.skills__border
-                            circle(cx="70" cy="70" r="65").skills__circle
-                            circle(cx="70" cy="70" r="65").skills__circle
-                            linearGradient#linear-gradient
-                                stop(offset="0%" stop-color="#ffc62a")
-                                stop(offset="100%" stop-color="#d0731b")
-                        .skills__desc HTML
-                    +skills("css", "CSS")
-                    +skills("javascript", "Javascript")
-                    +skills("jquery", "Jquery и Vue.js")
-            .skills__text Workflow  
-                ul.skills__list
-                    +skills("git", "GIT")
-                    +skills("terminal", "Terminal")
-                    +skills("gulp", "Gulp")
-                    +skills("webpack", "Webpack")                
+section.skills#skills
+    .container.skills__container
+        h2.title.skills__title Чем я могу быть полезен вам
+        p.skills__description.text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво! 
+        h3.skills__text Front-end
+            ul.skills__list
+                li.skills__item.skills__item--html <!-- Не использовал миксин, т.к. в svg прописан обязательный id градиента, который не могу использовать в соседних элементах. id - уникален, ругается валидатор-->
+                    svg.skills__border
+                        circle(cx="70" cy="70" r="65").skills__circle
+                        circle(cx="70" cy="70" r="65").skills__circle
+                        linearGradient#linear-gradient
+                            stop(offset="0%" stop-color="#ffc62a")
+                            stop(offset="100%" stop-color="#d0731b")
+                    .skills__desc HTML
+                +skills("css", "CSS")
+                +skills("javascript", "Javascript")
+                +skills("jquery", "Jquery и Vue.js")
+        h3.skills__text Workflow  
+            ul.skills__list
+                +skills("git", "GIT")
+                +skills("terminal", "Terminal")
+                +skills("gulp", "Gulp")
+                +skills("webpack", "Webpack")                

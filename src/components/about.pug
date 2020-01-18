@@ -1,0 +1,23 @@
+section.about#about
+    .container.about__container
+        .about__user
+            .about__avatar
+                .avatar
+                    +image("content/userfiles/avatar.jpg", "avatar__photo", "аватарка")
+            .about__table
+                - 
+                    var items = [
+                        ['Проживаю:', 'Москва'],
+                        ['Возраст:', '38'],
+                        ['Родился:', 'Братск'],
+                    ]
+                table.about__data
+                    each row in items
+                        tr.about__data-row
+                            each cell in row
+                                td.about__data-cell.text #{cell} 
+        .about__description        
+            .about__hello-text.text Привет, меня зовут
+            h2.title.about__title Вячеслав Волков
+            p.about__aboutme-text.text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            p.about__aboutsite-text.text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!

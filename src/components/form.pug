@@ -7,19 +7,19 @@ section.form-section#form-section
                     .form__col
                         +icon("user", "form__icon")
                         label.form__label
-                            span.form__text Введите ваше имя
+                            .form__text.text Введите ваше имя
                             input(required, name="name", type="text").form__input       
                     .form__col
                         +icon("envelope", "form__icon")
                         label.label
-                            span.form__text Введите ваше email
+                            .form__text.text Введите ваше email
                             input(required, name="email", type="email").form__input 
                 .form__row.form__row--textarea
                     .form__col
                         +icon("message", "form__icon form__icon--textarea")
                         label.label
-                            span.form__text.form__text--textarea Сообщение к письму
+                            .form__text.text.form__text--textarea Сообщение к письму
                             textarea(name="message").form__textarea.form__input  
                 .form__row
                     .form__col
-                        button.form__btn отправить
+                        button(type="submit").form__btn отправить

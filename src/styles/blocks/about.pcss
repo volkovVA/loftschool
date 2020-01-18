@@ -1,0 +1,49 @@
+.about {
+    background-image: url("../images/content/about/about-bg.png");
+
+    &__container {
+        padding: 160px 250px;
+        position: relative;
+        flex-direction: row;
+        z-index: 1;
+    }
+
+    &__user {
+        margin-right: 115px;
+        
+    } 
+
+    &__hello-text {
+        margin-bottom: 15px;      
+    }
+
+    &__aboutme-text {
+        margin-bottom: 95px;
+        line-height: 30px;
+    }
+
+    &__title {
+        margin-bottom: 26px;
+    }
+
+    &__aboutsite-text {      
+        font-style: italic;
+        line-height: 30px;
+        margin-bottom: 28px;
+    }
+
+    &__avatar {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        margin-bottom: 68px;
+    }
+
+    &__data-cell {
+        padding: 0px 82px 15px 0;
+        opacity: 1;
+        &:nth-child(odd) {
+            opacity: 0.15;
+        } 
+    }
+}    

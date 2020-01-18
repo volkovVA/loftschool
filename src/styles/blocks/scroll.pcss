@@ -1,54 +1,7 @@
-.firstscreen-section {
-    height: 100vh;
-    &__container {
-        position: relative;
-        height: 100%;
-        justify-content: space-between;
-    }
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding-top: 40px;
-    }
-    &__scroll {
-        padding-bottom: 100px;
-    }    
-}
-
-.logo {
-    text-transform: uppercase;
-    font-weight: 800;  
-    font-size: 36px;
-}
-
-.heading {
-    color: $text-color;
-    position: relative;
-    &__name {
-        width: 400px;
-        line-height: 60px;
-        font-size: 72px;
-        font-weight: 800;
-    }
-    &__desc {
-        position: absolute;
-        top: 0;
-        left: -50%;
-        width: 165px;
-        text-align: right;     
-        opacity: 0.4;
-        font-size: 18px;
-        font-weight: 400;
-        z-index: 1;
-    }
-}
-
 .scroll {
     position: relative;
     z-index: 1;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 400;
     text-align: center;
     &:before {
@@ -96,5 +49,3 @@
         transform: translate(-50px, 30px) rotate(-45deg);
     }
 }
-
-
