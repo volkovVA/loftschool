@@ -1,0 +1,25 @@
+section.form-section#form-section
+    .container.form-section__container   
+        h2.title.form-section__title Связаться со мной
+        form(action="post", enctype="multipart/form-data").form#form
+            .form__col
+                .form__row
+                    .form__col
+                        +icon("user", "form__icon")
+                        label.form__label
+                            span.form__text Введите ваше имя
+                            input(required, name="name", type="text").form__input       
+                    .form__col
+                        +icon("envelope", "form__icon")
+                        label.label
+                            span.form__text Введите ваше email
+                            input(required, name="email", type="email").form__input 
+                .form__row.form__row--textarea
+                    .form__col
+                        +icon("message", "form__icon form__icon--textarea")
+                        label.label
+                            span.form__text.form__text--textarea Сообщение к письму
+                            textarea(name="message").form__textarea.form__input  
+                .form__row
+                    .form__col
+                        button.form__btn отправить

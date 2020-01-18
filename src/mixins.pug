@@ -6,37 +6,5 @@ mixin icon(name, className)
 mixin image(path, className, alt)
   img(src=require(`images/${path}`) class=className alt=alt)
 
-mixin skills(mod, modName)
-  li(class='skills__item skills__item--' + mod)
-    svg.skills__border
-      circle(cx="70" cy="70" r="65").skills__circle
-      circle(cx="70" cy="70" r="65").skills__circle
-    .skills__desc=modName
-
-mixin socials(mod)
-  ul.socials
-    li(class="socials__item socials__item--" + mod) 
-      a.socials__link(href="#")
-        +icon("insta", "socials__img")
-    li(class="socials__item socials__item--" + mod)
-      a.socials__link(href="#")
-        +icon("vk", "socials__img")
-    li(class="socials__item socials__item--" + mod)
-      a.socials__link(href="#")
-        +icon("github", "socials__img")
-
 mixin nav
-  nav.nav
-    ul.nav__list
-      li.nav__item 
-        a.nav__link(href="#") Главная
-      li.nav__item
-        a.nav__link(href="#") Обо мне
-      li.nav__item
-        a.nav__link(href="#") Навыки
-      li.nav__item
-        a.nav__link(href="#") Работы  
-      li.nav__item
-        a.nav__link(href="#") Отзывы
-      li.nav__item
-        a.nav__link(href="#") Связаться      
+  

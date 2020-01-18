@@ -1,12 +1,26 @@
 .firstscreen-section {
+    height: 100vh;
     &__container {
         position: relative;
-        height: 100vh;
+        height: 100%;
+        justify-content: space-between;
+    }
+    &__header {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        width: 100%;
+        padding-top: 40px;
+    }
+    &__scroll {
+        padding-bottom: 100px;
     }    
+}
+
+.logo {
+    text-transform: uppercase;
+    font-weight: 800;  
+    font-size: 36px;
 }
 
 .heading {
@@ -20,7 +34,7 @@
     }
     &__desc {
         position: absolute;
-        bottom: 0;
+        top: 0;
         left: -50%;
         width: 165px;
         text-align: right;     
@@ -32,14 +46,55 @@
 }
 
 .scroll {
-    position: absolute;
-    bottom: 5%;
-    display: flex;
-    align-items: center;
+    position: relative;
     z-index: 1;
-    &__text {
-        margin-right: 17px;
-        font-size: 18px;
-        font-weight: 400;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    &:before {
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        width: 50px;
+        height: 50px;
+        border-left: 8px solid $text-color;
+        border-bottom: 8px solid $text-color;
+        animation: scroll 3s linear infinite;
+        top: 35px;
+        left: 58px;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        box-sizing: border-box;    
+        width: 50px;
+        height: 50px;
+        border-left: 8px solid $text-color;
+        border-bottom: 8px solid $text-color;
+        animation: scroll 3s linear infinite -1.5s;
+        top: 35px;
+        left: 58px;
+    }
+}    
+ 
+@keyframes scroll {
+    0% {
+        opacity: 0;
+        transform: translate(-50px, -30px) rotate(-45deg);
+    }
+    10%, 90% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;  
+        border-left: 8px solid $content-color;
+        border-bottom: 8px solid $content-color;
+        transform: translate(-50px, 0px) rotate(-45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50px, 30px) rotate(-45deg);
     }
 }
+
+
