@@ -1,17 +1,16 @@
-.form-section {
-
+.form {
     &__container {
         align-items: flex-start;
         padding-bottom: 130px;
     }
 
     &__title {
-        margin-bottom: 78px;
+        margin-bottom: 125px;
     }
-}
 
-.form {
-    width: 1000px;
+    &__box {
+        width: 1000px;
+    }
 
     &__col {
         flex: 1;
@@ -21,19 +20,22 @@
 
     &__row {
         display: flex;
-        margin-bottom: 37px;
-        &--textarea {
-            margin-bottom: 59px;
-        }
+        margin-bottom: 100px;
     }
 
     &__text {
-        display: block;     
-        margin-bottom: 16px;
+        position: absolute;
+        bottom: 17px;    
         padding-left: 50px;
-        &--textarea {
-            margin-bottom: 24px;
-        }
+    }
+
+    &__icon {
+        position: absolute; 
+        bottom: 15px;   
+        width: 30px;
+        height: 30px;
+        fill: #716b66;
+        z-index: 1;
     }
 
     &__input {
@@ -44,28 +46,28 @@
         border: none;
         border-bottom: 2px solid #716b66;
         background: none; 
-        padding: 10px 0 20px 50px;     
+        padding: 0 0 18px 50px;     
         color: $text-color;
         font-size: 1.1rem;
         font-weight: 700;
-
+        &:focus {
+            + .form__icon {
+                fill: $content-color;
+                &--textarea {
+                    bottom: 35px;
+                }
+            }
+            ~ .form__text {
+                bottom: 65px;
+                &--textarea {
+                    bottom: 85px;
+                }
+            }
+        }
     }
 
     &__textarea {
         resize: vertical;
-        padding: 0 0 38px 50px;
-    }
-
-    &__icon {
-        position: absolute; 
-        bottom: 15px;   
-        width: 30px;
-        height: 30px;
-        fill: #716b66;
-        z-index: 1;
-        &--textarea {
-            bottom: 52px;
-        }
     }
 
     &__btn {
@@ -74,7 +76,6 @@
         font-size: 1.1rem;
         font-weight: 700;
         text-transform: uppercase;
-        outline: none;
         cursor: pointer;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3);
         &:hover {

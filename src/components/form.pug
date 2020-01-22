@@ -1,25 +1,25 @@
-section.form-section#form-section
-    .container.form-section__container   
-        h2.title.form-section__title Связаться со мной
-        form(action="post", enctype="multipart/form-data").form#form
+section.form#form
+    .container.form__container   
+        h2.title.form__title Связаться со мной
+        form(action="post", enctype="multipart/form-data").form__box#form__box
             .form__col
                 .form__row
                     .form__col
-                        +icon("user", "form__icon")
                         label.form__label
-                            .form__text.text Введите ваше имя
                             input(required, name="name", type="text").form__input       
+                            +icon("user", "form__icon")
+                            .form__text.text Введите ваше имя        
                     .form__col
-                        +icon("envelope", "form__icon")
                         label.label
-                            .form__text.text Введите ваше email
-                            input(required, name="email", type="email").form__input 
+                            input(required, name="email", type="email").form__input
+                            +icon("envelope", "form__icon")
+                            .form__text.text Введите ваше email 
                 .form__row.form__row--textarea
                     .form__col
-                        +icon("message", "form__icon form__icon--textarea")
                         label.label
-                            .form__text.text.form__text--textarea Сообщение к письму
-                            textarea(name="message").form__textarea.form__input  
+                            textarea(name="message").form__textarea.form__input
+                            +icon("message", "form__icon form__icon--textarea")
+                            .form__text.form__text--textarea.text Сообщение к письму  
                 .form__row
                     .form__col
                         button(type="submit").form__btn отправить

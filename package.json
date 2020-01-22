@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
-    "build": "rd /s dist && webpack --mode=production --progress",
+    "build": "rm -rf dist && webpack --mode=production --progress",
     "reg": "node reg-util.js"
   },
   "keywords": [],
