@@ -130,6 +130,14 @@
                 }
             }
         }
+        &--active {
+            + .form__icon {
+                fill: $content-color;
+            }
+            ~ .form__text {
+                bottom: 65px;
+            }
+        }
     }
 
     &__textarea {
