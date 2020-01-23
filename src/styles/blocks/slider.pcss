@@ -8,7 +8,11 @@
 
         @include tablets {
             padding: 115px 20px;
-        }  
+        }
+        
+        @include phones {
+            padding: 115px 0;
+        }
     }
     
     &__title {       
@@ -23,7 +27,15 @@
         @include tablets {
             font-size: 2rem;
             margin-bottom: 50px;
-        }  
+        }
+        
+        @include phones {
+            margin-right: 0;
+        }
+
+        @include phonesLand {
+            margin-right: 0;
+        } 
     }
 
     &__wrapper {
@@ -71,7 +83,11 @@
         
         @include tablets {
             right: 65px;
-        }  
+        }
+
+        @include phones {
+            display: none;
+        }   
     }
 
     &__main {
@@ -84,7 +100,13 @@
         @include tablets {
             height: 353px;
             width: 625px;
-        }  
+        }
+        
+        @include phones {
+            margin: 0 -27px;
+            width: auto;
+            height: auto;
+        }
     }
 
     &__preview-btn {
@@ -119,7 +141,12 @@
         @include tablets {
             right: 13px;
             bottom: 29px;
-        }  
+        }
+        
+        @include phones {
+            right: -26px;
+            bottom: 0;
+        }   
     }
 
     &__preview {
@@ -165,17 +192,31 @@
         background-color: #f3f5f9;
         border-radius: 25%/50%;
         margin-right: 17px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     &__subtitle {
-        font-size: 30px;
+        font-size: 1.8rem;
         font-weight: 700;
         line-height: 48px;
         margin-bottom: 29px;
 
         @include tablets {
             margin-bottom: 15px;
-        }  
+            margin-right: auto;
+        }
+        
+        @include phones {
+            margin-bottom: 15px;
+            width: 200px;
+            line-height: 38px;
+        }
+
+        @include phonesLand {
+            margin-right: 0;
+        } 
     }
 
     &__text {  
@@ -187,7 +228,15 @@
             padding: 0 115px;
             text-align: center;
             margin-bottom: 16px;
-        }  
+        }
+        
+        @include tablets {
+            padding: 0;
+        }
+
+        @include phones {
+            text-align: left;
+        }
     } 
 
     &__counter {       
@@ -208,7 +257,11 @@
         @include tablets {
             left: 590px;
             top: -474px;
-        }  
+        }
+
+        @include phonesLand {
+            display: none;
+        } 
     }
 
     &__link {
@@ -240,7 +293,15 @@
         
         @include tablets {
             width: 27%;
-        
         }  
+
+        @include phones {
+            width: 59%;
+            margin-right: auto;
+        }
+
+        @include phonesLand {
+            width: 28%;
+        } 
     }
 }

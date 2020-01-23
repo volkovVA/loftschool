@@ -13,12 +13,16 @@
         width: 35px;
         height: 30px;
         transition: .4s;
-        z-index: 1;
+        z-index: 2;
         &--active ~ {
             .nav-mobile {
                 &__container {
                     transition-delay: 0s;
-                    left: 50%; 
+                    left: 50%;
+
+                    @include phones {
+                        left: 0;
+                    }
                 }
             }
         }
@@ -84,11 +88,20 @@
         transition-delay: .2s;
         background-color: $text-color;
         z-index: 1;
+
+        @include phones {
+            width: 100%;
+        }
     }
     &__list {
         transition: .5s;
         transition-delay: .5s;
         margin-bottom: 25px;
+
+        @include phones {
+            margin-right: 70px;
+            text-align: left;
+        }
     }
     &__item {
         font-size: rem(36px);

@@ -10,7 +10,11 @@
         
         @include tablets {
             padding: 0 25px 30px;
-        }  
+        }
+        
+        @include phones {
+            padding: 0 0 30px;
+        }
     }
 
     &__title {
@@ -27,7 +31,15 @@
 
         @include tablets {
             width: 700px;
-        }  
+        }
+        
+        @include phones {
+            width: 305px;
+        }
+
+        @include phonesLand {
+            width: 597px;
+        } 
     }
 
     &__col {
@@ -37,6 +49,11 @@
 
         @include tablets {
             margin-right: 20px;
+        }
+
+        @include phones {
+            margin-bottom: 100px;
+            margin-right: 0;
         }
         
         &--btn {
@@ -53,7 +70,11 @@
 
         @include tablets {
             margin-bottom: 87px;
-        }  
+        }
+        
+        @include phones {
+            display: block;
+        }
 
         &--textarea {
             margin-bottom: 65px;
@@ -96,6 +117,10 @@
                 fill: $content-color;
                 &--textarea {
                     bottom: 35px;
+
+                    @include phones {
+                        bottom: 15px;
+                    }
                 }
             }
             ~ .form__text {
@@ -125,6 +150,10 @@
         }
         &:active {
             box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 1px 4px rgba(0, 0, 100, 0.5);
+        }
+
+        @include phones {
+            padding: 29px 100px;
         }
     }
 }

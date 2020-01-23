@@ -21,6 +21,11 @@
         @include tablets {
             padding: 131px 0;
         }
+
+        @include phones {
+            flex-direction: column;
+            padding: 40px 0;
+        }
     }
 
     &__user {
@@ -28,6 +33,11 @@
 
         @include tablets {
             margin-right: 20px;
+        }
+
+        @include phones {
+            margin-right: 0;
+            margin-bottom: 5px;
         }
         
     } 
@@ -47,10 +57,18 @@
         @include tablets {
             margin-bottom: 20px;
         }
+
+        @include phones {
+            margin-bottom: 40px;
+        }
     }
 
     &__title {
         margin-bottom: 26px;
+
+        @include phones {
+            font-size: 2rem;
+        }
     }
 
     &__aboutsite-text {      

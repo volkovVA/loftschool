@@ -8,7 +8,11 @@
         
         @include tablets {
             padding: 55px 15px 85px;
-        } 
+        }
+        
+        @include phones {
+            flex-direction: column;
+        }
     }
 
     &__column_left {
@@ -22,7 +26,12 @@
         
         @include tablets {
             margin-right: 78px;
-        } 
+        }
+        
+        @include phones {
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
     }
 
     &__column_right {

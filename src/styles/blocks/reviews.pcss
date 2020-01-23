@@ -15,28 +15,44 @@
         
         @include tablets {
             padding: 125px 0 0 20px;
-        }  
+        }
+        
+        @include phones {
+            padding: 100px 0;
+        }
     } 
     
     &__title {
         margin-bottom: 90px;
+        margin-right: 95px;
 
         @include tablets {
             font-size: 2rem;
             margin-bottom: 63px;
-        }  
+        }
+        
+        @include phones {
+            text-align: left;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
     }
     
     &__wrapper {
         display: flex;
-    }
 
-    &__title {
-        margin-right: 95px;
+        @include phones {
+            display: block;
+            margin-bottom: 30px;
+        }
     }
 
     &__button {
         display: flex;
+    
+        @include phones {
+            justify-content: center;
+        }
     }
 
     &__arrow {
@@ -49,6 +65,9 @@
         border-radius: 50%;
         border: 1px solid $text-color;
         margin-right: 25px;
+        &:last-child {
+            margin-right: 0;
+        }
         &:hover {
             border-color: $content-color;
             .arrow {
@@ -98,6 +117,12 @@
                 height: 33px;
                 left: 0;
             }
+
+            @include phones {
+                width: 35px;
+                height: 23px;
+                left: -25px;
+            }
         }
 
         @include desktop {
@@ -108,7 +133,22 @@
             padding-left: 40px;
             margin-right: 40px;
             width: 320px;
-        }  
+        }
+        
+        @include phones {
+            padding: 0;
+            display: none;
+            &:first-child {
+                display: block;
+            }
+        }
+
+        @include phonesLand {
+            display: none;
+            &:first-child {
+                display: block;
+            }
+        } 
     }
 
     &__user {
