@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
-    "build": "rm -rf dist && webpack --mode=production --progress",
-    "reg": "node reg-util.js"
+    "build": "rd /s dist && webpack --mode=production --progress",
+    "reg": "node reg-util.js",
+    "stylelint": "stylelint src/styles/**/*.pcss"
   },
   "keywords": [],
   "author": "",
@@ -57,6 +58,7 @@
     "request": "^2.88.0",
     "signale": "^1.4.0",
     "slick-carousel": "^1.8.1",
+    "stylelint": "^13.0.0",
     "vue": "^2.6.7",
     "vue-router": "^3.0.2"
   }

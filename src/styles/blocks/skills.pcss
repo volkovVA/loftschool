@@ -13,17 +13,42 @@
         background-image: url("../images/content/skills/hands.png");
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         z-index: 1;
+
+        @include desktop {
+            width: 490px;
+            height: 707px;
+            bottom: -5%;
+            left: -7%;
+        }
+
+        @include tablets {
+            transform: rotate(-90deg);
+            width: 330px;
+            height: 547px;
+            bottom: -108px; 
+            left: 30%; 
+        }
     }
 
     &__container {
-        padding: 150px 0;
+        padding: 150px 0 100px;
+
+        @include tablets {
+            padding: 112px 0 300px;
+        }
     }
 
     &__title {
         margin-bottom: 50px;
         font-size: 1.9rem;
+
+        @include tablets {
+            width: 250px;
+            text-align: center;
+            margin-bottom: 13px;
+        }
     }
 
     &__description {       
@@ -31,6 +56,17 @@
         line-height: 30px;
         margin-bottom: 82px;
         padding-left: 58px;
+
+        @include desktop {
+            padding-left: 71px;
+        }
+
+        @include tablets {
+            padding: 0 60px;
+            line-height: 25px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
     }
 
     &__img {
@@ -43,11 +79,24 @@
 
     &__box {   
         margin: 0 75px 12px auto;
+        
+        @include desktop {
+            margin: 0 20px 12px auto;
+        }
+        
+        @include tablets {
+            margin: 0;
+            
+        }
     }
 
     &__text {
         font-size: 1.5rem;
         font-weight: 700;
+
+        @include tablets {
+            text-align: center;
+        }
     }
 
     &__list {
@@ -55,6 +104,10 @@
         padding: 22px 0;
         :last-child {
             margin-right: 0;
+        }
+
+        @include tablets {
+            padding: 12px 0;
         }
     }
 
@@ -70,6 +123,10 @@
         font-weight: 700;
         margin-right: 35px;
         position: relative;
+
+        @include desktop {
+            margin-right: 12px;
+        }  
     }
 
     &__desc {

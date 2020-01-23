@@ -1,31 +1,79 @@
 .paralax {
-    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 90vw;
 
-    &__sky {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: auto;
+    @include desktop {
+        height: 140vw;
     }
 
-    &__mountains {
-        position: absolute;
-        top: 18%;
-        width: 100%;
-        height: auto;
+    @include desktopIpad {
+        display: none;
     }
 
-    &__train {
+    &__layer {
         position: absolute;
-        top: 25%;
+        left: 0;
+        right: 0;
         width: 100%;
-        height: auto;
+        height: 100%;
+        &--sky {
+            .paralax__image {
+                top: 0;
+                width: 100%;
+            }    
+        }
+    
+        &--mountains {
+            .paralax__image {
+                top: 18%; 
+            }
+
+            @include desktop {
+                top: -3%;
+            }
+        }
+
+        &--trail {
+            .paralax__image {
+                top: 25%;  
+            }
+
+            @include desktop {
+                top: -4%;
+            }
+        }
+
+        &--grass {
+            .paralax__image {
+                top: 51%;  
+            }
+            
+            @include desktop {
+                top: -13%
+            }
+        }
+    
+        &--shadow {
+            .paralax__image {
+                top: 41%;  
+            }
+
+            @include desktop {
+                top: 1%;
+            }
+        }
+
+        &--about {
+            .paralax__image {
+                width: 100%;
+                bottom: 0;  
+            }    
+        }
     }
 
-    &__grass {
+    &__image {
         position: absolute;
-        top: 36%;
-        width: 100%;
-        height: auto; 
     }
 }

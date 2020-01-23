@@ -4,6 +4,7 @@
   "content-color": "#ff9a00",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
+  "bp-desktop-ipad": "1024px",
   "bp-tablets": "768px",
   "bp-phones": "480px"
 }

@@ -2,25 +2,66 @@
     &__container {
         align-items: flex-start;
         padding-bottom: 130px;
+
+        @include desktop {
+            padding-bottom: 70px;
+            padding-left: 30px;
+        }
+        
+        @include tablets {
+            padding: 0 25px 30px;
+        }  
     }
 
     &__title {
         margin-bottom: 125px;
+
+        @include tablets {
+            font-size: 2rem;
+            margin: 0 auto 88px; 
+        }  
     }
 
     &__box {
         width: 1000px;
+
+        @include tablets {
+            width: 700px;
+        }  
     }
 
     &__col {
         flex: 1;
         position: relative;
         margin-right: 65px;
+
+        @include tablets {
+            margin-right: 20px;
+        }
+        
+        &--btn {
+            @include tablets {
+                text-align: center;
+                margin-right: 0;
+            }
+        }      
     }
 
     &__row {
         display: flex;
         margin-bottom: 100px;
+
+        @include tablets {
+            margin-bottom: 87px;
+        }  
+
+        &--textarea {
+            margin-bottom: 65px;
+
+            @include tablets {
+                margin-bottom: 33px;
+            }           
+        }
     }
 
     &__text {

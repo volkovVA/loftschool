@@ -1,0 +1,103 @@
+.nav-mobile {
+    display: flex;
+    padding: 0 10px;
+    height: 50px;
+    z-index: 9999;
+    align-items: center;
+
+    &__btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 30px;
+        transition: .4s;
+        z-index: 1;
+        &--active ~ {
+            .nav-mobile {
+                &__container {
+                    transition-delay: 0s;
+                    left: 50%; 
+                }
+            }
+        }
+        &--active  {
+            .nav-mobile {
+                &__icon {
+                    background: transparent;
+                    &::before,
+                    &::after {
+                        top: 0;
+                        background: #000;
+                    }
+                    &::after {
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    }
+                    &::before {
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    }
+                }    
+            }
+        }
+    }
+    &__icon {
+        display: block;
+        position: relative;
+        background: rgba(255,255,255,1);
+        width: 90%;
+        height: 4px;
+        transition: .4s;
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: rgba(255,255,255,1);
+            width: 100%;
+            height: 4px;
+            transition: .4s;
+            box-shadow: 0 0 5px #000;
+        }
+        &::after {
+          top: 8px;
+        }
+        &::before {
+          top: -8px;
+        }
+    }
+    &__container {
+        position: fixed;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        left: 100%;
+        height: 100%;
+        width: 50%;
+        transition: .5s;
+        transition-delay: .2s;
+        background-color: $text-color;
+        z-index: 1;
+    }
+    &__list {
+        transition: .5s;
+        transition-delay: .5s;
+        margin-bottom: 25px;
+    }
+    &__item {
+        font-size: rem(36px);
+        margin-bottom: 20px;
+    }
+    &__link {
+        color: #000;
+        &:hover {
+            color: $content-color;
+        } 
+    }  
+} 

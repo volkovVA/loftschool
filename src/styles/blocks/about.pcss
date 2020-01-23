@@ -1,27 +1,52 @@
 .about {
     background-image: url("../images/content/about/about-bg.png");
     background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: contain;
+
+    @include desktopIpad {
+        background-image: none;
+    }
+    
     &__container {
-        padding: 140px 0 260px;
+        padding: 170px 0 210px;
         max-width: 990px;
         position: relative;
         flex-direction: row;
+
+        @include desktop {
+            padding: 180px 0;
+        }
+
+        @include tablets {
+            padding: 131px 0;
+        }
     }
 
     &__user {
         margin-right: 115px;
+
+        @include tablets {
+            margin-right: 20px;
+        }
         
     } 
 
     &__hello-text {
-        margin-bottom: 15px;      
+        margin-bottom: 15px;
+        
+        @include tablets {
+            margin-bottom: 5px;
+        }
     }
 
     &__aboutme-text {
         margin-bottom: 95px;
         line-height: 30px;
+
+        @include tablets {
+            margin-bottom: 20px;
+        }
     }
 
     &__title {
@@ -41,6 +66,12 @@
         margin-bottom: 68px;
         border-radius: 50%;
         overflow: hidden;
+
+        @include tablets {
+            width: 170px;
+            height: 170px;
+            margin-bottom: 30px;
+        }
     }
 
     &__photo {
