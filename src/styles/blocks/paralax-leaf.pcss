@@ -2,12 +2,21 @@
     position: absolute;
     width: 100%;
     height: 100%;
+
+    @include desktopIpad {
+        display: none;
+    }
+
+    @include phonesLand {
+        display: none;
+    }
+
     &__layer {
+        will-change: transform;
         &--one {
             position: absolute;
             right: 0;
             top: -170px;
-            transform: translate3d(0, 0, 0);
             @include desktop {
                 right: -140px;
             }  
@@ -43,12 +52,4 @@
             }  
         }
     }
-
-    @include phones {
-        display: none;
-    }
-
-    @include phonesLand {
-        display: none;
-    } 
 }

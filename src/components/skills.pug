@@ -1,32 +1,8 @@
-mixin skills(mod, modName)
-    li(class='skills__item skills__item--' + mod)
-        svg.skills__border
-            circle(cx="70" cy="70" r="65").skills__circle
-            circle(cx="70" cy="70" r="65").skills__circle
-        .skills__desc=modName    
-
 section.skills#skills
     .container.skills__container
         h2.title.skills__title Чем я могу быть полезен вам
         p.skills__description.text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво! 
-        .skills__box
-            h3.skills__text Front-end
-            ul.skills__list
-                li.skills__item.skills__item--html
-                    svg.skills__border
-                        circle(cx="70" cy="70" r="65").skills__circle
-                        circle(cx="70" cy="70" r="65").skills__circle
-                        linearGradient#linear-gradient
-                            stop(offset="0%" stop-color="#ffc62a")
-                            stop(offset="100%" stop-color="#d0731b")
-                    .skills__desc HTML
-                +skills("css", "CSS")
-                +skills("javascript", "Javascript")
-                +skills("jquery", "Jquery и Vue.js")
-        .skills__box
-            h3.skills__text Workflow  
-            ul.skills__list
-                +skills("git", "GIT")
-                +skills("terminal", "Terminal")
-                +skills("gulp", "Gulp")
-                +skills("webpack", "Webpack")                
+        
+        #skills-component
+
+include skills-vue.pug
