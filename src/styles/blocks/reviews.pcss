@@ -7,7 +7,7 @@
 
     &__container {
         padding-top: 137px;
-        align-items: flex-start;
+        display: block;
 
         @include desktop {
             padding: 137px 0 0 30px;
@@ -49,7 +49,7 @@
 
     &__button {
         display: flex;
-    
+        z-index: 1;
         @include phones {
             justify-content: center;
         }
@@ -91,7 +91,6 @@
     }
 
     &__list {
-        display: flex;
         &:last-child {
             margin-right: 0;
         } 
@@ -137,18 +136,7 @@
         
         @include phones {
             padding: 0;
-            display: none;
-            &:first-child {
-                display: block;
-            }
         }
-
-        @include phonesLand {
-            display: none;
-            &:first-child {
-                display: block;
-            }
-        } 
     }
 
     &__user {

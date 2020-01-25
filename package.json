@@ -60,6 +60,7 @@
     "slick-carousel": "^1.8.1",
     "stylelint": "^13.0.0",
     "vue": "^2.6.7",
+    "vue-flickity": "^1.2.1",
     "vue-router": "^3.0.2"
   }
 }

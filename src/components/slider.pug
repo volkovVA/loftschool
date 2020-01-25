@@ -1,7 +1,11 @@
 .slider#slider
     .container.slider__container
         h2.title.slider__title Мои работы 
-        .slider__wrapper
+        
+        #slider-component
+        
+        include slider-vue.pug
+        //- .slider__wrapper
             .slider__display
                 .slider__main
                     +image("content/slider/preview-snow.png", "slider__image", "скриншота страницы моего проекта")      
