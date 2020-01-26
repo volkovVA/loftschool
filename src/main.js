@@ -15,6 +15,8 @@ import "./scripts/slider";
 
 import "./scripts/reviews";
 
+import anchorScroll from "./scripts/anchorScroll";
+
 inputValue();
 
 parallax('.js-promo-area');
@@ -22,3 +24,5 @@ parallax('.js-promo-area');
 parallax('.js-leaf-area');
 
 popupMenu();
+
+anchorScroll();
