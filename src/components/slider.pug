@@ -1,36 +1,8 @@
 .slider#slider
     .container.slider__container
         h2.title.slider__title Мои работы 
-        .slider__wrapper
-            .slider__display
-                .slider__main
-                    +image("content/slider/preview-snow.png", "slider__image", "скриншота страницы моего проекта")      
-                .slider__preview-wrapper  
-                    ul.slider__preview
-                        li.slider__item.slider__item--active
-                            button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
-                                +image("content/slider/miniature-snow.png", "slider__image", "миниатюра скриншота страницы моего проекта")
-                        li.slider__item
-                            button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
-                                +image("content/slider/miniature-home.png", "slider__image", "миниатюра скриншота страницы моего проекта")
-                        li.slider__item
-                            button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
-                                +image("content/slider/miniature-car.png", "slider__image", "миниатюра скриншота страницы моего проекта")
-                        li.slider__item
-                            button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
-                                +image("content/slider/miniature-mountains.png", "slider__image", "миниатюра скриншота страницы моего проекта")
-                .slider__button
-                    button(type="button" aria-label="следующий слайд").slider__button-arrow
-                        +icon("arrow-down", "arrow arrow--next")                  
-                    button(type="button" aria-label="предыдущий слайд").slider__button-arrow
-                        +icon("arrow-down", "arrow arrow--prev")                  
-            .slider__content
-                .slider__counter 2         
-                .slider__desc
-                    - var tags = ["HTML", "CSS", "Javascript"]
-                    .slider__skills
-                        each item in tags
-                            .slider__item_skills.text #{item}
-                    h3.slider__subtitle Сайт школы образования
-                    p.slider__text.text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                    a.slider__link(href="#") Посмотреть сайт
+        
+        #slider-component
+        
+        include slider-vue.pug
+        

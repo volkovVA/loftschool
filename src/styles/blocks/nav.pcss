@@ -1,6 +1,8 @@
 .nav {
+
     &__list {
         display: flex;
+        flex-wrap: wrap;
     }
 
     &__item {
@@ -8,6 +10,10 @@
         opacity: 1;
         &:last-child {
             margin-right: 0;
+        }
+
+        @include tablets {
+           margin-bottom: 18px;
         }
     }
     

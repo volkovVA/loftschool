@@ -1,0 +1,50 @@
+script(type="text/x-template")#slider-container
+    .slider__wrapper
+        display
+        info
+        
+script(type="text/x-template")#slider-display
+    .slider__display
+        .slider__main
+            +image("content/slider/preview-snow.png", "slider__image", "скриншота страницы моего проекта")      
+            preview
+            btns                 
+
+script(type="text/x-template")#slider-preview
+    .slider__preview-wrapper  
+        ul.slider__preview
+            li.slider__item.slider__item--active
+                button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
+                    +image("content/slider/miniature-snow.png", "slider__image", "миниатюра скриншота страницы моего проекта")
+            li.slider__item
+                button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
+                    +image("content/slider/miniature-home.png", "slider__image", "миниатюра скриншота страницы моего проекта")
+            li.slider__item
+                button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
+                    +image("content/slider/miniature-car.png", "slider__image", "миниатюра скриншота страницы моего проекта")
+            li.slider__item
+                button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
+                    +image("content/slider/miniature-mountains.png", "slider__image", "миниатюра скриншота страницы моего проекта")
+
+
+script(type="text/x-template")#slider-button
+    .slider__button
+        button(type="button" aria-label="следующий слайд").slider__button-arrow
+            +icon("arrow-down", "arrow arrow--next")                  
+        button(type="button" aria-label="предыдущий слайд").slider__button-arrow
+            +icon("arrow-down", "arrow arrow--prev")
+
+script(type="text/x-template")#slider-content
+    .slider__content
+        .slider__counter 2         
+        .slider__desc
+            tags
+            h3.slider__subtitle Сайт школы образования
+            p.slider__text.text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            a.slider__link(href="#") Посмотреть сайт
+
+script(type="text/x-template")#slider-tags 
+    - var tags = ["HTML", "CSS", "Javascript"]
+        .slider__skills
+            each item in tags
+                .slider__item_skills.text #{item}               

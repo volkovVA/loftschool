@@ -1,7 +1,7 @@
 mixin socials(mod)
     - var icons = ["insta", "vk", "github"]
     - var link = ["https://www.instagram.com/volkov.slava.vva/", "https://vk.com/volkov_sl", "https://github.com/volkovVA" ]
-    ul.socials
+    ul.socials.socials--mobile.socials--footer
         each item, index in icons
             li(class="socials__item socials__item--" + mod) 
                 a.socials__link(href=`${link[index]}` target="_blank")

@@ -18,12 +18,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
+  margin: 0;
 }
 
 .wrapper {
-  overflow: hidden;
   min-height: 100%;
   position: relative;
+  min-width: 320px;
+  overflow: hidden;
 }
 
 .container {
@@ -117,6 +119,10 @@ img {
 
 .welcome {
   position: relative;
+  background-image: url("../images/content/parallax-promo/bg-ipad.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
 }
 
 .railway {

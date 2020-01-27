@@ -4,17 +4,42 @@
     &__container {
         padding: 75px 0;
         flex-direction: row;
-        align-items: flex-start;
+        align-items: flex-start;          
+        
+        @include tablets {
+            padding: 55px 15px 85px;
+        }
+        
+        @include phones {
+            flex-direction: column;
+        }
     }
 
     &__column_left {
         flex-basis: 34%;
         display: flex;
+
+        @include desktop {
+            display: block;
+            flex-basis: 27%;
+        }
+        
+        @include tablets {
+            margin-right: 78px;
+        }
+        
+        @include phones {
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
     }
 
     &__column_right {
         flex-basis: 66%;
 
+        @include desktop {
+            flex-basis: 73%;
+        }
     }
 
     &__year {
@@ -24,10 +49,30 @@
         line-height: 50px;
         white-space: nowrap;
         margin-right: 59px;
+
+        @include desktop {
+            margin-right: 0;
+            margin-bottom: 18px;
+            padding-left: 30px;
+        }
+
+        @include tablets {
+            padding-left: 0;
+        }  
     }
 
     &__name {
         margin-right: 140px;
+
+        @include desktop {
+            margin-right: 0;
+            padding: 0 110px 0 30px;
+        }
+        
+        @include tablets {
+            padding: 0 10px;
+        } 
+        
     }
 
     &__fio {
@@ -48,32 +93,45 @@
         margin-top: 55px;
         &_left {
             margin-right: 183px;
+
+            @include desktop {
+                margin-right: 57px;
+            }
+            
+            @include tablets {
+                margin-right: 0;
+                margin-bottom: 50px;
+            }
         }
+
+        @include tablets {
+            display: block;
+            margin-top: 30px;
+        }           
     }
 
     &__text {      
         line-height: 30px;
         margin-bottom: 22px;
+
+        @include tablets {
+            margin-bottom: 15px;
+            line-height: 25px;
+        }
     }
 
     &__quote {
         line-height: 30px;
         margin-bottom: 20px;
+
+        @include tablets {
+            margin-bottom: 10px;
+        }
+
         &_author {
             font-size: 1rem;
             font-style: italic;
             line-height: 30px;
         }
     } 
-}
-
-.socials__item--footer {
-    margin-right: 20px !important;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid #716b66;
-    &:hover {
-        border-color: $content-color;
-    }
 }

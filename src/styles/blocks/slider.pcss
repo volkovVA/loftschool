@@ -1,42 +1,133 @@
 .slider {
     &__container {
         padding: 200px 0;
+
+        @include desktop {
+            padding: 142px 26px 154px;
+        }
+
+        @include tablets {
+            padding: 115px 20px;
+        }
+        
+        @include phones {
+            padding: 115px 0;
+        }
     }
     
     &__title {       
         color: #333c49;
         margin-bottom: 90px;
         margin-right: auto;
+
+        @include desktop {
+            margin-bottom: 60px;
+        }
+
+        @include phonesLand {
+            margin-bottom: 60px;
+        } 
+        
+        @include tablets {
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+        
+        @include phones {
+            margin-right: 0;
+        }
     }
 
     &__wrapper {
         display: flex;
+
+        @include tablets {
+            display: block;;
+        }
     }
 
     &__display {
         flex-basis: 66%;
         position: relative;
+
+        @include tablets {
+            margin-bottom: 65px;
+        }
+        
+        @include phonesLand {
+            flex-basis: 60%;
+            margin-bottom: 50px;
+        } 
+ 
     }
 
     &__content {
         flex-basis: 34%;
         display: flex;
-        padding-left: 157px;
+        padding-left: 113px;
         position: relative;
         color: #000;
+
+        @include tablets {
+            padding-left: 0;
+        }
+        
+        @include phonesLand {
+            flex-basis: 40%;
+        } 
     }
 
     &__preview-wrapper {
         position: absolute;
         top: 388px;
-        right: -8px;
         overflow: hidden;
-        width: 712px;
+        width: 704px;
         height: 106px;
+        right: 0;
+
+        @include desktop {
+            top: 220px;
+            width: 528px;
+        }
+        
+        @include phonesLand {
+            top: 220px;
+            width: 528px;
+        }
+
+        @include tablets {
+            right: 66px;
+            top: 218px;
+            width: 453px;
+            height: 89px;
+        }
+
+        @include phones {
+            display: none;
+        } 
     }
 
     &__main {
         height: 550px;
+
+        @include desktop {
+            height: 353px;
+        }
+
+        @include phonesLand {
+            height: 353px;
+        } 
+        
+        @include tablets {
+            height: 353px;
+            width: 625px;
+        }
+        
+        @include phones {
+            margin: 0 -27px;
+            width: auto;
+            height: auto;
+        }
     }
 
     &__preview-btn {
@@ -66,12 +157,56 @@
                     fill: #000;
                 }
             }
-        }   
+
+            @include tablets {
+                width: 45px;
+                height: 45px;
+            } 
+
+            @include phonesLand {
+                width: 45px;
+                height: 45px;
+            } 
+        }
+        
+        @include desktop {
+            right: -52px;
+            bottom: 81px;
+        }
+
+        @include phonesLand {
+            right: -42px;
+            bottom: 49px;
+        } 
+
+        @include tablets {
+            right: 21px;
+            bottom: 45px;
+        }
+        
+        @include phones {
+            right: -26px;
+            bottom: 0;
+        }
     }
 
     &__preview {
         display: flex;
         position: absolute;
+    }
+
+    &__desc {
+        @include tablets {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        @include phonesLand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
     }
     
     &__item {
@@ -84,11 +219,23 @@
             outline: 3px solid $content-color;
             outline-offset: -3px;
         }
+
+        @include tablets {
+           width: 151px;
+        }
+
+        @include phonesLand {
+            width: 150px;
+        } 
     } 
 
     &__skills {
         display: flex;
         margin-bottom: 37px;
+
+        @include tablets {
+            margin-bottom: 15px;
+        }  
     }
 
     &__item_skills {     
@@ -100,19 +247,55 @@
         background-color: #f3f5f9;
         border-radius: 25%/50%;
         margin-right: 17px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     &__subtitle {
-        font-size: 30px;
+        font-size: 1.8rem;
         font-weight: 700;
         line-height: 48px;
         margin-bottom: 29px;
+
+        @include tablets {
+            margin-bottom: 15px;
+        }
+        
+        @include phones {
+            margin-bottom: 15px;
+            width: 200px;
+            line-height: 38px;
+        }
+
+        @include phonesLand {
+            margin-right: 0;
+        } 
     }
 
     &__text {  
         opacity: 0.7;   
         line-height: 1.9rem;
         margin-bottom: 36px;
+
+        @include tablets {
+            padding: 0 115px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        @include tablets {
+            padding: 0;
+            margin: 0 37px 16px;
+        }
+
+        @include phones {
+            text-align: left;
+        }
+
+        @include phonesLand {
+            text-align: center;
+        } 
     } 
 
     &__counter {       
@@ -123,6 +306,23 @@
         left: -65px;
         top: -51px;
         z-index: -1;
+
+        @include desktop {
+            font-size: 18rem;
+            left: -38px;
+            top: -76px;
+        }
+
+        @include phonesLand {
+            font-size: 18rem;
+            left: -38px;
+            top: -76px;
+        } 
+        
+        @include tablets {
+            left: 590px;
+            top: -461px;
+        }
     }
 
     &__link {
@@ -134,6 +334,7 @@
         position: relative;
         padding-left: 35px;
         width: 57%;
+        border-bottom: 1px solid transparent; 
         &:hover { 
             border-bottom: 1px solid $links-color;   
         }
@@ -145,6 +346,23 @@
             height: 15px;
             cursor: pointer;
             background: svg-load('link.svg', fill=$links-color, width=100%, height=100%);
+        }
+
+        @include desktop {
+            width: 65%;
+        }
+
+        @include phonesLand {
+            width: 65%;
+        } 
+        
+        @include tablets {
+            width: 30%;
+        }  
+
+        @include phones {
+            width: 59%;
+            margin-right: auto;
         }
     }
 }

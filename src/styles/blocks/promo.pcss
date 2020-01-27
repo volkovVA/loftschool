@@ -1,6 +1,6 @@
 .promo {
     height: 100vh;
-    min-height: 650px;
+    min-height: 576px;
     &__container {
         height: 100%;
         position: relative;
@@ -35,6 +35,10 @@
             animation: scroll 3s linear infinite -1.5s;
             top: 35px;
             left: 58px;
+        }
+
+        @include phones {
+            display: none;
         }
     } 
 }

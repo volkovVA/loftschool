@@ -2,25 +2,88 @@
     &__container {
         align-items: flex-start;
         padding-bottom: 130px;
+
+        @include desktop {
+            padding-bottom: 70px;
+            padding-left: 30px;
+        }
+
+        @include phonesLand {
+            padding-bottom: 70px;
+            padding-left: 30px;
+        } 
+        
+        @include tablets {
+            padding: 0 25px 30px;
+        }
+        
+        @include phones {
+            padding: 0 0 30px;
+        }
     }
 
     &__title {
         margin-bottom: 125px;
+
+        @include tablets {
+            font-size: 2rem;
+            margin: 0 auto 88px; 
+        }  
     }
 
     &__box {
         width: 1000px;
+
+        @include tablets {
+            width: 539px;
+        }
+        
+        @include phones {
+            width: 305px;
+        }
     }
 
     &__col {
         flex: 1;
         position: relative;
         margin-right: 65px;
+
+        @include tablets {
+            margin-right: 20px;
+        }
+
+        @include phones {
+            margin-bottom: 100px;
+            margin-right: 0;
+        }
+        
+        &--btn {
+            @include tablets {
+                text-align: center;
+                margin-right: 0;
+            }
+        }      
     }
 
     &__row {
         display: flex;
         margin-bottom: 100px;
+
+        @include tablets {
+            margin-bottom: 87px;
+        }
+        
+        @include phones {
+            display: block;
+        }
+
+        &--textarea {
+            margin-bottom: 65px;
+
+            @include tablets {
+                margin-bottom: 33px;
+            }           
+        }
     }
 
     &__text {
@@ -55,6 +118,10 @@
                 fill: $content-color;
                 &--textarea {
                     bottom: 35px;
+
+                    @include phones {
+                        bottom: 15px;
+                    }
                 }
             }
             ~ .form__text {
@@ -62,6 +129,14 @@
                 &--textarea {
                     bottom: 85px;
                 }
+            }
+        }
+        &--active {
+            + .form__icon {
+                fill: $content-color;
+            }
+            ~ .form__text {
+                bottom: 65px;
             }
         }
     }
@@ -84,6 +159,10 @@
         }
         &:active {
             box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 1px 4px rgba(0, 0, 100, 0.5);
+        }
+
+        @include phones {
+            padding: 29px 100px;
         }
     }
 }

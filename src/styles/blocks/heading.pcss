@@ -1,11 +1,25 @@
 .heading {
     position: relative;
     display: flex;
+
+    @include phones {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     &__name {
         width: 400px;
         line-height: 60px;
         font-size: 4.5rem;
         font-weight: 800;
+
+        @include phones {
+            width: 0;
+            font-size: 2.25rem;
+            line-height: 35px;
+            text-align: center;
+        }
      }
      &__desc {
         margin-right: 70px;
@@ -13,6 +27,12 @@
         text-align: right;     
         opacity: 0.5;
         font-size: 1.1rem;
-        font-weight: 400;   
+        font-weight: 400;
+        
+        @include phones {
+            margin-right: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
     }
 }

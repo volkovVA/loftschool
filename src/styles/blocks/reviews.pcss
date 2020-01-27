@@ -1,25 +1,58 @@
 .reviews {
     margin-bottom: 192px;
 
+    @include tablets {
+        margin-bottom: 83px;
+    }  
+
     &__container {
         padding-top: 137px;
-        align-items: flex-start;
+        display: block;
+
+        @include desktop {
+            padding: 137px 0 0 30px;
+        }
+        
+        @include tablets {
+            padding: 125px 0 0 20px;
+        }
+        
+        @include phones {
+            padding: 100px 0;
+        }
     } 
     
     &__title {
         margin-bottom: 90px;
+        margin-right: 95px;
+
+        @include tablets {
+            font-size: 2rem;
+            margin-bottom: 63px;
+        }
+        
+        @include phones {
+            text-align: left;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
     }
     
     &__wrapper {
         display: flex;
-    }
 
-    &__title {
-        margin-right: 95px;
+        @include phones {
+            display: block;
+            margin-bottom: 30px;
+        }
     }
 
     &__button {
         display: flex;
+        z-index: 1;
+        @include phones {
+            justify-content: center;
+        }
     }
 
     &__arrow {
@@ -32,6 +65,10 @@
         border-radius: 50%;
         border: 1px solid $text-color;
         margin-right: 25px;
+        outline: none;
+        &:last-child {
+            margin-right: 0;
+        }
         &:hover {
             border-color: $content-color;
             .arrow {
@@ -43,6 +80,10 @@
     &__text {       
         line-height: 30px;
         margin-bottom: 26px;
+
+        @include tablets {
+            line-height: 25px;
+        }  
     }
 
     &__user_fio {
@@ -51,7 +92,6 @@
     }
 
     &__list {
-        display: flex;
         &:last-child {
             margin-right: 0;
         } 
@@ -62,7 +102,7 @@
         padding-left: 124px;
         margin-right: 65px;
         width: 440px;
-        position: relative;
+        
         &:before {
             content: "";
             position: absolute;
@@ -71,6 +111,32 @@
             height: 63px;
             background: svg-load('quote.svg', fill=#303031, width=100%, height=100%);
             background-repeat: no-repeat;
+
+            @include tablets {
+                width: 45px;
+                height: 33px;
+                left: 0;
+            }
+
+            @include phones {
+                width: 35px;
+                height: 23px;
+                left: -25px;
+            }
+        }
+
+        @include desktop {
+            margin-right: 35px;
+        }
+
+        @include tablets {
+            padding-left: 40px;
+            margin-right: 40px;
+            width: 320px;
+        }
+        
+        @include phones {
+            padding: 0;
         }
     }
 
@@ -97,6 +163,10 @@
 
     &__user_desc {
         padding: 0 10px;
+
+        @include tablets {
+            padding: 0;
+        }  
     }
 
     &__user_fio {
