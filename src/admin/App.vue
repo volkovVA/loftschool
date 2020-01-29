@@ -19,7 +19,17 @@
     border: 0;
     padding: 0;
     cursor: pointer;
-    background-color: #fff;
+    background-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: normal;
+    margin: 0;
   }
 
   a {
@@ -59,7 +69,7 @@
   font-weight: 700;
 }
 
-.button {
+.button-oval {
   color: #fff;
   font-size: 1rem;
   font-weight: 400;
@@ -67,6 +77,40 @@
   border-radius: 25px;
   background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
   padding: 15px 30px;
+}
+
+.button-edit {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #43436a;
+  &__icon {
+    padding-left: 10px;
+  }
+}
+
+.button-add {
+  &__plus {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: #fff;
+  }
+  &__instruction {  
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 30px;
+    width: 90px;
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 .header {
@@ -261,7 +305,7 @@
   } 
 }
 
-.works-section {
+.work-section {
   &__container {
     padding: 50px 0;
   }
@@ -271,7 +315,7 @@
   }
 }
 
-.works {
+.work {
   background-color: #fff;
   box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
   padding: 0 25px;
@@ -289,7 +333,7 @@
     display: flex;
   }
   &__load {
-    width: 495px;
+    flex-basis: 50%;
     height: 275px;
     border: 1px solid #a1a1a1;
     background-color: #dee4ed;
@@ -308,7 +352,7 @@
     margin-bottom: 25px;
   }
   &__entry {
-    flex-basis: 45%;
+    flex-basis: 50%;
   }
   &__title {
     display: block;    
@@ -320,11 +364,12 @@
   &__text {
     display: block;
     width: 100%;
-    border-bottom: 2px solid #414c63;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.9);
     padding: 17px;
     &--area {
       height: 90px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+      margin-top: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.9);
       resize: vertical;
     }
   }
@@ -362,7 +407,7 @@
   } 
 }
 
-.add-works{
+.add-work{
   width: 100%;
   &__list {
     display: flex;
@@ -381,32 +426,11 @@
     }
     &--new {
       background: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
-      color: #fff;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
-  }
-  &__plus {
-    width: 150px;
-    height: 150px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-    font-weight: 300;
-    margin-bottom: 25px;
-  }
-  &__instruction {  
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 30px;
-    width: 90px;
-    text-align: center;
   }
   &__pic {
     width: 100%;
@@ -443,22 +467,188 @@
     margin-bottom: 45px;
   }
   &__button {   
-    &-edit {
-      margin-right: 85px;
-    }
-    &-edit, &-delete {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #a3a9b4;
-    }
-  }
-  &__icon {
-    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
   }
 } 
-  
 
+.review-section {
+  &__container {
+    padding: 50px 0;
+  }
+  &__title {
+    margin-right: auto;
+    margin-bottom: 55px;
+  }
+}
 
+.review {
+  background-color: #fff;
+  box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 25px;
+  width: 100%;
+  margin-bottom: 30px;
+  &__heading {
+    padding: 27px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    opacity: 0.8;
+    border-bottom: 1px solid #e6e6e7;
+  }
+  &__content {
+    display: flex;
+    padding: 50px 0;
+  }
+  &__load {
+    flex-basis: 20%;
+    margin-right: 30px;
+    text-align: center;
+  }
+  &__avatar {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__button {   
+    color: #383bcf;
+    font-size: 1rem;
+    font-weight: 700;  
+  }
+  &__entry {
+    flex-basis: 80%;
+    padding-right: 200px;
+  }
+  &__row {
+    display: flex;
+  }
+  &__title {
+    display: block;    
+    opacity: 0.5;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    margin-right: 35px;
+    width: 100%;
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+  }
+  &__text {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.9);;
+    padding: 17px;
+    &--area {
+      height: 120px;
+      margin-top: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+      resize: vertical;
+    }
+  }
+  &__button {
+    text-align: right;
+  }
+  &__button-cancel {    
+    color: #383bcf;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 60px;
+  } 
+}
+
+.add-review {
+  width: 100%;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  &__item {
+    width: 340px;
+    height: 380px;
+    margin-bottom: 30px;
+    box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-right: 30px;
+    padding: 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &--new {
+      background: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+  }
+  &__user {
+    display: flex;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    margin-bottom: -40px;
+  }
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 10px;
+    transform: scale(1.7);
+  }
+  &__name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    opacity: 0.8;
+    margin-bottom: 5px;
+  }
+  &__position {
+    opacity: 0.5;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  &__text {
+    opacity: 0.7;
+    font-size: 1rem;
+    font-weight: 500; 
+  }
+  &__content {
+    padding: 0 25px;
+  }
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    opacity: 0.8;
+    margin-bottom: 25px;
+  }
+  &__text {    
+    opacity: 0.7;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 27px;
+    margin-bottom: 25px;
+  }
+  &__button {   
+    display: flex;
+    justify-content: space-between;
+  }
+} 
 </style>
 
 <template lang="pug">
@@ -528,47 +718,86 @@
               input(type="number" name="name" min="0" max="100" placeholder="100%").about__new-skill_value
               button.about__add +     
     section.work-section
-      .container.works-section__container
-        h2.title.works-section__title Блок  &laquo;Работы&raquo;
-        form.works
-          .works__heading Редактирование Работы
-          .works__content
-            .works__load
-              .works__instruction Перетащите или загрузите для загрузки изображения 
-              button.button.works__button загрузить
-            .works__entry
-              label.works__title Название
-                input.works__text(type="text" name="name")
-              label.works__title Ссылка
-                input.works__text(type="text" name="name")
-              label.works__title Описание
-                textarea.works__text.works__text--area(type="textarea" name="name")
-              label.works__title Добавление тэга
-                input.works__text(type="text" name="name")
+      .container.work-section__container
+        h2.title.work-section__title Блок  &laquo;Работы&raquo;
+        form.work
+          .work__heading Редактирование Работы
+          .work__content
+            .work__load
+              .work__instruction Перетащите или загрузите для загрузки изображения 
+              button.button-oval.work__button загрузить
+            .work__entry
+              label.work__title Название
+                input.work__text(type="text" name="name")
+              label.work__title Ссылка
+                input.work__text(type="text" name="name")
+              label.work__title Описание
+                textarea.work__text.work__text--area(type="textarea" name="name")
+              label.work__title Добавление тэга
+                input.work__text(type="text" name="name")
               - var tags = ["HTML", "CSS", "Javascript"]
-              .works__skills
+              .work__skills
                 each item in tags
-                  .works__item #{item}
-              .works__button
-                button(type="button").works__button-cancel Отмена
-                button(type="button").button.works__button-save Сохранить  
-        .add-works
-          ul.add-works__list
-            li.add-works__item.add-works__item--new
-              .add-works__plus +
-              .add-works__instruction Добавить работу
-            li.add-works__item
-              .add-works__pic
-                img(src="../images/content/slider/car.png").add-works__img
-              .add-works__content  
-                h3.add-works__title Сайт школы образования
-                .add-works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").add-works__link http://loftschool.ru
-                .add-works__button
-                  button(type="button").add-works__button-edit Править
-                      img(src="../images/admin_icons/pencil-blue.png").add-works__icon
-                  button(type="button").add-works__button-delete Удалить
-                      img(src="../images/admin_icons/cross.png").add-works__icon
-             
-            
+                  .work__item #{item}
+              .work__button
+                button(type="button").work__button-cancel Отмена
+                button(type="button").button-oval.work__button-save cохранить  
+        .add-work
+          ul.add-work__list
+            li.add-work__item.add-work__item--new
+              button.add-work__button-plus.button-add
+                .button-add__plus +
+                .button-add__instruction Добавить работу
+            li.add-work__item
+              .add-work__pic
+                img(src="../images/content/slider/car.png").add-work__img
+              .add-work__content  
+                h3.add-work__title Сайт школы образования
+                .add-work__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                a(href="#").add-work__link http://loftschool.ru
+                .add-work__button
+                  button(type="button").button-edit Править
+                      img(src="../images/admin_icons/pencil-blue.png").button-edit__icon
+                  button(type="button").button-edit Удалить
+                      img(src="../images/admin_icons/cross.png").button-edit__icon
+    section.review-section
+      .container.review-section__container
+        h2.title.review-section__title Блок  &laquo;Отзывы&raquo;
+        form.review
+          .review__heading Новый отзыв
+          .review__content
+            .review__load
+              .review__avatar
+                img(src="../images/admin_icons/man-user.png").review__photo
+              button.review__button Добавить фото
+            .review__entry
+              .review__row           
+                label.review__title Имя автора
+                  input.review__text(type="text" name="name")
+                label.review__title Титул автора
+                  input.review__text(type="text" name="name")
+              label.review__title Отзыв
+                textarea.review__text.review__text--area(type="textarea" name="name")
+              .review__button
+                button(type="button").review__button-cancel Отмена
+                button(type="button").button-oval.work__button-save Сохранить
+        .add-review
+          ul.add-review__list
+            li.add-review__item.add-review__item--new
+              button.add-review__button-plus.button-add
+                .button-add__plus +
+                .button-add__instruction Добавить отзыв
+            li.add-review__item
+              .add-review__user
+                .add-review__avatar
+                  img(src="../images/content/userfiles/vladimir.png").add-review__photo
+                .add-review__user-info
+                  h3.add-review__name Владимир Сабанцев
+                  .add-review__position Преподаватель
+              .add-review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах       
+              .add-review__button
+                button(type="button").button-edit Править
+                    img(src="../images/admin_icons/pencil-blue.png").button-edit__icon
+                button(type="button").button-edit Удалить
+                    img(src="../images/admin_icons/cross.png").button-edit__icon
 </template>
