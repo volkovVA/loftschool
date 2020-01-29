@@ -1,58 +1,76 @@
 <style lang="postcss">
-  
-  * {
+
+@mixin tablets() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phones() {
+  @media screen and (max-width: 460px) {
+    @content;
+  }
+}
+
+@mixin iphone() {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+* {
   box-sizing: border-box;
-  }
+}
 
-  body {
-    margin: 0;
-    font-family: 'Open Sans', Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.42;
-  }
+body {
+  margin: 0;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.42;
+}
 
-  input {
-    border: none;
-  }
+input {
+  border: none;
+}
 
-  button {
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    background-color: transparent;
-  }
+button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: normal;
-    margin: 0;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
 
-  a {
-    color: inherit;
-    cursor: pointer;
-    text-decoration: none;
-  }
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
 
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
-  li {
-    list-style: none;
-  }
+li {
+  list-style: none;
+}
 
-  .content {
-    background-color: #f7f9fe;
-  }
+.content {
+  background-color: #f7f9fe;
+}
 
-  .container {
+.container {
   margin: 0 auto;
   max-width: 1080px;
   width: 95%;
@@ -60,6 +78,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @include tablets {
+    max-width: 700px;
+  }
+
+  @include phones {
+    max-width: 340px;
+  }
+
+  @include iphone {
+    max-width: 320px;
+    width: 100%;
+  }
 }
 
 .title {
@@ -101,6 +132,14 @@
     font-weight: 300;
     margin-bottom: 25px;
     color: #fff;
+
+    @include phones {
+      width: 50px;
+      height: 50px;
+      font-size: 2rem;
+      margin-bottom: 0;
+      margin-right: 25px;
+    }
   }
   &__instruction {  
     color: #fff;
@@ -110,6 +149,10 @@
     width: 90px;
     text-align: center;
     margin: 0 auto;
+
+    @include phones {
+      width: 155px;
+    }
   }
 }
 
@@ -121,6 +164,14 @@
     flex-direction: row;
     justify-content: space-between;
     color: #fff;
+
+    @include phones {
+      justify-content: center;
+    }
+
+    @include iphone {
+      max-width: 280px;
+    }
   }
   &__desc {
     padding: 14px 0;
@@ -130,23 +181,35 @@
     height: 45px;
     border-radius: 50%;
     overflow: hidden;
+    margin-right: 20px;
   }
   &__photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  &__info {
-    margin-right: 470px;
+  &__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    @include phones {
+      display: block;
+    }
   }
   &__name {
     font-size: 1.1rem;
     font-weight: 400;
+    margin-right: 20px;
   }
   &__info {   
     opacity: 0.5;
     font-size: 0.9rem;
     font-weight: 400;
+
+    @include phones {
+      display: none;
+    }
   }
   &__exit {
     opacity: 0.7;
@@ -154,6 +217,7 @@
     font-weight: 400;
     text-decoration: underline;
     color:#fff;
+    margin-left: auto;
   }
   &__navigation {
     padding: 23px 0;
@@ -161,9 +225,20 @@
   }
   &__list {
     display: flex;
+
+    @include phones {
+      justify-content: space-between;
+    }
   }
   &__item {
-    margin-right: 55px;
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include phones {
+      margin-right: 0;
+    }
   } 
   &__link {
     color: #000;
@@ -171,7 +246,7 @@
     font-size: 1rem;
     font-weight: 400;
     text-decoration: none;
-    padding: 21px 0;
+    padding: 21px 15px;
     &:hover {
       color: #383bcf;
       opacity: 1;
@@ -181,85 +256,133 @@
 }
 
 .about-section {
-    &__container {
-      padding: 47px 0;
-    }
-    &__heading {
-      display: flex;
-      align-items: center;
-      margin-right: auto;
-      margin-bottom: 50px;
-    }
-    &__title {       
-      margin-right: 55px;
-    }
-    &__btn {
-      position: relative;
-      color: #383bcf;
-      font-size: 1rem;
-      font-weight: 700;
-      background-color: #f7f9fe;
-      padding-left: 30px;
-      &:before {
-        content: "+";
-        position: absolute;
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        font-size: 0.8rem;
-        background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
-        color: #fff;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-    &__form {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
+  padding: 50px 0;
+
+  @include iphone {
+    padding: 40px 0;
   }
 
+  &__heading {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-bottom: 50px;
+    @include phones {
+      display: block;
+      margin-bottom: 30px;
+    }
+    @include iphone {
+      padding: 0 20px;
+    }
+  }
+  &__title {       
+    margin-right: 55px;
+
+    @include phones {
+      margin-bottom: 30px;
+    }
+  }
+  &__btn {
+    position: relative;
+    color: #383bcf;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #f7f9fe;
+    padding-left: 30px;
+    &:before {
+      content: "+";
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+      color: #fff;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  &__item {
+    margin-right: 20px;
+    margin-bottom: 25px;
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+
+    @include phones {
+      margin-right: 0;
+    }
+  }
+}
 .about {
   width: 520px;
-  height: 350px;
   background-color: #fff;
-  margin-right: 40px;
-  margin-bottom: 25px;
   padding: 0 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
-  &:nth-child(even) {
-    margin-right: 0;
+  
+  @include tablets {
+    width: 340px;
   }
+
+  @include phones {
+    padding: 0;
+  }
+
+  @include iphone {
+    width: 320px;
+  }
+
   &__head {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 17px 0;
     border-bottom: 1px solid #e6e6e7;
+
+    @include phones {
+      padding: 17px 10px;
+    }
+
+    @include iphone {
+      padding: 17px 20px;
+    }
   }
   &__group {
     width: 250px;
     border-bottom: 1px solid #000;
     padding: 10px 0;
+
+    @include tablets {
+      width: 200px;
+    }
   }
   &__button-accept {
     margin-right: 15px;
   }
   &__content {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     padding: 15px 0;
+    margin-bottom: 10px;
+
+    @include phones {
+      padding: 15px 10px;
+    }
+
+    @include iphone {
+      padding: 15px 20px;
+    }
   }
   &__table {
     opacity: 0.7;
@@ -268,7 +391,15 @@
     height: 30px;
   }
   &__col:first-child {
-      width: 65%;
+    width: 80%;
+
+    @include tablets {
+      width: 67%;
+    }
+
+    @include iphone {
+      width: 66%;
+    }
   }
   &__col:last-child {
       text-align: right;
@@ -280,7 +411,19 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 17px 0 27px;
+    padding-bottom: 27px;
+
+    @include phones {
+      padding: 0 10px 27px;
+    }
+
+    @include iphone {
+      justify-content: center;
+    }
+
+    @include iphone {
+      padding: 0 20px 27px;
+    }
     &_name {
       width: 160px;
       border-bottom: 1px solid #000;
@@ -293,6 +436,11 @@
       padding: 10px 0;
       margin-right: 15px;
       text-align: center;
+
+      @include phones {
+        margin-right: 10px;
+        width: 60px;
+      }
     }
   }
   &__add {
@@ -302,16 +450,35 @@
     background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
     color:#fff;
     font-size: 2.2rem;
+
+    @include phones {
+      width: 35px;
+      height: 35px;
+    }
   } 
 }
 
 .work-section {
+  width: 100%;
+  padding-bottom: 50px;
+
+  @include iphone {
+    padding-bottom: 40px;
+  }
   &__container {
-    padding: 50px 0;
+    padding-bottom: 50px;
   }
   &__title {
     margin-right: auto;
     margin-bottom: 55px;
+
+    @include iphone {
+      padding: 0 20px;
+      margin-bottom: 40px;
+    }
+  }
+  &__wrapper {
+    margin-bottom: 30px;
   }
 }
 
@@ -320,7 +487,21 @@
   box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
   padding: 0 25px;
   width: 100%;
-  margin-bottom: 30px;
+
+    @include tablets {
+      padding: 0 120px;
+    }
+
+    @include phones {
+      padding: 0 25px;
+      width: 340px;
+    }
+
+    @include iphone {
+      width: 320px;
+      padding: 0 20px;
+    }
+
   &__heading {
     padding: 27px 0;
     font-size: 1.1rem;
@@ -331,8 +512,20 @@
   &__content {
     padding: 45px 0;
     display: flex;
+
+    @include tablets {
+      display: block;
+    }
   }
   &__load {
+    margin-right: 25px;
+    flex-basis: 50%;
+    @include tablets {
+      margin-right: 0;
+      margin-bottom: 60px;
+    }
+  }
+  &__pic {
     flex-basis: 50%;
     height: 275px;
     border: 1px solid #a1a1a1;
@@ -341,7 +534,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 25px;
+
+    @include tablets {
+      margin-bottom: 30px;
+    }
   }
   &__instruction {    
     width: 230px;
@@ -350,6 +546,24 @@
     font-weight: 500;
     line-height: 35px;
     margin-bottom: 25px;
+    text-align: center;
+
+    @include phones {
+      width: 200px;
+    }
+  }
+  &__change {
+    text-align: center;
+    display: none;
+
+    @include tablets {
+      display: block;
+    }
+  }
+  &__link {   
+    color: #383bcf;
+    font-size: 1rem;
+    font-weight: 500;
   }
   &__entry {
     flex-basis: 50%;
@@ -376,6 +590,7 @@
   &__skills {
     display: flex;
     margin-bottom: 40px;
+    flex-wrap: wrap;
   }
   &__item {
     border-radius: 15px;
@@ -384,10 +599,14 @@
     font-size: 0.8rem;
     font-weight: 500;
     margin-right: 10px;
+    margin-bottom: 10px;
     padding: 7px 30px 7px 15px;
     position: relative;
     display: flex;
     align-items: center;
+    &:last-child {
+      margin-right: 0;
+    }
     &:after {
       content: "+";
       position: absolute;
@@ -398,17 +617,34 @@
   }
   &__button {
     text-align: right;
+
+    @include tablets {
+      text-align: center;
+    }
   }
   &__button-cancel {    
     color: #383bcf;
     font-size: 16px;
     font-weight: 700;
     margin-right: 60px;
+
+    @include phones {
+      margin-right: 30px;
+    }
   } 
 }
 
-.add-work{
+.add-work {
   width: 100%;
+
+  @include phones {
+    width: 340px;
+  }
+
+  @include iphone {
+    width: 320px;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -416,19 +652,53 @@
   }
   &__item {
     width: 340px;
-    height: 555px;
     margin-bottom: 30px;
     box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     margin-right: 30px;
+    padding-bottom: 25px;
+
+    @include tablets {
+      margin-right: 20px;
+    }
+
+    @include phones {
+      margin-right: 0;
+    }
+
+    @include iphone {
+      width: 320px;
+    }
+
     &:nth-child(3n) {
       margin-right: 0;
+
+      @include tablets {
+        margin-right: 20px;
+      }
     }
     &--new {
       background: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      height: 555px;
+      padding-bottom: 0;
+
+      @include phones {
+        height: 110px;
+      }
+    }
+    @include tablets {
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+  }
+  &__button-plus {
+    @include phones {
+      display: flex;
       align-items: center;
     }
   }
@@ -445,6 +715,10 @@
   }
   &__content {
     padding: 0 25px;
+
+    @include iphone {
+      padding: 0 20px;
+    }
   }
   &__title {
     font-size: 1.1rem;
@@ -473,12 +747,18 @@
 } 
 
 .review-section {
-  &__container {
-    padding: 50px 0;
-  }
+  width: 100%;
   &__title {
     margin-right: auto;
     margin-bottom: 55px;
+
+    @include iphone {
+      padding: 0 20px;
+      margin-bottom: 40px;
+    }
+  }
+  &__wrapper {
+    margin-bottom: 30px;
   }
 }
 
@@ -487,7 +767,11 @@
   box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
   padding: 0 25px;
   width: 100%;
-  margin-bottom: 30px;
+
+  @include iphone {
+    padding: 0 20px;
+  }
+
   &__heading {
     padding: 27px 0;
     font-size: 1.1rem;
@@ -498,17 +782,30 @@
   &__content {
     display: flex;
     padding: 50px 0;
+
+    @include phones {
+      display: block;
+    }
   }
   &__load {
     flex-basis: 20%;
     margin-right: 30px;
     text-align: center;
+
+    @include phones {
+      margin-right: 0;
+      margin-bottom: 60px;
+    }
   }
   &__avatar {
     width: 200px;
     height: 200px;
     overflow: hidden;
     margin-bottom: 25px;
+
+    @include phones {
+      margin: 0 auto 25px;
+    }
   }
   &__photo {
     width: 100%;
@@ -523,9 +820,22 @@
   &__entry {
     flex-basis: 80%;
     padding-right: 200px;
+
+    @include tablets {
+      padding-right: 0;
+    }
   }
   &__row {
     display: flex;
+
+    @include tablets {
+      display: block;
+      padding-right: 130px;
+    }
+
+    @include phones {
+      padding-right: 0;
+    }
   }
   &__title {
     display: block;    
@@ -571,7 +881,6 @@
   }
   &__item {
     width: 340px;
-    height: 380px;
     margin-bottom: 30px;
     box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -580,8 +889,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    &:nth-child(3n) {
-      margin-right: 0;
+
+    @include tablets {
+      margin-right: 20px;
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
+      &:nth-child(3n) {
+        margin-right: 0;
+
+        @include tablets {
+          margin-right: 20px;
+      }
     }
     &--new {
       background: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
@@ -590,13 +910,30 @@
       justify-content: center;
       align-items: center;
       padding: 0;
+      height: 380px;
+
+      @include phones {
+        height: 110px;
+        margin-right: 0;
+      }
     }
+    
+    @include iphone {
+      width: 320px;
+    }
+  }
+  &__button-plus {
+    @include iphone {
+      display: flex;
+      align-items: center;
+    }
+    
   }
   &__user {
     display: flex;
     padding: 25px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    margin-bottom: -40px;
+    margin-bottom: 20px;
   }
   &__avatar {
     width: 50px;
@@ -624,6 +961,7 @@
     font-weight: 500;
   }
   &__text {
+    height: 100%;
     opacity: 0.7;
     font-size: 1rem;
     font-weight: 500; 
@@ -658,9 +996,10 @@
         .container.header__container
           .header__avatar
             img(src="../images/content/userfiles/avatar.jpg" alt="аватарка").header__photo
-          .header__name Волков Вячеслав
-          .header__info Панель администрирования
-          a(href="#").header__exit Выйти
+          .header__content  
+            .header__name Волков Вячеслав
+            .header__info Панель администрирования
+            a(href="#").header__exit Выйти
       .header__navigation
         .container.header__container
           nav.header__nav
@@ -668,80 +1007,97 @@
             ul.header__list
               each item in menu
                   li.header__item.text
-                      a(href=`#`).header__link #{item}      
-    section.about-section
-      .container.about-section__container
+                      a(href=`#`).header__link #{item}
+    .container                    
+      section.about-section
         .about-section__heading
           h2.title.about-section__title Блок  &laquo;Обо мне&raquo;
           button.about-section__btn Добавить группу
         .about-section__form
-          form.about  
-            .about__head
-              input(type="text" name="name" placeholder="Название новой группы").about__group
-              .about__button
-                button(type="button").about__button-accept
-                  img(src="../images/admin_icons/tick.png")
-                button(type="button").about__button-close
-                  img(src="../images/admin_icons/cross.png")
-            .about__content
-            .about__new-skill
-              input(type="text" name="name" placeholder="Новый навык").about__new-skill_name
-              input(type="number" name="name" min="0" max="100" placeholder="100%").about__new-skill_value
-              button(type="button").about__add +
-          form.about  
-            .about__head
-              input(type="text" name="name" placeholder="Название новой группы" value="Frontend").about__group
-              .about__button
-                button(type="button").about__button-accept
-                  img(src="../images/admin_icons/tick.png")
-                button(type="button").about__button-close
-                  img(src="../images/admin_icons/cross.png")
-            .about__content
-              - 
+          .about-section__item
+            form.about  
+              .about__head
+                input(type="text" name="name" placeholder="Название новой группы").about__group
+                .about__button
+                  button(type="button").about__button-accept
+                    img(src="../images/admin_icons/tick.png")
+                  button(type="button").about__button-close
+                    img(src="../images/admin_icons/cross.png")
+              .about__content
+                - 
+                  var items = []
+                table.about__table
+                    each row in items
+                        tr.about__row
+                            each cell in row
+                                td.about__col #{cell}
+                            td.about__col
+                              button(type="button").about__button-edit
+                                img(src="../images/admin_icons/pencil.png")
+                              button(type="button").about__button-delete
+                                img(src="../images/admin_icons/trash.png") 
+              .about__new-skill
+                input(type="text" name="name" placeholder="Новый навык").about__new-skill_name
+                input(type="number" name="name" min="0" max="100" placeholder="100%").about__new-skill_value
+                button(type="button").about__add +
+          .about-section__item      
+            form.about  
+              .about__head
+                input(type="text" name="name" placeholder="Название новой группы" value="Frontend").about__group
+                .about__button
+                  button(type="button").about__button-accept
+                    img(src="../images/admin_icons/tick.png")
+                  button(type="button").about__button-close
+                    img(src="../images/admin_icons/cross.png")
+              .about__content
+                - 
                   var items = [
                       ['HTML', '30 %'],
                       ['CSS', '50 %',],
                       ['Javascript', '100 %',],
                   ]
-              table.about__table
-                  each row in items
-                      tr.about__row
-                          each cell in row
-                              td.about__col #{cell}
-                          td.about__col
-                            button(type="button").about__button-edit
-                              img(src="../images/admin_icons/pencil.png")
-                            button(type="button").about__button-delete
-                              img(src="../images/admin_icons/trash.png")   
-            .about__new-skill
-              input(type="text" name="name" placeholder="Новый навык").about__new-skill_name
-              input(type="number" name="name" min="0" max="100" placeholder="100%").about__new-skill_value
-              button.about__add +     
-    section.work-section
-      .container.work-section__container
+                table.about__table
+                    each row in items
+                        tr.about__row
+                            each cell in row
+                                td.about__col #{cell}
+                            td.about__col
+                              button(type="button").about__button-edit
+                                img(src="../images/admin_icons/pencil.png")
+                              button(type="button").about__button-delete
+                                img(src="../images/admin_icons/trash.png")   
+              .about__new-skill
+                input(type="text" name="name" placeholder="Новый навык").about__new-skill_name
+                input(type="number" name="name" min="0" max="100" placeholder="100%").about__new-skill_value
+                button.about__add +     
+      section.work-section
         h2.title.work-section__title Блок  &laquo;Работы&raquo;
-        form.work
-          .work__heading Редактирование Работы
-          .work__content
-            .work__load
-              .work__instruction Перетащите или загрузите для загрузки изображения 
-              button.button-oval.work__button загрузить
-            .work__entry
-              label.work__title Название
-                input.work__text(type="text" name="name")
-              label.work__title Ссылка
-                input.work__text(type="text" name="name")
-              label.work__title Описание
-                textarea.work__text.work__text--area(type="textarea" name="name")
-              label.work__title Добавление тэга
-                input.work__text(type="text" name="name")
-              - var tags = ["HTML", "CSS", "Javascript"]
-              .work__skills
-                each item in tags
-                  .work__item #{item}
-              .work__button
-                button(type="button").work__button-cancel Отмена
-                button(type="button").button-oval.work__button-save cохранить  
+        .work-section__wrapper
+          form.work
+            .work__heading Редактирование Работы
+            .work__content
+              .work__load
+                .work__pic
+                  .work__instruction Перетащите или загрузите для загрузки изображения 
+                  button.button-oval.work__button загрузить
+                .work__change
+                  a.work__link Изменить превью 
+              .work__entry
+                label.work__title Название
+                  input.work__text(type="text" name="name")
+                label.work__title Ссылка
+                  input.work__text(type="text" name="name")
+                label.work__title Описание
+                  textarea.work__text.work__text--area(type="textarea" name="name")
+                label.work__title Добавление тэга
+                  input.work__text(type="text" name="name")
+                - var tags = ["HTML", "CSS", "Javascript"]
+                .work__skills
+                  each item in tags
+                    .work__item #{item}
+                .work__button
+                  button(type="button").work__button-cancel Отмена
+                  button(type="button").button-oval.work__button-save cохранить  
         .add-work
           ul.add-work__list
             li.add-work__item.add-work__item--new
@@ -760,27 +1116,27 @@
                       img(src="../images/admin_icons/pencil-blue.png").button-edit__icon
                   button(type="button").button-edit Удалить
                       img(src="../images/admin_icons/cross.png").button-edit__icon
-    section.review-section
-      .container.review-section__container
+      section.review-section
         h2.title.review-section__title Блок  &laquo;Отзывы&raquo;
-        form.review
-          .review__heading Новый отзыв
-          .review__content
-            .review__load
-              .review__avatar
-                img(src="../images/admin_icons/man-user.png").review__photo
-              button.review__button Добавить фото
-            .review__entry
-              .review__row           
-                label.review__title Имя автора
-                  input.review__text(type="text" name="name")
-                label.review__title Титул автора
-                  input.review__text(type="text" name="name")
-              label.review__title Отзыв
-                textarea.review__text.review__text--area(type="textarea" name="name")
-              .review__button
-                button(type="button").review__button-cancel Отмена
-                button(type="button").button-oval.work__button-save Сохранить
+        .review-section__wrapper
+          form.review
+            .review__heading Новый отзыв
+            .review__content
+              .review__load
+                .review__avatar
+                  img(src="../images/admin_icons/man-user.png").review__photo
+                button.review__button Добавить фото
+              .review__entry
+                .review__row           
+                  label.review__title Имя автора
+                    input.review__text(type="text" name="name")
+                  label.review__title Титул автора
+                    input.review__text(type="text" name="name")
+                label.review__title Отзыв
+                  textarea.review__text.review__text--area(type="textarea" name="name")
+                .review__button
+                  button(type="button").review__button-cancel Отмена
+                  button(type="button").button-oval.work__button-save Сохранить
         .add-review
           ul.add-review__list
             li.add-review__item.add-review__item--new
@@ -794,7 +1150,7 @@
                 .add-review__user-info
                   h3.add-review__name Владимир Сабанцев
                   .add-review__position Преподаватель
-              .add-review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах       
+              .add-review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.       
               .add-review__button
                 button(type="button").button-edit Править
                     img(src="../images/admin_icons/pencil-blue.png").button-edit__icon
