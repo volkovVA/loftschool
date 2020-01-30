@@ -20,6 +20,10 @@
         @include phones {
             padding: 100px 0;
         }
+
+        @include Iphone {
+            padding: 50px 0;
+        }
     } 
     
     &__title {
@@ -66,11 +70,13 @@
         border: 1px solid $text-color;
         margin-right: 25px;
         outline: none;
+        transition: $trans-hover; 
         &:last-child {
             margin-right: 0;
         }
         &:hover {
             border-color: $content-color;
+            transition: $trans-hover; 
             .arrow {
                 fill: $content-color;
             }
@@ -137,6 +143,10 @@
         
         @include phones {
             padding: 0;
+        }
+
+        @include Iphone {
+            width: 280px;
         }
     }
 

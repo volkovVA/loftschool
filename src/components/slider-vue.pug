@@ -1,50 +1,55 @@
 script(type="text/x-template")#slider-container
     .slider__wrapper
-        display
-        info
+        display(
+            :works="works"
+            :currentWork="currentWork"
+            @slide="handleSlide"
+        )
+        info(
+            :currentWork="currentWork"
+            :currentIndex="currentIndex"
+        )
         
 script(type="text/x-template")#slider-display
     .slider__display
         .slider__main
-            +image("content/slider/preview-snow.png", "slider__image", "скриншота страницы моего проекта")      
-            preview
-            btns                 
+            img(:src="currentWork.photo", alt="скриншот страницы моего проекта" class="slider__image")    
+            preview(
+                :works="works"
+                :currentWork="currentWork"
+            )
+            btns(
+                @slide="$emit('slide', $event)"
+            )                 
 
 script(type="text/x-template")#slider-preview
     .slider__preview-wrapper  
         ul.slider__preview
-            li.slider__item.slider__item--active
+            li.slider__item(
+                v-for="work in works"
+                :class="{active: work.id === currentWork.id}"
+            )
                 button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
-                    +image("content/slider/miniature-snow.png", "slider__image", "миниатюра скриншота страницы моего проекта")
-            li.slider__item
-                button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
-                    +image("content/slider/miniature-home.png", "slider__image", "миниатюра скриншота страницы моего проекта")
-            li.slider__item
-                button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
-                    +image("content/slider/miniature-car.png", "slider__image", "миниатюра скриншота страницы моего проекта")
-            li.slider__item
-                button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
-                    +image("content/slider/miniature-mountains.png", "slider__image", "миниатюра скриншота страницы моего проекта")
-
-
+                    img(:src="work.photo" alt="миниатюра скриншота страницы моего проекта" class="slider__image")
+            
 script(type="text/x-template")#slider-button
     .slider__button
-        button(type="button" aria-label="следующий слайд").slider__button-arrow
+        button(@click.prevent="$emit('slide', 'next')" type="button" aria-label="следующий слайд").slider__button-arrow
             +icon("arrow-down", "arrow arrow--next")                  
-        button(type="button" aria-label="предыдущий слайд").slider__button-arrow
+        button(@click.prevent="$emit('slide', 'prev')" type="button" aria-label="предыдущий слайд").slider__button-arrow
             +icon("arrow-down", "arrow arrow--prev")
 
 script(type="text/x-template")#slider-content
     .slider__content
-        .slider__counter 2         
+        .slider__counter {{currentIndex+1}}       
         .slider__desc
-            tags
-            h3.slider__subtitle Сайт школы образования
-            p.slider__text.text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-            a.slider__link(href="#") Посмотреть сайт
+            tags(
+                :tags="tagsArray"
+            )
+            h3.slider__subtitle {{currentWork.title}}
+            p.slider__text.text {{currentWork.desc}}
+            a(:href="currentWork.link").slider__link Посмотреть сайт
 
 script(type="text/x-template")#slider-tags 
-    - var tags = ["HTML", "CSS", "Javascript"]
-        .slider__skills
-            each item in tags
-                .slider__item_skills.text #{item}               
+    .slider__skills
+            .slider__item_skills.text(v-for="tag in tags") {{tag}}               

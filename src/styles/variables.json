@@ -6,5 +6,7 @@
   "bp-desktop": "1200px",
   "bp-desktop-ipad": "1024px",
   "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-phones": "480px",
+  "bp-iphone": "320px",
+  "trans-hover": "0.2s ease"
 }

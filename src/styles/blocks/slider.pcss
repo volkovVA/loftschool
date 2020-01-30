@@ -1,7 +1,6 @@
 .slider {
     &__container {
         padding: 200px 0;
-
         @include desktop {
             padding: 142px 26px 154px;
         }
@@ -12,6 +11,10 @@
         
         @include phones {
             padding: 115px 0;
+        }
+
+        @include Iphone {
+            padding: 50px 0;
         }
     }
     
@@ -64,7 +67,7 @@
     &__content {
         flex-basis: 34%;
         display: flex;
-        padding-left: 113px;
+        padding-left: 118px;
         position: relative;
         color: #000;
 
@@ -82,7 +85,7 @@
         top: 388px;
         overflow: hidden;
         width: 704px;
-        height: 106px;
+        height: 104px;
         right: 0;
 
         @include desktop {
@@ -136,7 +139,8 @@
 
     &__image {
         height: 100%;
-        width: 100%;    
+        width: 100%;
+        object-fit: cover;    
     }
 
     &__button {
@@ -151,8 +155,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: $trans-hover; 
             &:hover {
                 background-color: $content-color;
+                transition: $trans-hover; 
                 .arrow {
                     fill: #000;
                 }
@@ -188,11 +194,16 @@
             right: -26px;
             bottom: 0;
         }
+
+        @include Iphone {
+            right: -10px;
+        }
     }
 
     &__preview {
         display: flex;
         position: absolute;
+        height: 104px;
     }
 
     &__desc {
@@ -210,14 +221,17 @@
     }
     
     &__item {
+        position: relative;
         width: 176px;
-        &--active {
+        transition: $trans-hover; 
+        &.active {
             outline: 3px solid $content-color;
             outline-offset: -3px;
         }
         &:hover {
             outline: 3px solid $content-color;
             outline-offset: -3px;
+            transition: $trans-hover; 
         }
 
         @include tablets {
@@ -264,7 +278,7 @@
         
         @include phones {
             margin-bottom: 15px;
-            width: 200px;
+            width: 300px;
             line-height: 38px;
         }
 
@@ -291,11 +305,12 @@
 
         @include phones {
             text-align: left;
+            margin: 0 10px 20px;
         }
 
         @include phonesLand {
             text-align: center;
-        } 
+        }
     } 
 
     &__counter {       
@@ -334,9 +349,11 @@
         position: relative;
         padding-left: 35px;
         width: 57%;
-        border-bottom: 1px solid transparent; 
+        border-bottom: 1px solid transparent;
+        transition: $trans-hover;  
         &:hover { 
-            border-bottom: 1px solid $links-color;   
+            border-bottom: 1px solid $links-color; 
+            transition: $trans-hover;   
         }
         &:before {
             content: "";
