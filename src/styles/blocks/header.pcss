@@ -1,16 +1,24 @@
 .header {
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 1;
+    padding: 50px 0;
+    transition: $trans-header;
+
+    &.active {
+        padding: 15px 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 1px 40px $text-color;
+        transition: $trans-header;
+        @include phones {
+            padding: 10px 0;
+        }
+    }
+
     &__container {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 50px 0;
-
-        @include phones {
-            padding: 20px 0;
-        }
     }
     &__menu {
         @include tablets {

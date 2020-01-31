@@ -19,7 +19,7 @@
     }
     
     &__title {       
-        color: #333c49;
+        color: $grey-color;
         margin-bottom: 90px;
         margin-right: auto;
 
@@ -69,7 +69,7 @@
         display: flex;
         padding-left: 118px;
         position: relative;
-        color: #000;
+        color: $black-color;
 
         @include tablets {
             padding-left: 0;
@@ -151,7 +151,7 @@
         &-arrow {
             width: 52px;
             height: 52px;
-            background-color: #353e4e;
+            background-color: $dark-grey-color;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -160,7 +160,7 @@
                 background-color: $content-color;
                 transition: $trans-hover; 
                 .arrow {
-                    fill: #000;
+                    fill: $black-color;
                 }
             }
 
@@ -258,7 +258,7 @@
         align-items: center;  
         opacity: 1;
         padding: 13px 20px;
-        background-color: #f3f5f9;
+        background-color: $light-grey-color;
         border-radius: 25%/50%;
         margin-right: 17px;
         &:last-child {
@@ -314,7 +314,8 @@
     } 
 
     &__counter {       
-        color: #e6e6e6;
+        color: $grey-color;
+        opacity: 0.3;
         font-size: 25rem;
         font-weight: 800;
         position: absolute;

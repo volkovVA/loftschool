@@ -15,6 +15,8 @@ import "./scripts/slider";
 
 import "./scripts/reviews";
 
+import headerFix from "./scripts/headerFix";
+
 import anchorScroll from "./scripts/anchorScroll";
 
 inputValue();
@@ -26,3 +28,5 @@ parallax('.js-leaf-area');
 popupMenu();
 
 anchorScroll();
+
+headerFix('.js-header');
