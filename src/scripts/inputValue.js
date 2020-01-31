@@ -6,6 +6,7 @@ export default function inputValue () {
     item.addEventListener('change', () => {
       if (item.value.length) {
         item.classList.add(active);
+        item.previousElementSibling.classList.remove('active');
       } else {
         item.classList.remove(active);
       }

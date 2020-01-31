@@ -15,6 +15,8 @@ import "./scripts/slider";
 
 import "./scripts/reviews";
 
+import "./scripts/form";
+
 import headerFix from "./scripts/headerFix";
 
 import anchorScroll from "./scripts/anchorScroll";

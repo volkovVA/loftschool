@@ -66,7 +66,6 @@ new Vue ({
             });
         },
         handleSlide(direction) {
-            console.log(direction);
             switch(direction) {
                 case "next":
                     this.currentIndex++;

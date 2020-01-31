@@ -1055,7 +1055,7 @@ li {
     height: 20px;
     cursor: pointer;
   }  
-  &--active {
+  &.active {
     display: flex;
   } 
 }
@@ -1063,7 +1063,7 @@ li {
 
 <template lang="pug">
   .content
-    .popup.popup--active
+    .popup
       .popup__container
         .popup__title Авторизация
         form.popup__form
