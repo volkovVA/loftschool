@@ -15,5 +15,6 @@
   "bp-phones": "480px",
   "bp-iphone": "320px",
   "trans-hover": "0.2s ease",
-  "trans-header": "0.5s ease"
+  "trans-header": "0.5s ease",
+  "trans-slider": "0.8s ease"
 }

@@ -93,6 +93,7 @@
         position: absolute;
         bottom: 17px;    
         padding-left: 50px;
+        transition: $trans-hover;
     }
 
     &__icon {
@@ -102,6 +103,7 @@
         height: 30px;
         fill: $grey-color;
         z-index: 1;
+        transition: $trans-hover;
     }
 
     &__input {
@@ -116,10 +118,15 @@
         color: $text-color;
         font-size: 1.1rem;
         font-weight: 700;
+        transition: $trans-hover;
         &:focus {
+            border-bottom: 2px solid $content-color;
+            transition: $trans-hover;
             + .form__icon {
+                transition: $trans-hover;
                 fill: $content-color;
                 &--textarea {
+                    transition: $trans-hover;
                     bottom: 35px;
 
                     @include phones {
@@ -129,6 +136,7 @@
             }
             ~ .form__text {
                 bottom: 65px;
+                transition: $trans-hover;
                 &--textarea {
                     bottom: 85px;
                 }
@@ -137,9 +145,11 @@
         &--active {
             + .form__icon {
                 fill: $content-color;
+                transition: $trans-hover;
             }
             ~ .form__text {
                 bottom: 65px;
+                transition: $trans-hover;
             }
         }
     }
@@ -171,9 +181,11 @@
             display: block;
             + .form__input {
                 border-bottom: 2px solid $red-color;
+                transition: $trans-hover;
             } 
             ~ .form__icon {
                 fill: $red-color;
+                transition: $trans-hover;
             } 
         }
     }

@@ -4,6 +4,7 @@ script(type="text/x-template")#slider-container
             :works="works"
             :currentWork="currentWork"
             @slide="handleSlide"
+            :currentIndex='currentIndex'
         )
         info(
             :currentWork="currentWork"
@@ -17,26 +18,42 @@ script(type="text/x-template")#slider-display
             preview(
                 :works="works"
                 :currentWork="currentWork"
+                :currentIndex='currentIndex'
+                @slide='handleSlide'
             )
             btns(
+                :worksLength='works.length'
+                :currentIndex='currentIndex'
                 @slide="$emit('slide', $event)"
             )                 
 
 script(type="text/x-template")#slider-preview
     .slider__preview-wrapper  
-        ul.slider__preview
+        ul.slider__preview(:style='{transform: `translateX(-${translate}%)`}')
             li.slider__item(
-                v-for="work in works"
-                :class="{active: work.id === currentWork.id}"
+                v-for='work, index in works'
+                :key='work.id'
+                @click='$emit("slide", index)' 
+                :class='{active: work.id === currentWork.id}'      
             )
                 button(type="button" aria-label="миниатюра слайдера" tabindex="-1").slider__preview-btn
                     img(:src="work.photo" alt="миниатюра скриншота страницы моего проекта" class="slider__image")
             
 script(type="text/x-template")#slider-button
     .slider__button
-        button(@click.prevent="$emit('slide', 'next')" type="button" aria-label="следующий слайд").slider__button-arrow
+        button(
+                @click.prevent="$emit('slide', 'next')"
+                :disabled='currentIndex >= (worksLength - 1)'
+                type="button" 
+                aria-label="следующий слайд"
+            ).slider__button-arrow
             +icon("arrow-down", "arrow arrow--next")                  
-        button(@click.prevent="$emit('slide', 'prev')" type="button" aria-label="предыдущий слайд").slider__button-arrow
+        button(
+                @click.prevent="$emit('slide', 'prev')"
+                :disabled='currentIndex <= 0' 
+                type="button" 
+                aria-label="предыдущий слайд"
+            ).slider__button-arrow
             +icon("arrow-down", "arrow arrow--prev")
 
 script(type="text/x-template")#slider-content

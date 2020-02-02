@@ -140,7 +140,7 @@
     &__image {
         height: 100%;
         width: 100%;
-        object-fit: cover;    
+        object-fit: cover; 
     }
 
     &__button {
@@ -162,7 +162,17 @@
                 .arrow {
                     fill: $black-color;
                 }
+                &:disabled {
+                    background-color: $dark-grey-color;
+                }
             }
+
+            &:disabled {
+                .arrow {
+                    fill: $black-color;
+                }
+            }
+            
 
             @include tablets {
                 width: 45px;
@@ -204,6 +214,7 @@
         display: flex;
         position: absolute;
         height: 104px;
+        transition: $trans-slider; 
     }
 
     &__desc {

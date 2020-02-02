@@ -1,12 +1,22 @@
 import Vue from "vue";
 
-const preview = {
-    template: "#slider-preview",
-    props: ["works", "currentWork"]
+const btns = {
+    template: "#slider-button",
+    props: ["currentIndex", "worksLength"]  
 };
 
-const btns = {
-    template: "#slider-button"
+const preview = {
+    template: "#slider-preview",
+    props: ["works", "currentWork", "currentIndex"],
+    computed: {
+        translate() {
+            const step = 100 / this.works.length;
+
+            if (this.currentIndex >= this.works.length - 1) return;
+            else if (this.currentIndex < 3) return 0;
+            else if (this.currentIndex >= 3) return step * (this.currentIndex - 2);
+        }
+    }
 };
 
 const display = {
@@ -14,12 +24,12 @@ const display = {
     components: {
         preview, btns
     },
-    props: ["works", "currentWork"],
-    // computed: {
-    //     reversedWorks() {
-    //         return [...this.works].reverse();
-    //     }
-    // }
+    props: ["works", "currentWork", "currentIndex"],
+    methods: {
+        handleSlide(direction) {
+            this.$emit('slide', direction);
+        }
+    }
 };
 
 const tags = {
@@ -57,6 +67,11 @@ new Vue ({
             return this.works[this.currentIndex]
         }
     },
+    watch: {
+        currentIndex(value) {
+            this.updateCurrentIndex(value);
+        }
+    },
     methods: {
         makeArrWithRequiredImages(data) {
             return data.map(item => {
@@ -73,19 +88,27 @@ new Vue ({
                 case "prev":
                     this.currentIndex--;
                     break;
+                default:
+                    this.currentIndex = direction;
+                    break;    
             }            
         },
-        makeInfiniteLoopForIndex(value) {
-            const worksAmountComputedCounted = this.works.length - 1;
-            if (value > worksAmountComputedCounted) this.currentIndex = 0;
-            if(value < 0) this.currentIndex = worksAmountComputedCounted;
+        updateCurrentIndex(value) {
+            if (value >= this.works.length - 1) {
+                this.currentIndex = this.works.length - 1;
+            } else if (value <= 0) this.currentIndex = 0;
         },
+        // makeInfiniteLoopForIndex(value) {
+        //     const worksAmountComputedCounted = this.works.length - 1;
+        //     if (value > worksAmountComputedCounted) this.currentIndex = 0;
+        //     if(value < 0) this.currentIndex = worksAmountComputedCounted;
+        // },
     },
-    watch: {
-        currentIndex(value) {
-            this.makeInfiniteLoopForIndex(value)
-        }
-    },
+    // watch: {
+    //     currentIndex(value) {
+    //         this.makeInfiniteLoopForIndex(value)
+    //     }
+    // },
     created() {
         const data = require("../data/works.json");
         this.works = this.makeArrWithRequiredImages(data);

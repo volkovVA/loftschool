@@ -1,26 +1,28 @@
-const loadButton = document.querySelector('.js-form-btn');
+import closedPopup from "./closedPopup.js";
+
 const myForm = document.querySelector('.js-form');
-const modalWindow = document.querySelector('.popup__title');
-const errors = document.querySelectorAll('.form__error');
-const popup = document.querySelector(".popup");
-const closeBtn = popup.querySelector(".popup__close");
+const loadButton = document.querySelector('.js-form-btn');
+const errors = document.querySelectorAll('.js-form-error');
+const popup = document.querySelector(".js-popup");
+const popupTitle = document.querySelector('.js-popup-title');
 
 
 function sendForm() {
     event.preventDefault();
     if(chechVal(myForm)) {
-        const formData = new FormData(myForm);
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+        let formData = new FormData(myForm);
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'form.txt');
         xhr.send(formData);
         xhr.addEventListener('load', function() {
+            console.log(xhr.response);
             if (xhr.response) {
                 popup.classList.add('active');
-                modalWindow.innerText = 'Сообщение отправлено';
+                popupTitle.innerText = 'Сообщение отправлено';
                 console.log(JSON.parse(xhr.response));
             } else {
                 popup.classList.add('active');
-                modalWindow.innerText = 'Сообщение не отправлено';
+                popupTitle.innerText = 'Сообщение не отправлено';
             } 
         });
     };
@@ -41,29 +43,37 @@ function chechVal(form) {
 }
 
 function chechValFild(field) {
-    errors.forEach((error) => {
-        if(!field.checkValidity()) {
+    if(!field.checkValidity()) {
+        errors.forEach((error) => {
             error.textContent = field.validationMessage;
             error.classList.add('active');
+        });
             return false;
-        } else {
+    } else {
+        errors.forEach((error) => {
             error.textContent = '';
             error.classList.remove('active');
+        });
             return true;
-        }
-    });   
+    }  
 }
 
+// function chechValFild(field) {
+//     errors.forEach((error) => {
+//         if(!field.checkValidity()) {
+//             error.textContent = field.validationMessage;
+//             error.classList.add('active');
+//             return false;
+//         } else {
+//             error.textContent = '';
+//             error.classList.remove('active');
+//             return true;
+//         }
+//     });    
+// }
 
-closeBtn.addEventListener("click", function(e) {
-  e.preventDefault();
-  popup.style.display = "none";
-});
-popup.addEventListener("click", function(e) {
-    if (e.target === popup) {
-      closeBtn.click();
-    }
-});
+closedPopup();
 
 loadButton.addEventListener('click', sendForm)
+
 

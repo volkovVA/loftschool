@@ -17,9 +17,13 @@ import "./scripts/reviews";
 
 import "./scripts/form";
 
+import hoverScroll from "./scripts/hoverScroll";
+
 import headerFix from "./scripts/headerFix";
 
 import anchorScroll from "./scripts/anchorScroll";
+
+hoverScroll();
 
 inputValue();
 
@@ -32,3 +36,4 @@ popupMenu();
 anchorScroll();
 
 headerFix('.js-header');
+
