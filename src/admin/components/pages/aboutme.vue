@@ -5,11 +5,11 @@
       button.about-section__btn Добавить группу
     .about-section__form
       .about-section__item
-        form.about  
+        form(@submit.prevent="addNewCategory").about  
           .about__head
-            input(type="text" name="name" placeholder="Название новой группы").about__group
+            input(type="text" name="name" placeholder="Название новой группы" v-model="title").about__group
             .about__button
-              button(type="button").about__button-accept
+              button(type="submit").about__button-accept
                 img(src="../../../images/admin_icons/tick.png")
               button(type="button").about__button-close
                 img(src="../../../images/admin_icons/cross.png")
@@ -62,25 +62,25 @@
             button.about__add +
 </template>
 
+<script>
+import { mapActions } from "vuex";
+export default {
+  data: () => ({
+    title: ""
+  }),
+  methods: {
+    ...mapActions("categories", ["addCategory"]),
+    addNewCategory() {
+      this.addCategory(this.title);
+    }
+  }
+}
+</script>  
+
+
 <style lang="postcss" scoped>
 
-  @mixin tablets() {
-    @media screen and (max-width: 768px) {
-      @content;
-    }
-  }
-
-  @mixin phones() {
-    @media screen and (max-width: 460px) {
-      @content;
-    }
-  }
-
-  @mixin iphone() {
-    @media screen and (max-width: 320px) {
-      @content;
-    }
-  }
+  @import "../../../styles/mixins-admin.pcss";
 
   .about-section {
     padding: 50px 0;

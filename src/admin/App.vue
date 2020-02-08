@@ -8,7 +8,6 @@
 </template>
 
 <script>
-  
   export default {
     components:{
       appHeader: () => import("./components/header")
