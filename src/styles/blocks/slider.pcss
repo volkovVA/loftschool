@@ -95,14 +95,13 @@
         
         @include phonesLand {
             top: 220px;
-            width: 528px;
+            width: 451px;
         }
 
         @include tablets {
-            right: 66px;
+            right: 65px;
             top: 218px;
             width: 453px;
-            height: 89px;
         }
 
         @include phones {
@@ -155,15 +154,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: $trans-hover; 
+            transition: background-color $trans-hover; 
             &:hover {
                 background-color: $content-color;
-                transition: $trans-hover; 
                 .arrow {
                     fill: $black-color;
                 }
                 &:disabled {
                     background-color: $dark-grey-color;
+                    cursor: auto;
                 }
             }
 
@@ -175,13 +174,13 @@
             
 
             @include tablets {
-                width: 45px;
-                height: 45px;
+                width: 52px;
+                height: 52px;
             } 
 
             @include phonesLand {
-                width: 45px;
-                height: 45px;
+                width: 52px;
+                height: 52px;
             } 
         }
         
@@ -191,13 +190,13 @@
         }
 
         @include phonesLand {
-            right: -42px;
-            bottom: 49px;
+            right: -51px;
+            bottom: 106px;
         } 
 
         @include tablets {
-            right: 21px;
-            bottom: 45px;
+            right: 13px;
+            bottom: 32px;
         }
         
         @include phones {

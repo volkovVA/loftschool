@@ -1,13 +1,7 @@
 script(type="text/x-template")#reviews-container
     section.reviews#reviews.js-section
         .container.reviews__container
-            .reviews__wrapper
-                h2.title.reviews__title Что обо мне говорят
-                .reviews__button
-                    button(@click="previous()" type="button" aria-label="следующий отзыв").reviews__arrow
-                        +icon("arrow-down", "arrow arrow--prev") 
-                    button(@click="next()" type="button" aria-label="предыдущий слайд").reviews__arrow
-                        +icon("arrow-down", "arrow arrow--next")     
+            h2.title.reviews__title Что обо мне говорят   
             .reviews__slider
                 ul.reviews__list
                     flickity(class="reviews__flikity-list" ref="flickity", :options="flickityOptions")

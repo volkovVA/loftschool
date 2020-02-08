@@ -51,38 +51,6 @@
         }
     }
 
-    &__button {
-        display: flex;
-        z-index: 1;
-        @include phones {
-            justify-content: center;
-        }
-    }
-
-    &__arrow {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        background-color: transparent;
-        border-radius: 50%;
-        border: 1px solid $text-color;
-        margin-right: 25px;
-        outline: none;
-        transition: $trans-hover; 
-        &:last-child {
-            margin-right: 0;
-        }
-        &:hover {
-            border-color: $content-color;
-            transition: $trans-hover; 
-            .arrow {
-                fill: $content-color;
-            }
-        }
-    }  
-
     &__text {       
         line-height: 30px;
         margin-bottom: 26px;
@@ -100,7 +68,68 @@
     &__list {
         &:last-child {
             margin-right: 0;
-        } 
+        }
+        & .flickity-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            top: -53%;
+            left: 42%;
+            border-radius: 50%;
+            border: 1px solid $text-color;
+            background: transparent;
+            transition: $trans-hover;
+
+            @include desktop {
+                left: 53%;
+            }
+
+            @include tablets {
+                left: 59%;
+                top: -37%;
+            }
+
+            @include phones {
+                display: none;
+            }
+
+            @include phonesLand {
+                display: none;
+            } 
+
+            &:hover {
+                border-color: $content-color;
+                background-color: transparent;
+
+                .arrow {
+                    fill: $content-color;
+                }
+            }
+
+            .flickity-button-icon {
+                width: 15px;
+                height: 15px;
+                position: static;
+            }
+        }
+        & .flickity-prev-next-button.previous {
+            left: 37%;
+
+            @include desktop {
+                left: 46%;
+            }
+            
+            @include tablets {
+                left: 49%;
+            } 
+        }
+    }
+
+    &__slider {
+        position: relative;
+        z-index: 1;
     }
 
     &__item {

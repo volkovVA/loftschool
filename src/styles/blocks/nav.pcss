@@ -1,5 +1,5 @@
 .nav {
-
+    
     &__list {
         display: flex;
         flex-wrap: wrap;
@@ -18,13 +18,15 @@
     }
     
     &__link {
-        padding: 10px 0 30px;
+        padding: 10px 0 20px;
+        border-bottom: 1px solid transparent;
         transition: $trans-hover; 
+
         &:hover {
             color: $content-color;
-            border-bottom: 1px solid $content-color;
-            transition: $trans-hover;   
+            border-bottom-color: $content-color;
         }
+
         &.active {
             color: $content-color;
         }

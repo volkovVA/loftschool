@@ -16,24 +16,10 @@
         &:last-child {
             margin-right: 0;
         }
-    }
 
-    &__icon {
-        width: 23px;
-        height: 23px;
-        fill: $grey-color;
-    }
-    
-    &__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 12px;
-        transition: $trans-hover; 
         &:hover {
             .socials__icon {
                 fill: $content-color;
-                transition: $trans-hover; 
             }
         }
     }
@@ -44,10 +30,28 @@
         height: 50px;
         border-radius: 50%;
         border: 1px solid $grey-color;
-        transition: $trans-hover; 
+        transition: border-color $trans-hover; 
+        
         &:hover {
             border-color: $content-color;
-            transition: $trans-hover; 
+
+            .socials__icon {
+                fill: $content-color;
+            }
         }
+    }
+
+    &__icon {
+        width: 23px;
+        height: 23px;
+        fill: $grey-color;
+        transition: fill $trans-hover; 
+    }
+    
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
     }
 }

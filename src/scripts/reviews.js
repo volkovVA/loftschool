@@ -11,21 +11,11 @@ new Vue({
   data() {
     return {
       flickityOptions: {
-        initialIndex: 0,
-        prevNextButtons: false,
+        prevNextButtons: true,
         pageDots: false,
         cellAlign: 'left',
+        freeScroll: true,
       }
-    }
-  },
-  
-  methods: {
-    next() {
-      this.$refs.flickity.next();
-    },
-    
-    previous() {
-      this.$refs.flickity.previous();
     }
   }
 });
