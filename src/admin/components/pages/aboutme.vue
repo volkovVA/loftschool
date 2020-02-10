@@ -27,6 +27,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
+import { ClipLoader } from '@saeris/vue-spinners';
 import * as variables from '../../../styles/variables.json';
 import PageTitle from '../PageTitle.vue';
 import BasicButton from '../BasicButton.vue';

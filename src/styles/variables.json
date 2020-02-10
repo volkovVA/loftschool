@@ -13,6 +13,7 @@
   "success-color": "#00d70a",
   "success-notify": "#4bb133",
   "danger-color": "#bf2929",
+  "placeholder-color": "#dee4ed",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-desktop-ipad": "1024px",
