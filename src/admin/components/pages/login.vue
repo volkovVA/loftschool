@@ -2,21 +2,48 @@
   .popup
     .popup__container
       .popup__title Авторизация
-      form.popup__form
+      form(@submit.prevent="login").popup__form
         label.popup__text Логин
-          input.popup__input(type="text" name="name")
-          img(src="../images/admin_icons/avatar.png" role="presentation").popup__icon
+          input.popup__input(type="text" name="name" v-model="user.name")
+          img(src="../../../images/admin_icons/avatar.png" role="presentation").popup__icon
         label.popup__text Пароль
-          input.popup__input(type="text" name="name")
-          img(src="../images/admin_icons/key.png" role="presentation").popup__icon
-      button.button-oval.popup__close Закрыть
+          input.popup__input(type="text" name="name" v-model="user.password")
+          img(src="../../../images/admin_icons/key.png" role="presentation").popup__icon
+        button(type="submit").button-oval.popup__close отправить
       <svg class="popup__cross" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
         <g><path d="M585.8,500l385.9-385.9c24.5-24.5,24.5-61.3,0-85.8c-24.5-24.5-61.3-24.5-85.8,0L500,414.3L114.1,28.4c-24.5-24.5-61.2-24.5-85.8,0c-24.5,24.5-24.5,61.3,0,85.8L411.2,500L28.4,885.9c-24.5,24.5-24.5,61.3,0,85.8c9.2,12.3,27.6,18.4,42.9,18.4c15.3,0,30.6-6.1,42.9-18.4L500,585.8l385.9,385.9c12.3,12.3,27.6,18.4,42.9,18.4s30.6-6.1,42.9-18.4c24.5-24.5,24.5-61.3,0-85.8L585.8,500z"/></g>
       </svg>
 </template>
 
+<script>
+  import $axios from "../../requests";
+  export default {
+    data: ()=> ({
+      user: {
+        name: "",
+        password: ""
+      }
+    }),
+    methods: {
+      async login() {
+        try {
+          const response = await $axios.post("/login", this.user);
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+          this.$router.replace("/");
+          $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+          console.log(response);
+        } catch (error) {
+          
+        }
+      }
+    }
+  }
+</script>
 
 <style lang="postcss" scoped>
+
+   @import "../../../styles/mixins-admin.pcss";
 
   .popup {
     position: fixed;
@@ -25,7 +52,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0,0,0,.7);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
@@ -69,6 +96,8 @@
     &__close {
         padding: 34px 120px;
         border-radius: 50px;
+        margin-left: 50%;
+        transform: translateX(-50%);
         @include phones {
         padding: 34px 75px;
         } 
@@ -85,9 +114,6 @@
         height: 20px;
         cursor: pointer;
     }  
-    &.active {
-        display: flex;
-    } 
   }
 
 </style>

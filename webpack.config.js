@@ -31,7 +31,10 @@ module.exports = (env, argv) => {
     exclude: /node_modules/,
     options: {
       presets: ['@babel/preset-env'],
-      plugins: ["@babel/plugin-syntax-dynamic-import"]
+      plugins: [
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-syntax-dynamic-import"
+      ]
     }
   };
 
@@ -86,7 +89,7 @@ module.exports = (env, argv) => {
   const config = {
     entry: {
       main: "./src/main.js",
-      admin: "./src/admin/main.js"
+      admin: "./src/admin/main.js",
     },
     output: {
       path: path.resolve(__dirname, "./dist"),

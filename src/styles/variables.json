@@ -3,11 +3,16 @@
   "black-color": "#000",
   "links-color": "#4b6fd7",
   "content-color": "#ff9a00",
+  "dark-content-color": "#de8e14",
   "footer-color": "#1b1f22",
   "grey-color": "#716b66",
   "dark-grey-color": "#303031",
   "light-grey-color": "#f3f5f9",
   "red-color": "#b60000",
+  "admin-text-color": "#2d3c4e",
+  "success-color": "#00d70a",
+  "success-notify": "#4bb133",
+  "danger-color": "#bf2929",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-desktop-ipad": "1024px",
@@ -16,5 +21,7 @@
   "bp-iphone": "320px",
   "trans-hover": "0.2s ease",
   "trans-header": "0.5s ease",
-  "trans-slider": "0.8s ease"
+  "trans-slider": "0.8s ease",
+  "primary-gradient": "linear-gradient(to right, #ea7400 0%, #f29400 100%)",
+  "reverse-gradient": "linear-gradient(to right, #ff7f00 0%, #ff9d00 100%)"
 }

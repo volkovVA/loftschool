@@ -2,78 +2,155 @@
   section.about-section
     .about-section__heading
       h2.title.about-section__title Блок  &laquo;Обо мне&raquo;
-      button.about-section__btn Добавить группу
-    .about-section__form
-      .about-section__item
-        form(@submit.prevent="addNewCategory").about  
-          .about__head
-            input(type="text" name="name" placeholder="Название новой группы" v-model="title").about__group
-            .about__button
-              button(type="submit").about__button-accept
-                img(src="../../../images/admin_icons/tick.png")
-              button(type="button").about__button-close
-                img(src="../../../images/admin_icons/cross.png")
-          .about__content
-            - 
-              var items = []
-            table.about__table
-                each row in items
-                    tr.about__row
-                        each cell in row
-                            td.about__col #{cell}
-                        td.about__col
-                          button(type="button").about__button-edit
-                            img(src="../../../images/admin_icons/pencil.png")
-                          button(type="button").about__button-delete
-                            img(src="../../../images/admin_icons/trash.png") 
-          .about__new-skill
-            input(type="text" name="name" placeholder="Новый навык").about__new-skill_name
-            input(type="number" name="name" min="0" max="100" placeholder="100%").about__new-skill_value
-            button(type="button").about__add +
-      .about-section__item      
-        form.about  
-          .about__head
-            input(type="text" name="name" placeholder="Название новой группы" value="Frontend").about__group
-            .about__button
-              button(type="button").about__button-accept
-                img(src="../../../images/admin_icons/tick.png")
-              button(type="button").about__button-close
-                img(src="../../../images/admin_icons/cross.png")
-          .about__content
-            - 
-              var items = [
-                  ['HTML', '30 %'],
-                  ['CSS', '50 %',],
-                  ['Javascript', '100 %',],
-              ]
-            table.about__table
-                each row in items
-                    tr.about__row
-                        each cell in row
-                            td.about__col #{cell}
-                        td.about__col
-                          button(type="button").about__button-edit
-                            img(src="../../../images/admin_icons/pencil.png")
-                          button(type="button").about__button-delete
-                            img(src="../../../images/admin_icons/trash.png")   
-          .about__new-skill
-            input(type="text" name="name" placeholder="Новый навык").about__new-skill_name
-            input(type="number" name="name" min="0" max="100" placeholder="100%").about__new-skill_value
-            button.about__add +
+      button(@click="showNewSkill" v-if="!isShowNewSkill").about-section__btn Добавить группу
+    .about-section__content
+      .about-section__skill-group(v-if="isShowNewSkill")
+        new-skill-group(
+          @create-category="createCategory"
+          @reset="isShowNewSkill = false"
+        )
+      .about-section__skill-group(
+        v-for="category in categories"
+      )
+        skill-group(
+          :key="category.id"
+          :title="category.category"
+          :category-id="category.id"
+          :skills="skillsByCategory[category.id]"
+          @update-category="updateCategory(category.id, $event)"
+          @delete-group="deleteSkillGroup(category.id)"
+          @add-skill="createSkill(category.id, $event)"
+          @update-skill="updateSkill"
+          @delete-skill="deleteSkill"
+        )
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
+import * as variables from '../../../styles/variables.json';
+import PageTitle from '../PageTitle.vue';
+import BasicButton from '../BasicButton.vue';
+import NewSkillGroup from '../NewSkillGroup';
+import SkillGroup from '../SkillGroup.vue';
 export default {
-  data: () => ({
-    title: ""
-  }),
-  methods: {
-    ...mapActions("categories", ["addCategory"]),
-    addNewCategory() {
-      this.addCategory(this.title);
+  components: {
+    NewSkillGroup,
+    SkillGroup,
+    PageTitle,
+    BasicButton,
+    NewSkillGroup,
+    SkillGroup
+  },
+  data() {
+    return {
+      isShowNewSkill: false,
+      isLoading: false,
+      accentColor: variables['content-color']
     }
-  }
+  },
+  computed: {
+    ...mapState('skills', {
+      categories: (state) => state.categories,
+      skills: (state) => state.skills,
+    }),
+    skillsByCategory() {
+      const result = {};
+      this.categories.forEach((category) => {
+        result[category.id] = [];
+      });
+      this.skills.forEach((skill) => {
+        if (result[skill.category]) {
+          result[skill.category].push(skill);
+        }
+      });
+      return result;
+    }
+  },
+  methods: {
+    ...mapActions('tooltips', ['showTooltip']),
+    ...mapActions('skills', [
+      'fetchSkills',
+      'addSkill',
+      'editSkill',
+      'removeSkill',
+      'fetchCategories',
+      'addNewSkillGroup',
+      'updateSkillGroup',
+      'removeSkillGroup',
+    ]),
+    showNewSkill() {
+      this.isShowNewSkill = true;
+    },
+    hideNewSkill() {
+      this.isShowNewSkill = false;
+    },
+    async createCategory(value) {
+      try {
+        await this.addNewSkillGroup(value);
+        this.showTooltip({ type: 'success', text: 'Группа успешно добавлена', duration: 3000 });
+      } catch (e) {
+        this.showTooltip({ type: 'error', text: e.message, duration: 3000 });
+      }
+      this.isShowNewSkill = false;
+    },
+    async updateCategory(id, title) {
+      const sourceCategory = this.categories.find((item) => item.id);
+      if (sourceCategory && sourceCategory.category === title) {
+        return;
+      }
+      try {
+        await this.updateSkillGroup({ id, title });
+        this.showTooltip({ type: 'success', text: 'Группа успешно обновлена', duration: 3000 });
+      } catch (e) {
+        this.showTooltip({ type: 'error', text: e.message, duration: 3000 });
+      }
+    },
+    async createSkill(category, data) {
+      try {
+        await this.addSkill({ ...data, category });
+        this.showTooltip({ type: 'success', text: 'Навык успешно добавлен', duration: 3000 });
+      } catch (e) {
+        this.showTooltip({ type: 'error', text: e.message, duration: 3000 });
+      }
+    },
+    async updateSkill(data) {
+      try {
+        await this.editSkill(data);
+        this.showTooltip({ type: 'success', text: 'Навык успешно обновлен', duration: 3000 });
+      } catch (e) {
+        this.showTooltip({ type: 'error', text: e.message, duration: 3000 });
+      }
+    },
+    async deleteSkill(id) {
+      try {
+        await this.showTooltip({ type: 'success', text: 'Навык успешно удален', duration: 3000 });
+        this.removeSkill(id);
+      } catch (e) {
+        this.showTooltip({ type: 'error', text: e.message, duration: 3000 });
+      }
+    },
+    async deleteSkillGroup(id) {
+      try {
+        await this.removeSkillGroup(id);
+        this.showTooltip({ type: 'success', text: 'Группа успешно удалена', duration: 3000 });
+      } catch (e) {
+        this.showTooltip({ type: 'error', text: e.message, duration: 3000 });
+      }
+    },
+    async fetchData() {
+      this.isLoading = true;
+      try {
+        await Promise.all([this.fetchSkills(), this.fetchCategories()]);
+      } catch (e) {
+        this.showTooltip({ type: 'error', text: 'Произошла ошибка при загрузке данных', duration: 3000 });
+      } finally {
+        this.isLoading = false;
+      }
+    }
+  },
+  created() {
+    this.fetchData();
+  },
 }
 </script>  
 
@@ -84,6 +161,7 @@ export default {
 
   .about-section {
     padding: 50px 0;
+    margin-right: auto;
 
     @include iphone {
       padding: 40px 0;
@@ -111,10 +189,9 @@ export default {
     }
     &__btn {
       position: relative;
-      color: #383bcf;
+      color: $content-color;
       font-size: 1rem;
       font-weight: 700;
-      background-color: #f7f9fe;
       padding-left: 30px;
       &:before {
         content: "+";
@@ -123,7 +200,7 @@ export default {
         height: 17px;
         border-radius: 50%;
         font-size: 0.8rem;
-        background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+        background-image: $primary-gradient;
         color: #fff;
         left: 0;
         top: 50%;
@@ -132,13 +209,26 @@ export default {
         justify-content: center;
         align-items: center;
       }
+      &:after {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $content-color;
+        content: "";
+        transition: width $trans-hover;
+      }
+      &:hover:after {
+        width: 100%;
+      }
     }
-    &__form {
+    &__content {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
     }
-    &__item {
+    &__skill-group {
       margin-right: 20px;
       margin-bottom: 25px;
       &:nth-child(even) {
@@ -149,140 +239,6 @@ export default {
         margin-right: 0;
       }
     }
-  }
-  .about {
-    width: 520px;
-    background-color: #fff;
-    padding: 0 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.1);
-    
-    @include tablets {
-      width: 340px;
-    }
-
-    @include phones {
-      padding: 0;
-    }
-
-    @include iphone {
-      width: 320px;
-    }
-
-    &__head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 17px 0;
-      border-bottom: 1px solid #e6e6e7;
-
-      @include phones {
-        padding: 17px 10px;
-      }
-
-      @include iphone {
-        padding: 17px 20px;
-      }
-    }
-    &__group {
-      width: 250px;
-      border-bottom: 1px solid #000;
-      padding: 10px 0;
-
-      @include tablets {
-        width: 200px;
-      }
-    }
-    &__button-accept {
-      margin-right: 15px;
-    }
-    &__content {
-      height: 100%;
-      padding: 15px 0;
-      margin-bottom: 10px;
-
-      @include phones {
-        padding: 15px 10px;
-      }
-
-      @include iphone {
-        padding: 15px 20px;
-      }
-    }
-    &__table {
-      opacity: 0.7;
-    }
-    &__row {
-      height: 30px;
-    }
-    &__col:first-child {
-      width: 80%;
-
-      @include tablets {
-        width: 67%;
-      }
-
-      @include iphone {
-        width: 66%;
-      }
-    }
-    &__col:last-child {
-        text-align: right;
-    }
-    &__button-edit {
-      margin-right: 15px;
-    }
-    &__new-skill {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-bottom: 27px;
-
-      @include phones {
-        padding: 0 10px 27px;
-      }
-
-      @include iphone {
-        justify-content: center;
-      }
-
-      @include iphone {
-        padding: 0 20px 27px;
-      }
-      &_name {
-        width: 160px;
-        border-bottom: 1px solid #000;
-        margin-right: 10px;
-        padding: 10px 15px;
-      }
-      &_value {
-        width: 75px;
-        border-bottom: 1px solid #000;
-        padding: 10px 0;
-        margin-right: 15px;
-        text-align: center;
-
-        @include phones {
-          margin-right: 10px;
-          width: 60px;
-        }
-      }
-    }
-    &__add {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
-      color:#fff;
-      font-size: 2.2rem;
-
-      @include phones {
-        width: 35px;
-        height: 35px;
-      }
-    } 
-  }
+  }  
 
 </style>

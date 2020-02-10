@@ -1,39 +1,12 @@
 <template lang="pug">
-  header.header
-    .header__desc
-      .container.header__container
-        .header__avatar
-          img(src="../../images/content/userfiles/avatar.jpg").header__photo
-        .header__content  
-          .header__name Волков Вячеслав
-          .header__info Панель администрирования
-          a(href="#").header__exit Выйти
-    .header__navigation
-      .container.header__container
-        nav.header__nav
-          ul.header__list
-            li.header__item(v-for="tab in tabs")
-              router-link(
-                :data-text="tab.title"
-                :to="tab.href"
-                exact-active-class="active"
-              ).header__link
-            
+  .container.header__container
+    .header__avatar
+      img(src="../../images/content/userfiles/avatar.jpg").header__photo
+    .header__content  
+      .header__name Волков Вячеслав
+      .header__info Панель администрирования
+      a(href="#").header__exit Выйти    
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        tabs: [
-          { title: "Обо мне", href: "/admin" },
-          { title: "Работы", href: "/works" },
-          { title: "Отзывы", href: "/reviews" }
-        ]
-      };
-    }
-  };
-</script>
 
 <style lang="postcss" scoped>
 
@@ -56,9 +29,6 @@
   }
 
   .header {
-    &__desc {
-      background-color: #414166;
-    }
     &__container {
       flex-direction: row;
       justify-content: space-between;
@@ -117,43 +87,6 @@
       text-decoration: underline;
       color:#fff;
       margin-left: auto;
-    }
-    &__navigation {
-      padding: 23px 0;
-      background-color: #fff;
-    }
-    &__list {
-      display: flex;
-
-      @include phones {
-        justify-content: space-between;
-      }
-    }
-    &__item {
-      margin-right: 40px;
-      &:last-child {
-        margin-right: 0;
-      }
-
-      @include phones {
-        margin-right: 0;
-      }
-    } 
-    &__link {
-      color: #000;
-      opacity: 0.7;
-      font-size: 1rem;
-      font-weight: 400;
-      text-decoration: none;
-      padding: 21px 15px;
-      &:hover {
-        color: #383bcf;
-        opacity: 1;
-        border-bottom: 2px solid #383bcf;
-      }
-      &:before {
-        content: attr(data-text);
-      }
     }
   }
 
