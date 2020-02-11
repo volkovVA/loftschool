@@ -36,7 +36,7 @@ export default {
   font-size: 18px;
   font-weight: 700;
   line-height: 30px;
-  transition: background-image 0.2s ease;
+  transition: background-image $trans-hover;
   &:hover {
     background-image: $reverse-gradient;
   }

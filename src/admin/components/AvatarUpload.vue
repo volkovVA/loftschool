@@ -48,7 +48,7 @@ export default {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 85px 113px;
-    transition: opacity 0.2s ease;
+    transition: opacity $trans-hover;
     cursor: pointer;
     overflow: hidden;
     &:hover {
@@ -86,7 +86,7 @@ export default {
 .slide-up {
   &-enter-to,
   &-leave {
-    transition: all 0.3s ease;
+    transition: all $trans-hover;
   }
   &-enter,
   &-leave-to {

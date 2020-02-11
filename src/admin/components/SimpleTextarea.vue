@@ -98,7 +98,7 @@ export default {
     padding: 20px;
     background: none;
     border: 1px solid rgba($admin-text-color, 0.2);
-    transition: border 0.2s ease;
+    transition: border $trans-hover;
 
     &:focus {
       border-color: $content-color;
@@ -154,7 +154,7 @@ export default {
 .slide-up {
   &-enter-to,
   &-leave {
-    transition: all 0.3s ease;
+    transition: all $trans-hover;
   }
   &-enter,
   &-leave-to {
