@@ -158,13 +158,13 @@ export default {
 
 <style lang="postcss" scoped>
 
-  @import "../../../styles/mixins-admin.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .about-section {
-    padding: 50px 0;
+    padding: 58px 0;
     margin-right: auto;
 
-    @include iphone {
+    @include Iphone {
       padding: 40px 0;
     }
 
@@ -177,7 +177,7 @@ export default {
         display: block;
         margin-bottom: 30px;
       }
-      @include iphone {
+      @include Iphone {
         padding: 0 20px;
       }
     }
@@ -230,8 +230,8 @@ export default {
       justify-content: flex-start;
     }
     &__skill-group {
-      margin-right: 20px;
-      margin-bottom: 25px;
+      margin-right: 28px;
+      margin-bottom: 28px;
       &:nth-child(even) {
         margin-right: 0;
       }

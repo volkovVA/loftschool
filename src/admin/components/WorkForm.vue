@@ -146,6 +146,9 @@ export default {
     grid-gap: 30px;
     font-weight: 700;
     margin: 20px 0;
+    @include tablets {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__form-control {

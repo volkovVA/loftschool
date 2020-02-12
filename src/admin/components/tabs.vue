@@ -31,6 +31,9 @@
 .header {
   &__nav {
     margin-right: auto;
+    @include phones {
+    margin-right: 0;
+  }
   }
   &__list {
     display: flex;
@@ -55,7 +58,7 @@
     font-size: 1rem;
     font-weight: 400;
     text-decoration: none;
-    padding: 21px 15px;
+    padding: 25px 15px;
     transition: color $trans-hover; 
     &:hover {
       color: $content-color;

@@ -140,7 +140,7 @@ export default {
 @import "../../../styles/mixins.pcss";
 
 .reviews-page {
-  padding: 60px;
+  padding: 50px 0;
 
   @include desktop {
     padding: 50px 30px;
@@ -148,6 +148,12 @@ export default {
 
   @include phones {
     padding: 40px 20px;
+  }
+
+  &__item {
+    @include phones {
+      padding: 20px 0;
+    }
   }
 
   &__preloader {
@@ -162,7 +168,7 @@ export default {
   }
 
   &__title {
-    margin-bottom: 60px;
+    margin-bottom: 55px;
     @include phones {
       padding: 0 20px;
       margin-bottom: 48px;

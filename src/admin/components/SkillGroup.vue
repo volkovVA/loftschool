@@ -89,6 +89,9 @@ export default {
 .skill-group {
   height: 100%;
   min-height: 415px;
+  @include tablets {
+    width: 336px;
+  }
 
   &__category {
     padding: 0 10px;

@@ -59,6 +59,9 @@ export default {
     height: 100%;
     border: 1px dashed #a1a1a1;
     background-color: $placeholder-color;
+    @include tablets {
+      padding: 0 25px;
+    }
   }
   &__placeholder-text {
     color: rgba($admin-text-color, 0.5);

@@ -93,14 +93,17 @@ export default {
   justify-content: space-between;
 
   &__input {
-    width: 273px;
+    width: 415px;
+
+    @include tablets {
+    width: 315px;;
+  }
   }
 
   &__buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 15px;
   }
 
   &__button {

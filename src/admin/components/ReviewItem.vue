@@ -67,11 +67,11 @@ export default {
     padding: 10px;
   }
   &__user-avatar {
-    object-fit: cover;
-    object-position: center center;
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    object-position: center 0;
+    object-fit: cover;
   }
   &__user-info {
     margin-left: 20px;

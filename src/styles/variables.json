@@ -12,6 +12,7 @@
   "admin-text-color": "#2d3c4e",
   "success-color": "#00d70a",
   "success-notify": "#4bb133",
+  "error-notify": "#b13333",
   "danger-color": "#bf2929",
   "placeholder-color": "#dee4ed",
   "bp-desktop-hd": "1800px",

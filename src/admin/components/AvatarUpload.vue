@@ -64,7 +64,8 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: 0 35px;
+    transform: scale(1.7);
   }
   &__file {
     display: none;

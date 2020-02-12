@@ -6,7 +6,7 @@
 @import '../../styles/mixins.pcss';
 
 .page-title {
-  color: $text-color;
+  color: $admin-text-color;
   font-size: 21px;
   font-weight: 700;
 

@@ -132,7 +132,8 @@ export default {
 @import '../../../styles/mixins.pcss';
 
 .works-page {
-  padding: 60px;
+  width: 500px;
+  padding: 50px;
 
   @include desktop {
     padding: 50px 30px;
@@ -140,6 +141,12 @@ export default {
 
   @include phones {
     padding: 40px 20px;
+  }
+
+  &__item {
+    @include phones {
+      padding: 20px 0;
+    }
   }
 
   &__title {
@@ -176,7 +183,7 @@ export default {
     }
 
     @include tablets {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
     }
   }
 }

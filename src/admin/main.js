@@ -4,11 +4,11 @@ import SimpleVueValidation from 'simple-vue-validator';
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import $axios from './requests'
+import requests from './requests'
 
 Vue.use(SimpleVueValidation);
 // Vue.use(VueScrollTo);
-store.$axios = $axios;
+store.$axios = requests;
 
 new Vue({
   el: "#app-root",

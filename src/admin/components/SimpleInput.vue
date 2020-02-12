@@ -107,7 +107,7 @@ export default {
     color: #000;
     font-size: 16px;
     font-weight: inherit;
-    line-height: 42px;
+    line-height: 36px;
     background: none;
     border: none;
     border-bottom: 1px solid $admin-text-color;

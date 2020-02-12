@@ -3,30 +3,27 @@
     .header__avatar
       img(src="../../images/content/userfiles/avatar.jpg").header__photo
     .header__content  
-      .header__name Волков Вячеслав
+      .header__username Волков Вячеслав
       .header__info Панель администрирования
-      a(href="#").header__exit Выйти    
+      a.header__exit(@click="signOut") Выйти    
 </template>
+
+<script>
+import { mapActions } from "vuex";
+export default {
+  methods: {
+    ...mapActions("user", ["logout"]),
+    signOut() {
+      this.logout();
+      this.$router.replace('login');
+    }
+  }
+};
+</script>
 
 <style lang="postcss" scoped>
 
-  @mixin tablets() {
-    @media screen and (max-width: 768px) {
-      @content;
-    }
-  }
-
-  @mixin phones() {
-    @media screen and (max-width: 460px) {
-      @content;
-    }
-  }
-
-  @mixin iphone() {
-    @media screen and (max-width: 320px) {
-      @content;
-    }
-  }
+  @import '../../styles/mixins.pcss';
 
   .header {
     &__container {
@@ -38,7 +35,7 @@
         justify-content: center;
       }
 
-      @include iphone {
+      @include Iphone {
         max-width: 280px;
       }
     }
@@ -66,7 +63,7 @@
         display: block;
       }
     }
-    &__name {
+    &__username {
       font-size: 1.1rem;
       font-weight: 400;
       margin-right: 20px;
