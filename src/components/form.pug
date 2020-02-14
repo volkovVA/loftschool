@@ -1,27 +1,33 @@
 section.form#form.js-section
     .container.form__container   
         h2.title.form__title Связаться со мной
-        form(method="POST" enctype="multipart/form-data").form__box.js-form
+        form(enctype='multipart/form-data').form__box.js-form
             .form__col
                 .form__row
                     .form__col
                         label.form__label
                             .form__error.js-form-error
-                            input(required, name="name", type="text").form__input  
+                            input(required name="name" type="text").form__input.js-input 
                             +icon("user", "form__icon")
-                            span.form__text.text Введите ваше имя
-                                     
+                            span.form__text.text Введите ваше имя         
                     .form__col
                         label.form__label
                             .form__error.js-form-error
-                            input(required, name="email", type="email").form__input
+                            input(required name="email" type="email").form__input.js-input
                             +icon("envelope", "form__icon")
-                            span.form__text.text Введите ваше email            
+                            span.form__text.text Введите ваше email
+                //- .form__row
+                //-     .form__col
+                //-         label.form__label
+                //-             .form__error.js-form-error
+                //-             input(required name="phone" type="tel").form__input.js-input
+                //-             +icon("envelope", "form__icon")
+                //-             span.form__text.text Введите ваш номер телефона                     
                 .form__row.form__row--textarea
                     .form__col
                         label.form__label
                             .form__error.js-form-error 
-                            textarea(required, name="message").form__textarea.form__input
+                            textarea(required name="message").form__textarea.form__input.js-input
                             +icon("message", "form__icon form__icon--textarea")
                             span.form__text.form__text--textarea.text Сообщение к письму         
                 .form__row

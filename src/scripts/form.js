@@ -11,8 +11,12 @@ function sendForm() {
     event.preventDefault();
     if(chechVal(myForm)) {
         let formData = new FormData(myForm);
+        formData.append('name', 'slava');
+        formData.append('phone', '+79151111111');
+        formData.append('comment', 'qwerty');
+        formData.append('to', 'slavavva@mail.ru');
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'form.txt');
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
         xhr.send(formData);
         xhr.addEventListener('load', function() {
             console.log(xhr.response);

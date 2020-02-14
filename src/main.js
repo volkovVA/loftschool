@@ -3,12 +3,6 @@ if (process.env.NODE_ENV === "development") {
   require("file-loader!./index.pug");
 }
 
-import inputValue from "./scripts/inputValue";
-
-import  parallax  from "./scripts/parallax";
-
-import popupMenu from "./scripts/popupMenu";
-
 import "./scripts/skills";
 
 import "./scripts/slider";
@@ -16,6 +10,12 @@ import "./scripts/slider";
 import "./scripts/reviews";
 
 import "./scripts/form";
+
+import inputValue from "./scripts/inputValue";
+
+import parallax  from "./scripts/parallax";
+
+import popupMenu from "./scripts/popupMenu";
 
 import hoverScroll from "./scripts/hoverScroll";
 

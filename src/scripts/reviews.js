@@ -14,7 +14,7 @@ new Vue({
         prevNextButtons: true,
         pageDots: false,
         cellAlign: 'left',
-        freeScroll: true,
+        freeScroll: true
       }
     }
   }

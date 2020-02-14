@@ -11,7 +11,6 @@ const preview = {
     computed: {
         translate() {
             const step = 100 / this.works.length;
-
             if (this.currentIndex >= this.works.length - 1) return;
             else if (this.currentIndex < 3) return 0;
             else if (this.currentIndex >= 3) return step * (this.currentIndex - 2);

@@ -13,19 +13,24 @@ script(type="text/x-template")#slider-container
         
 script(type="text/x-template")#slider-display
     .slider__display
-        .slider__main
-            img(:src="currentWork.photo", alt="скриншот страницы моего проекта" class="slider__image")    
-            preview(
-                :works="works"
-                :currentWork="currentWork"
-                :currentIndex='currentIndex'
-                @slide='handleSlide'
+        transition-group.slider__current-slide(name="fade" tag="div")
+            img.slider__image(
+                v-if="currentWork"
+                :src="currentWork.photo"
+                :key="currentWork.id" 
+                alt="скриншот страницы моего проекта"
             )
-            btns(
-                :worksLength='works.length'
-                :currentIndex='currentIndex'
-                @slide="$emit('slide', $event)"
-            )                 
+        preview(
+            :works="works"
+            :currentWork="currentWork"
+            :currentIndex='currentIndex'
+            @slide='handleSlide'
+        )
+        btns(
+            :worksLength='works.length'
+            :currentIndex='currentIndex'
+            @slide="$emit('slide', $event)"
+        )                 
 
 script(type="text/x-template")#slider-preview
     .slider__preview-wrapper  
