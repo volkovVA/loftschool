@@ -3,6 +3,8 @@ if (process.env.NODE_ENV === "development") {
   require("file-loader!./index.pug");
 }
 
+import './scripts/preloader';
+
 import "./scripts/skills";
 
 import "./scripts/slider";
@@ -23,8 +25,6 @@ import headerFix from "./scripts/headerFix";
 
 import anchorScroll from "./scripts/anchorScroll";
 
-hoverScroll();
-
 inputValue();
 
 parallax('.js-promo-area');
@@ -33,7 +33,11 @@ parallax('.js-leaf-area');
 
 popupMenu();
 
-anchorScroll();
+hoverScroll();
 
 headerFix('.js-header');
+
+anchorScroll();
+
+
 
