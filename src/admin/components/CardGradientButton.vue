@@ -28,17 +28,14 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 320px;
   height: 100%;
+  padding: 40px 0;
   background-image: $primary-gradient;
   color: white;
   font-size: 18px;
   font-weight: 700;
   line-height: 30px;
   transition: background-image $trans-hover;
-    @include tablets {
-      padding: 40px 0;
-    }
   &:hover {
     background-image: $reverse-gradient;
   }

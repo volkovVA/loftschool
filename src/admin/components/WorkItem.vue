@@ -55,9 +55,7 @@ export default {
 
 .work-item {
   position: relative;
-  @include tablets {
-    width: 320px;
-  }
+
   &_active::after {
     position: absolute;
     content: '';
@@ -71,7 +69,6 @@ export default {
     position: relative;
     width: 100%;
     height: 190px;
-    width: 320px;
   }
   &__image {
     object-fit: cover;
