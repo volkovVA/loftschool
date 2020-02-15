@@ -51,20 +51,6 @@
         }
     }
 
-    &__text {       
-        line-height: 30px;
-        margin-bottom: 26px;
-
-        @include tablets {
-            line-height: 25px;
-        }  
-    }
-
-    &__user_fio {
-        font-size: 1.1rem;
-        font-weight: 700;
-    }
-
     &__list {
         &:last-child {
             margin-right: 0;
@@ -178,6 +164,17 @@
             width: 280px;
         }
     }
+}
+
+.review {
+    &__text {       
+        line-height: 30px;
+        margin-bottom: 26px;
+
+        @include tablets {
+            line-height: 25px;
+        }  
+    }
 
     &__user {
         display: flex;
@@ -210,5 +207,10 @@
 
     &__user_fio {
         margin-bottom: 14px;
+    }
+
+    &__user_fio {
+        font-size: 1.1rem;
+        font-weight: 700;
     }
 }

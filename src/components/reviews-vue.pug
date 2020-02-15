@@ -1,26 +1,21 @@
 script(type="text/x-template")#reviews-container
-    section.reviews#reviews.js-section
-        .container.reviews__container
-            h2.title.reviews__title Что обо мне говорят   
-            .reviews__slider
-                ul.reviews__list
-                    flickity(class="reviews__flikity-list" ref="flickity", :options="flickityOptions")
-                        li.reviews__item
-                            .reviews__text.text 
-                                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                            .reviews__user
-                                .reviews__avatar
-                                    +image("content/userfiles/dima.png", "reviews__photo", "аватарка")
-                                .reviews__user_desc
-                                    .reviews__user_fio Ковальчук Дмитрий
-                                    .reviews__user_position.text Основатель LoftSchool
-                        li.reviews__item
-                            .reviews__text.text 
-                                p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                            .reviews__user
-                                .reviews__avatar
-                                    +image("content/userfiles/vladimir.png", "reviews__photo", "аватарка")
-                                .reviews__user_desc
-                                    .reviews__user_fio Владимир Сабанцев
-                                    .reviews__user_position.text Преподаватель
-                        
+  section.reviews#reviews.js-section
+    .container.reviews__container
+      h2.title.reviews__title Что обо мне говорят
+      .reviews__slider
+        flickity.reviews__list(ref="flickity" :options="flickityOptions")
+          .reviews__item(v-for="(review, index) in reviews" :key="index")
+            review(:review="review")
+
+script(type="text/x-template")#review
+  .review
+    .review__text.text 
+      p {{ review.text }}
+    .review__user
+      .review__avatar
+        img.review__photo(:src="review.photo")
+      .review__user_desc
+        .review__user_fio {{ review.author }}
+        .review__user_position.text {{ review.occ }}
+  
+              
