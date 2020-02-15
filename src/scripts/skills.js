@@ -1,15 +1,18 @@
 import Vue from "vue";
+import axios from "axios";
 
 const skill = {
     template: "#skill__wrapper",
-    props: ["skillName", "skillPercent"],
+    props: {
+        skill: Object
+    },
     methods: {
         drawColoredCircle() {
             const circle = this.$refs["color-circle"];
             const dashArray = parseInt(
                 getComputedStyle(circle).getPropertyValue("stroke-dasharray")
             );
-            const percent = (dashArray / 100) * (100 - this.skillPercent);
+            const percent = (dashArray / 100) * (100 - this.skill.percent);
             circle.style.strokeDashoffset = percent;
         }
     },
@@ -37,8 +40,9 @@ new Vue({
     components: {
         skillsRow
     },
-    created() {
-        const data = require("../data/skills.json");
+    async created() {
+        // const data = require("../data/skills.json");
+        const {data} = await axios.get(`${process.env.BASE_URL}/categories/${process.env.USER_ID}`);
         this.skills = data;
     }
 });

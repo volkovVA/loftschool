@@ -3,16 +3,15 @@ script(type="text/x-template")#skills-container
         .skills__box(v-for="skill in skills")
             skillsRow(
                 :skill="skill"
-            )  
+            )
         
 script(type="text/x-template")#skills__row
     .skills__row
-        h3.skills__text {{skill.skillsGroup}}
+        h3.skills__text {{skill.category}}
         ul.skills__list
-            li.skills__item(v-for="(skillPercent, skillName) in skill.skills")
+            li.skills__item(v-for="skillItem in skill.skills")
                 skill(
-                    :skillName="skillName"
-                    :skillPercent="skillPercent"
+                    :skill="skillItem"
                 )
 
 script(type="text/x-template")#skill__wrapper
@@ -23,4 +22,4 @@ script(type="text/x-template")#skill__wrapper
             linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
                 stop(offset="0%" stop-color="#ff9a00")
                 stop(offset="100%" stop-color="#d0731b")
-        .skills__desc {{skillName}} 
+        .skills__desc {{skill.title}} 

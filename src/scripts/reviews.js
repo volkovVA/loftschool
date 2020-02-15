@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Flickity from 'vue-flickity';
+import axios from 'axios';
 
 new Vue({
   el: "#reviews-slider",
