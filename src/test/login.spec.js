@@ -1,6 +1,6 @@
 const fs = require('fs');
 const webdriverio = require('webdriverio');
-const options = require('../../wdio.conf');
+const options = require('./../../wdio.conf');
 const client = webdriverio.multiremote(options);
 
 jest.setTimeout(90000);

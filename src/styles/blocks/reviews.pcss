@@ -42,7 +42,7 @@
         }
     }
     
-    &__wrapper {
+    &__header {
         display: flex;
 
         @include phones {
@@ -50,6 +50,49 @@
             margin-bottom: 30px;
         }
     }
+
+    &__button {
+        display: flex;
+        z-index: 1;
+        @include phones {
+            justify-content: center;
+        }
+    }
+
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 1px solid $text-color;
+        margin-right: 25px;
+        outline: none;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            border-color: $content-color;
+            .arrow {
+                fill: $content-color;
+            }
+            &.disabled {
+                .arrow {
+                    fill: $grey-color;
+                }
+            }
+        }
+        &.disabled {
+            border-color: $grey-color;
+            cursor: auto;
+            .arrow {
+                fill: $grey-color;
+            }
+        }
+        
+    }  
 
     &__list {
         &:last-child {
@@ -116,6 +159,8 @@
     &__slider {
         position: relative;
         z-index: 1;
+        width: 62.5rem;
+        overflow: hidden;
     }
 
     &__item {
