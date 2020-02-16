@@ -1,5 +1,5 @@
 script(type="text/x-template")#slider-container
-    .slider__wrapper
+    .slider__wrapper 
         display(
             :works="works"
             :currentWork="currentWork"
@@ -65,13 +65,14 @@ script(type="text/x-template")#slider-content
     .slider__content
         .slider__counter {{currentIndex+1}}       
         .slider__desc
-            tags(
-                :tags="tagsArray"
-            )
-            h3.slider__subtitle {{currentWork.title}}
-            p.slider__text.text {{currentWork.desc}}
-            a(:href="currentWork.link").slider__link Посмотреть сайт
+            tags(:tags="tags")
+            h3.slider__subtitle {{ work.title }}
+            p.slider__text.text {{ work.description }}
+            a.slider__link(:href="link" targer="_blank") Посмотреть сайт
 
 script(type="text/x-template")#slider-tags 
     .slider__skills
-            .slider__item_skills.text(v-for="tag in tags") {{tag}}               
+        .slider__item_skills.text(
+            v-for="(tag, index) in tags"
+            :key="index"
+        ) {{ tag }}               

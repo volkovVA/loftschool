@@ -9,7 +9,7 @@ export default {
     },
     maxSize: {
       type: Number,
-      default: 1500000,
+      default: 2000000,
     },
     errorMessage: {
       type: String,
@@ -54,7 +54,7 @@ export default {
     async handlePhotoUpload(e) {
       const file = e.target.files[0];
       if (file.size > this.maxSize) {
-        this.showTooltip({ type: 'error', text: 'Слишком большой размер файла (максимум 1.5MB)', duration: 3000 });
+        this.showTooltip({ type: 'error', text: 'Слишком большой размер файла (максимум 2MB)', duration: 3000 });
         return;
       }
       this.$emit('input', file);

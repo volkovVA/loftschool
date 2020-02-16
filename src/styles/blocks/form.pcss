@@ -183,7 +183,7 @@
 
     &__error {
         position: absolute;
-        background-color: $red-color;
+        background-color: $danger-color;
         padding: 5px 15px;
         left: 50px;
         bottom: -32px;
@@ -198,15 +198,15 @@
             width: 0;
             height: 0;
             border: 9px solid transparent;
-            border-bottom: 16px solid $red-color;
+            border-bottom: 16px solid $danger-color;
         }
         &.active {
             display: block;
             + .form__input {
-                border-bottom: 2px solid $red-color;
+                border-bottom: 2px solid $danger-color;
             } 
             ~ .form__icon {
-                fill: $red-color;
+                fill: $danger-color;
             } 
         }
     }

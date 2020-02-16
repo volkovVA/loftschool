@@ -213,9 +213,10 @@
         position: relative;
         width: 176px;
         transition: $trans-hover; 
-        &.active {
+        &.active::after {
             outline: 3px solid $content-color;
             outline-offset: -3px;
+            opacity: 1;
         }
         &::after {
             content: '';

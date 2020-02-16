@@ -1,4 +1,5 @@
 import Vue from "vue";
+import axios from 'axios';
 
 const btns = {
     template: "#slider-button",
@@ -7,7 +8,17 @@ const btns = {
 
 const preview = {
     template: "#slider-preview",
-    props: ["works", "currentWork", "currentIndex"],
+    props: {
+        works: {
+            type: Array,
+        },
+        currentWork: {
+            type: Object,
+        },
+        currentIndex: {
+            type: Number,
+        }
+    },
     computed: {
         translate() {
             const step = 100 / this.works.length;
@@ -23,7 +34,17 @@ const display = {
     components: {
         preview, btns
     },
-    props: ["works", "currentWork", "currentIndex"],
+    props: {
+        works: {
+            type: Array,
+        },
+        currentWork: {
+            type: Object,
+        },
+        currentIndex: {
+            type: Number,
+        }
+    },
     methods: {
         handleSlide(direction) {
             this.$emit('slide', direction);
@@ -31,7 +52,7 @@ const display = {
     }
 };
 
-const tags = {
+const sliderTags = {
     template: "#slider-tags",
     props: ["tags"]
 };
@@ -39,12 +60,35 @@ const tags = {
 const info = {
     template: "#slider-content",
     components: {
-        tags
+        tags: sliderTags
     },
-    props: ["currentWork", "currentIndex"],
+    props: {
+        currentWork: {
+            type: Object,
+        },
+        currentIndex: {
+            type: Number,
+        },
+        techs: {
+            type: String,
+            default: '',
+        },
+        title: {
+            type: String,
+        },
+        description: {
+            type: String,
+        },
+        link: {
+            type: String,
+        }
+    },
     computed: {
-        tagsArray() {
-            return this.currentWork.skills.split(', ')
+        tags() {
+            return this.currentWork ? this.currentWork.techs.split(", ") : ' ';
+        },
+        work() {
+            return {...this.currentWork}
         }
     }
 };
@@ -108,8 +152,13 @@ new Vue ({
     //         this.makeInfiniteLoopForIndex(value)
     //     }
     // },
-    created() {
-        const data = require("../data/works.json");
-        this.works = this.makeArrWithRequiredImages(data);
+    async created() {
+        // const data = require("../data/works.json");
+        // this.works = this.makeArrWithRequiredImages(data);
+        const { data: works } = await axios.get(`${process.env.BASE_URL}/works/${process.env.USER_ID}`);
+        this.works = works.map((item) => ({
+            ...item,
+            photo: `${process.env.BASE_URL}/${item.photo}`,
+        }));
     }
 })
