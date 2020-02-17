@@ -39,8 +39,8 @@ export default {
   },
   data() {
     return {
-      name: 'volkovVA-092019',
-      password: '12345',
+      name: '',
+      password: '',
       isLoading: false,
     };
   },
