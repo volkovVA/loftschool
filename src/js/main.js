@@ -24,11 +24,12 @@ $('.review').slick({
     focusOnSelect: true,
     });
 
-/*===== FULLPAGE =====*/    
+/*===== FULLPAGE =====*/
 
 $(document).ready(function() {
 	$('#fullpage').fullpage({
         menu: '#pagination__list',
+        fitToSection: false
     });
 });
 
@@ -88,7 +89,7 @@ ymaps.ready(function () {
         .add(myPlacemarkThree)
         .add(myPlacemarkFour);
 
-    myMap.behaviors.disable('scrollZoom');    
+    myMap.behaviors.disable('scrollZoom');
 });
 
 /*===== WINDOW SCROLL =====*/
@@ -111,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function(){
             } else {
                 navMobBtn.classList.add('nav-mobile__btn--active');
                 window.addEventListener('scroll', noScroll);
-                fullpage_api.destroy('all'); 
+                fullpage_api.destroy('all');
             }
 
         });
@@ -144,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             removeClass(accItem, 'accordeon__item--active');
             this.classList.add('accordeon__item--active');
-            this.parentNode.classList.add('accordeon__list--active');   
-        });    
+            this.parentNode.classList.add('accordeon__list--active');
+        });
     }
     const accClose = document.querySelectorAll('.accordeon__close');
     for (var i = 0; i < accClose.length; i++) {
@@ -153,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             event.stopPropagation();
             event.target.closest('.accordeon__item').classList.remove('accordeon__item--active');
-            event.target.closest('.accordeon__list').classList.remove('accordeon__list--active');     
+            event.target.closest('.accordeon__list').classList.remove('accordeon__list--active');
         })
     }
 });
@@ -165,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var i = 0; i < teamName.length; i++) {
         teamName[i].addEventListener('click', function() {
             removeClass(teamName, 'team__name--active');
-            this.classList.add('team__name--active'); 
+            this.classList.add('team__name--active');
         });
     }
 });
@@ -199,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     popup.classList.add('popup-active');
                     modalWindow.innerText = 'Сообщение не отправлено';
-                } 
+                }
             });
         };
     }
@@ -236,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
             field.parentNode.nextElementSibling.textContent = '';
             return true;
         }
-    }      
+    }
 
     loadButton.addEventListener('click', sendForm);
 
@@ -255,89 +256,6 @@ popup.addEventListener("click", function(e) {
   });
 });
 
-/*===== VIDEO PLAYER =====*/
-
-    let playBtn = document.querySelector('.player__start'),
-        video = document.querySelector('.player__video'),
-        player = document.querySelector('.player__wrapper'),
-        duration = document.querySelector('.player__duration-estimate'),
-        compleated = document.querySelector('.player__duration-completed'),
-        progress = document.querySelector('#progress'),
-        volumeControl = document.querySelector('#volume'),
-        volumeIcon = document.querySelector('.player__volume--icon');
-
-    playBtn.addEventListener('click', function () {
-        if (video.paused) {
-            video.play();
-            this.classList.add('paused');
-            player.classList.add('active');
-            
-        } else {
-            video.pause();
-            this.classList.remove('paused');
-        }
-    });
-
-    player.addEventListener('click', function () {
-        if (video.paused) {
-            video.play();
-            playBtn.classList.add('paused');
-            this.classList.add('active');
-        } else {
-            video.pause();
-            playBtn.classList.remove('paused');
-        }
-    })
-
-    function progressVideo() {
-        video.currentTime = Math.floor((video.duration/100) * progress.value);
-    }
-    progress.addEventListener('input', progressVideo);  
-    
-    video.addEventListener("timeupdate", function() {
-        let percent = Math.floor((100 / video.duration) * video.currentTime);
-        progress.value = percent;
-        const compleatedSec = video.currentTime;
-        compleated.innerText = formatTime(compleatedSec);
-    });
-
-    video.addEventListener('canplay', function() {
-        let durationSec = video.duration;
-        duration.innerText = formatTime(durationSec);
-    });   
-
-    function volumeVideoControl () {
-            video.volume = volumeControl.value / 100;
-        }
-    volumeControl.addEventListener('input' , volumeVideoControl);
-    volumeControl.addEventListener('input', function(){
-        if (video.volume == 0) {
-        volumeIcon.classList.add('muted');
-        } if (video.volume > 0) {
-            volumeIcon.classList.remove('muted');
-        }
-    })    
-    
-    volumeIcon.addEventListener('click', function() {
-        if (this.classList.contains('muted')) {
-            video.volume = 1;
-            volumeControl.value = 100;
-            this.classList.remove('muted');
-        } else {
-            this.classList.add('muted');
-            video.volume = 0;
-            volumeControl.value = 0;
-        };      
-    })
-
-    function formatTime(timeSec) {
-        const roundTime = Math.round(timeSec);
-        const minutes = Math.floor(roundTime / 60);
-        const seconds = roundTime - minutes * 60;
-        const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
-        return minutes + ' : ' + formattedSeconds ;
-    };
-
 /*===== REVIEWS =====*/
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -345,8 +263,91 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < reviewLink.length; i++) {
         reviewLink[i].addEventListener('click', function() {
             removeClass(reviewLink, 'review__photo-bottom--active');
-            this.classList.add('review__photo-bottom--active'); 
+            this.classList.add('review__photo-bottom--active');
         });
     }
 });
+
+/*===== VIDEO PLAYER =====*/
+
+let playBtn = document.querySelector('.player__start'),
+video = document.querySelector('.player__video'),
+player = document.querySelector('.player__wrapper'),
+duration = document.querySelector('.player__duration-estimate'),
+compleated = document.querySelector('.player__duration-completed'),
+progress = document.querySelector('#progress'),
+volumeControl = document.querySelector('#volume'),
+volumeIcon = document.querySelector('.player__volume--icon');
+
+playBtn.addEventListener('click', function () {
+if (video.paused) {
+    video.play();
+    this.classList.add('paused');
+    player.classList.add('active');
+
+} else {
+    video.pause();
+    this.classList.remove('paused');
+}
+});
+
+player.addEventListener('click', function () {
+if (video.paused) {
+    video.play();
+    playBtn.classList.add('paused');
+    this.classList.add('active');
+} else {
+    video.pause();
+    playBtn.classList.remove('paused');
+}
+})
+
+function progressVideo() {
+video.currentTime = Math.floor((video.duration/100) * progress.value);
+}
+progress.addEventListener('input', progressVideo);
+
+video.addEventListener("timeupdate", function() {
+let percent = Math.floor((100 / video.duration) * video.currentTime);
+progress.value = percent;
+const compleatedSec = video.currentTime;
+compleated.innerText = formatTime(compleatedSec);
+});
+
+video.addEventListener('canplay', function() {
+let durationSec = video.duration;
+duration.innerText = formatTime(durationSec);
+});
+
+function volumeVideoControl () {
+    video.volume = volumeControl.value / 100;
+}
+volumeControl.addEventListener('input' , volumeVideoControl);
+volumeControl.addEventListener('input', function(){
+if (video.volume == 0) {
+volumeIcon.classList.add('muted');
+} if (video.volume > 0) {
+    volumeIcon.classList.remove('muted');
+}
+})
+
+volumeIcon.addEventListener('click', function() {
+if (this.classList.contains('muted')) {
+    video.volume = 1;
+    volumeControl.value = 100;
+    this.classList.remove('muted');
+} else {
+    this.classList.add('muted');
+    video.volume = 0;
+    volumeControl.value = 0;
+};
+})
+
+function formatTime(timeSec) {
+const roundTime = Math.round(timeSec);
+const minutes = Math.floor(roundTime / 60);
+const seconds = roundTime - minutes * 60;
+const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+return minutes + ' : ' + formattedSeconds ;
+};
 
