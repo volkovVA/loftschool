@@ -1,0 +1,27 @@
+.hero {
+  height: rem(560);
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 100%;
+  }
+  &__title {
+    width: rem(520);
+    font-size: rem(72);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: rem(25);
+  }
+  &__info {
+    font-size: rem(18);
+    font-weight: 400;
+    line-height: rem(21);
+    margin-bottom: rem(36);
+  }
+  &__btn {
+    background-color: $red;
+    padding: rem(18) rem(39);
+  }
+}

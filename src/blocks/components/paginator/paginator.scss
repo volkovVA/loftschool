@@ -1,0 +1,35 @@
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__display {
+    margin-right: rem(25);
+    font-size: rem(16);
+    font-weight: 400;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    margin-right: rem(20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+    &_active {
+      border-radius: 50%;
+      background-color: $white;
+      color: $red;
+      width: rem(32);
+      height: rem(32);
+    }
+  }
+  &__link {
+    padding: 5px 10px;
+    font-weight: 700;
+    font-size: rem(16);
+  }
+}

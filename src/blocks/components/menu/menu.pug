@@ -1,0 +1,10 @@
+mixin menu(...items)
+  nav.menu
+    ul.menu__list
+      each item, index in items
+        if index === 0
+          li.menu__item.menu__item_active
+            a.menu__link(href="#")= item
+        else
+          li.menu__item
+            a.menu__link(href="#")= item

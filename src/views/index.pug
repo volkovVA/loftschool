@@ -5,6 +5,12 @@ block variables
 	- const title = "air-asia"
 
 block content
+	.wrapper.main-page-wrapper
+		include ../blocks/modules/header/header
+		main.main
+			include ../blocks/modules/hero/hero
+			include ../blocks/modules/tours/tours
+			include ../blocks/modules/news/news
 
 block scripts
 	script(src="js/main.js")

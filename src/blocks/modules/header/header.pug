@@ -1,0 +1,12 @@
+include ../../components/logo/logo.pug
+include ../../components/menu/menu.pug
+include ../../components/phone/phone.pug
+
+header.header
+  .container.header__container
+    .header__logo
+      +logo('../../../img/logo.png')
+    .header__menu
+      +menu('Главная', 'Услуги', 'Отзывы')
+    .header__phone
+      +phone('+78007003030', '8 800 700 30 30')

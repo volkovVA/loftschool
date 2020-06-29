@@ -1,0 +1,19 @@
+.news {
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  &__item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__title {
+    margin-bottom: 53px;
+  }
+}
+
+

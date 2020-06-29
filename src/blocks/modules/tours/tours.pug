@@ -1,0 +1,16 @@
+include ../../components/tourCard/tourCard
+
+-
+  var tourCards = [
+    {src:'../../../img/content/offers/river.jpg', alt:'фотография природы тайланда', title:'Тайланд', duration:'7-12 ночей', feed:'Завтраки', description:'Равным образом постоянное обеспечение нашей деятельности позволяет оценить значение систем массового участия.', href:'#'},
+    {src:'../../../img/content/offers/pool.jpg', alt:'фотография природы бали', title:'Бали', duration:'7-12 ночей', feed:'Завтраки', description:'Равным образом постоянное обеспечение нашей деятельности позволяет оценить значение систем массового участия.', href:'#'},
+    {src:'../../../img/content/offers/ocean.jpg', alt:'фотография природы индонезия', title:'Индонезия', duration:'7-12 ночей', feed:'Завтраки', description:'Равным образом постоянное обеспечение нашей деятельности позволяет оценить значение систем массового участия.', href:'#'}
+  ]
+
+section.tours
+  .container.tours__container
+    h2.title.tours__title Горящие туры
+    ul.tours__list
+      each card in tourCards
+        li.tours__item
+          +tourCard(card.src, card.alt, card.title, card.duration, card.feed, card.description, card.href)

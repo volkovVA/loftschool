@@ -1,0 +1,17 @@
+include ../../components/newsCard/newsCard
+include ../../components/paginator/paginator
+
+-
+  var newsCards = [
+    {src:'../../../img/content/news/plain.jpg', alt:'Акция дешевые путевки', date: "декабрь 2019",title: "Дешевые путевки на Новый Год!",description: "Проведи новый год в Тайланде"},
+    {src:'../../../img/content/news/surfer.jpg', alt:'Акция для серфенгистов', date: 'декабрь 2019',title: 'Акция для серфенгистов!',description: 'В сезон больших волн скидка на путевку в Тайланд на остров серфенгистов. Удачного пути!'}
+  ]
+
+section.news
+  .container.news__container
+    h2.title.news__title Новости и акции
+    ul.news__list
+      each card in newsCards
+        li.news__item
+          +newsCard(card.src, card.alt, card.date, card.title, card.description)
+    +paginator(5)

@@ -1,0 +1,32 @@
+.tours {
+  margin-bottom: rem(150);
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  &__item {
+    margin-right: rem(30);
+    margin-bottom: rem(10);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__title {
+    position: relative;
+    margin-bottom: rem(50);
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../../../img/icons/flame.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: rem(21);
+      height: rem(28);
+      top: 21%;
+      left: 25%;
+    }
+  }
+}
+
+

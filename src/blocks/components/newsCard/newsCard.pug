@@ -1,0 +1,7 @@
+mixin newsCard(src, alt, date, title, description)
+  article.news-card
+    img.news-card__image(src= src alt= alt)
+    .news-card__content
+      span.news-card__date= date
+      h3.news-card__title= title
+      p.news-card__description= description

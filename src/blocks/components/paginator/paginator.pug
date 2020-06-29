@@ -1,0 +1,13 @@
+-var i = 0
+
+mixin paginator(n)
+  .paginator
+    .paginator__display Страница 1 из 7
+    ul.paginator__list
+      while i < n
+        if (i === 0)
+          li.paginator__item.paginator__item_active
+            a.paginator__link(href= href)= ++i
+        else
+          li.paginator__item
+            a.paginator__link(href= href)= ++i

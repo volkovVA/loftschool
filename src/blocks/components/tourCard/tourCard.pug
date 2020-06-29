@@ -1,0 +1,11 @@
+mixin tourCard(src, alt, title, duration, feed, description, href)
+  article.tour-card
+    .tour-card__header
+      img.tour-card__img(src= src alt= alt)
+    .tour-card__content
+      h3.tour-card__title= title
+      .tour-card__details
+        .tour-card__duration= duration
+        .tour-card__feed= feed
+      p.tour-card__description= description
+      a.btn.tour-card__btn(href= href) Смотреть
