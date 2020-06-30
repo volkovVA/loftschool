@@ -1,0 +1,10 @@
+.footer {
+  height: rem(152);
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $grey;
+  }
+}

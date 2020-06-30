@@ -1,0 +1,43 @@
+.about {
+  position: relative;
+  margin-bottom: rem(40);
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 50%;
+    bottom: 20%;
+    width: rem(488);
+    height: rem(502);
+    background-image: url('../../../img/decor/gates.jpg');
+    background-position: center center;
+    background-size: cover;
+  }
+  &__description {
+    display: block;
+    width: rem(780);
+    min-height: rem(454);
+    margin-left: auto;
+    background-image: url('../../../img/decor/mountains.jpg');
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    padding: rem(80) rem(100) rem(75) rem(95);
+  }
+  &__title {
+    color: $black;
+    margin-bottom: rem(44);
+  }
+  &__text {
+    color: $black;
+    font-weight: 400;
+    line-height: rem(27);
+    margin-bottom: rem(44);
+  }
+  &__ text p {
+    margin-bottom: 10px;
+    &::last-child {
+      margin-bottom: 0;
+    }
+  }
+}

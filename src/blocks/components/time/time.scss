@@ -1,0 +1,51 @@
+.time {
+  text-align: right;
+  font-size: rem(13);
+  font-weight: 400;
+  text-decoration: underline;
+  position: relative;
+  z-index: 1;
+  &:hover {
+    .time__block {
+      opacity: 1;
+      left: rem(41);
+      transition: opacity ease .4s;
+    }
+  }
+  &__block {
+    opacity: 0;
+    position: absolute;
+    padding: rem(16) rem(12) rem(14) rem(16);
+    background-color: $white;
+    border-radius: 10px;
+    top: rem(30);
+    left: -9999px;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: rem(30);
+      left: 0;
+      right: 0;
+      top: rem(-29);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: rem(90);
+      top: rem(-21);
+      width: 0;
+      height: 0;
+      border: 7px solid transparent;
+      border-bottom: 14px solid $white;
+    }
+  }
+  &__days, &__lunch {
+    color: $black;
+    font-size: rem(13);
+    line-height: rem(21);
+  }
+  &__days {
+    font-weight: 700;
+  }
+}
