@@ -1,3 +1,5 @@
+include ../../components/btn/btn
+
 mixin tourCard(src, alt, title, duration, feed, description, href)
   article.tour-card
     .tour-card__header
@@ -8,4 +10,5 @@ mixin tourCard(src, alt, title, duration, feed, description, href)
         li.tour-card__item.tour-card__item--duration= duration
         li.tour-card__item.tour-card__item--feed= feed
       p.tour-card__description= description
-      a.btn.tour-card__btn(href= href) Смотреть
+      //- a.btn.tour-card__btn(href= href) Смотреть
+      +btn('Подробнее','#')(class="btn--color--white tour-card__btn")

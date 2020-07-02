@@ -28,10 +28,16 @@
     }
     &_active {
       border-radius: 50%;
-      background-color: $white;
-      color: $red;
       width: rem(32);
       height: rem(32);
+      &.color--theme--white {
+        background-color: $white;
+        color: $red;
+      }
+      &.color--theme--black {
+        background-color: $red;
+        color: $white;
+      }
     }
   }
   &__link {

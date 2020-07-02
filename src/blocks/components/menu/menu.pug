@@ -1,10 +1,17 @@
-mixin menu(...items)
+-
+  var items = [
+    {name: 'Главная', href: '#'},
+    {name: 'Услуги', href: '/service.html'},
+    {name: 'Отзывы',href: '/page.html'}
+  ]
+
+mixin menu
   nav.menu
     ul.menu__list
       each item, index in items
         if index === 0
           li.menu__item.menu__item_active
-            a.menu__link(href="#")= item
+            a.menu__link(href= item.href)= item.name
         else
           li.menu__item
-            a.menu__link(href="#")= item
+            a.menu__link(href=item.href)= item.name

@@ -1,0 +1,25 @@
+.partners {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    margin-left: rem(20);
+
+    &:nth-child(4n + 1) {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    display: flex;
+    width: rem(270);
+    height: rem(100);
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%);
+    transition: ease .2s;
+    &:hover {
+      filter: grayscale(0);
+      transition: ease .2s;
+    }
+  }
+}

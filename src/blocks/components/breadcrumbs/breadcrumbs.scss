@@ -1,0 +1,34 @@
+.breadcrumbs {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: rem(15);
+    &::after {
+      content: '/';
+      position: absolute;
+      right: -10px;
+      color: $light-grey;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+    &--active {
+      .breadcrumbs__link {
+        font-weight: 700;
+      }
+    }
+  }
+  &__link {
+    color: $light-grey;
+    font-weight: 400;
+    font-size: rem(14);
+    text-decoration: underline;
+  }
+}

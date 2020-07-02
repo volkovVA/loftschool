@@ -1,0 +1,36 @@
+.service-card {
+  display: flex;
+  &__img {
+    width: 30%;
+    height: 330px;
+    margin-right: 7%;
+  }
+  &__img-elem {
+    height: 100%;
+    object-fit: cover;
+  }
+  &__content {
+    flex: 1
+  }
+  &__title {
+    font-size: rem(36);
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+  &__description {
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: rem(30);
+    color: $dark-grey;
+    margin-bottom: rem(34);
+  }
+  &__btn {
+    transition: ease .5s;
+    &:hover {
+      background-color: $red;
+      color: $white;
+      transition: ease .5s;
+    }
+  }
+}

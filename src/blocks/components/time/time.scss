@@ -1,4 +1,5 @@
 .time {
+  display: none;
   text-align: center;
   font-size: rem(13);
   font-weight: 400;
@@ -7,6 +8,7 @@
   z-index: 1;
   @include media-tablet {
     text-align: right;
+    display: block;
   }
   &:hover {
     .time__block {

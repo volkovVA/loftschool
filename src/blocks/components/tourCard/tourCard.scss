@@ -82,9 +82,6 @@
   &__btn {
     display: inline-block;
     padding: rem(16) rem(28);
-    border: 1px solid rgba(245, 23, 14, 0.4);
-    background-color: $white;
-    color: $red;
     transition: ease .5s;
     &:hover {
       background-color: $red;

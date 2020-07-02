@@ -32,14 +32,16 @@
         margin-right: 0;
       }
     }
-    &:hover {
-      .news-card::after {
-        transform: translateY(-10%);
-      }
-      .news-card {
-        transform: skewY(-1deg);
-        box-shadow:8px 4px 15px 0px rgba(225,225,225,.1);
-        transition: ease .2s;
+    @include media-laptop {
+      &:hover {
+        .news-card::after {
+          transform: translateY(-10%);
+        }
+        .news-card {
+          transform: skewY(-1deg);
+          box-shadow:8px 4px 15px 0px rgba(225,225,225,.1);
+          transition: ease .2s;
+        }
       }
     }
   }

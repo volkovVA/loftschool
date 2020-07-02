@@ -14,4 +14,4 @@ section.news
       each card in newsCards
         li.news__item
           +newsCard(card.src, card.alt, card.date, card.title, card.description)
-    +paginator(7)
+    +paginator(7)(class="color--theme--white")

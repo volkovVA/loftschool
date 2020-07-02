@@ -1,0 +1,10 @@
+mixin breadcrumbs
+  nav.breadcrumbs
+    ul.breadcrumbs__list
+      each link, index in links
+        if index === 1
+          li.breadcrumbs__item.breadcrumbs__item--active
+            a.breadcrumbs__link(href= link.href)= link.text
+        else
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href= link.href)= link.text
