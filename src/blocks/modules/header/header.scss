@@ -1,15 +1,29 @@
+@import "../../../styles/helpers/media";
+
 .header {
-  height: rem(100);
+  @include media-tablet {
+    height: rem(100);
+  }
   &__container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    padding: rem(15) 0;
+    @include media-tablet {
+      flex-direction: row;
+      padding: 0;
+    }
   }
   &__menu {
-    margin-right: auto;
+    @include media-tablet {
+      margin-right: auto;
+    }
   }
   &__logo {
-    margin-right: rem(66);
+    @include media-tablet {
+      margin-right: rem(66);
+    }
   }
 }

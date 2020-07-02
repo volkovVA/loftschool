@@ -1,19 +1,50 @@
+@import "../../../styles/helpers/media";
+
 .news {
-  margin-bottom: rem(263);
+  margin-bottom: rem(15);
+  @include media-tablet {
+    margin-bottom: rem(100);
+  }
+  @include media-laptop {
+    margin-bottom: rem(240);
+  }
   &__list {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin-bottom: rem(34);
+    @include media-laptop {
+      margin-bottom: rem(4);
+    }
   }
   &__item {
-    margin-right: 30px;
-    margin-bottom: 30px;
+    margin-right: rem(15);
+    margin-left: rem(15);
+    margin-bottom: rem(30);
     &:last-child {
-      margin-right: 0;
+      margin-bottom: 0;
+    }
+    @include media-laptop {
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &:hover {
+      .news-card::after {
+        transform: translateY(-10%);
+      }
+      .news-card {
+        transform: skewY(-1deg);
+        box-shadow:8px 4px 15px 0px rgba(225,225,225,.1);
+        transition: ease .2s;
+      }
     }
   }
   &__title {
-    margin-bottom: 53px;
+    margin-bottom: rem(50);
   }
 }
 

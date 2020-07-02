@@ -1,13 +1,18 @@
 .tour-card {
   color: $black;
   background-color: $white;
-  width: 360px;
+  width: 305px;
   border-radius: 7px;
   overflow: hidden;
+  box-shadow:4px 4px 12px 0px rgba(225,225,225,.3);
+  @include media-tablet {
+    width: rem(360);
+  }
   &__header {
-    height: rem(141);
+    height: rem(140);
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 0px 70px 0 rgba(0, 0, 0, .5);
     &::after {
       content: '';
       position: absolute;
@@ -25,50 +30,58 @@
     object-position: center;
   }
   &__content {
-    padding: rem(15) rem(40) rem(35) rem(21);
+    padding: rem(21) rem(40) rem(33) rem(21);
   }
   &__title {
     font-size: rem(24);
     font-weight: 700;
-    margin-bottom: rem(18);
+    margin-bottom: rem(23);
   }
   &__details {
     display: flex;
     justify-content: space-between;
-    margin-bottom: rem(28);
+    margin-bottom: rem(25);
   }
-  &__duration, &__feed {
+  &__item {
+    display: flex;
+    align-items: center;
     position: relative;
     font-size: rem(16);
     font-weight: 400;
     line-height: rem(21);
     color: $grey;
-    padding-left: rem(40);
+    padding-left: rem(42);
     &:before {
       content: '';
       position: absolute;
       background-repeat: no-repeat;
       width: rem(26);
       height: rem(26);
-      left: 0;
-      bottom: 0;
+      left: 5px;
+      bottom: 50%;
+      transform: translateY(50%);
     }
-  }
-  &__duration:before {
-    background-image: url('../../../img/icons/offers/calendar.png');
-  }
-  &__feed:before {
-    background-image: url('../../../img/icons/offers/meal.png');
-    width: rem(36);
+    &--feed {
+      padding-left: rem(46);
+      margin-right: rem(20);
+    }
+    &--duration:before {
+      background-image: url('../../../img/icons/offers/calendar.png');
+    }
+    &--feed:before {
+      background-image: url('../../../img/icons/offers/meal.png');
+      width: rem(38);
+    }
   }
   &__description {
     font-size: rem(14);
     font-weight: 400;
     line-height: rem(21);
-    margin-bottom: rem(27);
+    margin-bottom: rem(25);
   }
   &__btn {
-    padding: rem(17) rem(25);
+    display: inline-block;
+    padding: rem(16) rem(28);
     border: 1px solid rgba(245, 23, 14, 0.4);
     background-color: $white;
     color: $red;

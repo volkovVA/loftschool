@@ -1,20 +1,38 @@
+@import "../../../styles/helpers/media";
+
 .tours {
-  margin-bottom: rem(150);
+  margin-bottom: rem(30);
+  @include media-tablet {
+    margin-bottom: rem(40);
+  }
+  @include media-laptop {
+    margin-bottom: rem(110);
+  }
   &__list {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: center;
   }
   &__item {
-    margin-right: rem(30);
-    margin-bottom: rem(10);
+    margin-bottom: rem(30);
+    margin-right: rem(15);
+    margin-left: rem(15);
     &:last-child {
-      margin-right: 0;
+      margin-bottom: 0;
+    }
+    @include media-laptop {
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
   &__title {
     position: relative;
     margin-bottom: rem(50);
+    width: rem(300);
     &::after {
       content: '';
       position: absolute;
@@ -24,7 +42,7 @@
       width: rem(21);
       height: rem(28);
       top: 21%;
-      left: 25%;
+      right: 0;
     }
   }
 }

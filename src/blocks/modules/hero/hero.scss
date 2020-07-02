@@ -1,23 +1,37 @@
 .hero {
-  height: rem(560);
+  height: rem(403);
+  margin-bottom: rem(100);
+  @include media-tablet {
+    margin-bottom: rem(128);
+    height: rem(548);
+  }
   &__container {
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
+    padding-top: rem(30);
     height: 100%;
+    @include media-tablet {
+      justify-content: center;
+      padding-top: 0;
+    }
   }
   &__title {
-    width: rem(520);
-    font-size: rem(72);
+    width: rem(304);
+    font-size: rem(36);
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: rem(25);
+    margin-bottom: rem(28);
+    @include media-tablet {
+      width: rem(520);
+      font-size: rem(72);
+    }
   }
   &__info {
     font-size: rem(18);
     font-weight: 400;
     line-height: rem(21);
-    margin-bottom: rem(36);
+    margin-bottom: rem(35);
   }
 }

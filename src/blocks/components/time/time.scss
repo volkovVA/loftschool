@@ -1,10 +1,13 @@
 .time {
-  text-align: right;
+  text-align: center;
   font-size: rem(13);
   font-weight: 400;
   text-decoration: underline;
   position: relative;
   z-index: 1;
+  @include media-tablet {
+    text-align: right;
+  }
   &:hover {
     .time__block {
       opacity: 1;

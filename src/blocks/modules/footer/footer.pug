@@ -1,14 +1,7 @@
 include ../../components/logo/logo.pug
 include ../../components/menu/menu.pug
 include ../../components/phone/phone.pug
-
--
-  var socials = [
-    {icon:'socials__link--telegram', href: 'https://telegram.org'},
-    {icon:'socials__link--vk', href: 'https://vk.com'},
-    {icon:'socials__link--facebook', href: 'https://facebook.com'},
-    {icon:'socials__link--instagram', href: 'https://instagram.com'}
-  ]
+include ../../components/socials/socials.pug
 
 footer.footer
   .container.footer__container
@@ -19,6 +12,7 @@ footer.footer
     .footer__socials
       +socials
     .footer__phone
+      .footer__text Бесплатный звонок по России
       +phone('+78007003030', '8 800 700 30 30')
 
 
