@@ -1,5 +1,5 @@
 .top-line {
-  min-height: rem(400);
+  min-height: rem(412);
   background-color: $bg;
   display: flex;
   flex-direction: column;
@@ -7,9 +7,14 @@
   background-position: center top;
   background-repeat: no-repeat;
   &__container {
+    padding-top: rem(20);
+    padding-bottom: rem(10);
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include media-tablet {
+      padding-top: rem(85);
+    }
   }
 }

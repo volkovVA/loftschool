@@ -2,6 +2,14 @@ extends ../layouts/default
 
 block variables
 	- const title = "Услуги";
+	- const currentUrl = '/service.html';
+	- var links = [{text: 'Главная', href:'/index.html'}, {text: 'Услуги', href:'#'}];
+	-
+		var items = [
+			{name: 'Главная', href: '/index.html'},
+			{name: 'Услуги', href: '/service.html'},
+			{name: 'Отзывы',href: '/page.html'}
+		]
 
 block content
 	.wrapper

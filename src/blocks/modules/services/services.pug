@@ -13,6 +13,6 @@ section.services
       each card in serviceCards
         li.services__item
           +serviceCard(card.src, card.alt, card.title, card.href)
-    +paginator(7)(class='color--theme--black')
+    +paginator(7, 1, 'color--theme--black')
 
 

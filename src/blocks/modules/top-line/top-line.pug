@@ -1,10 +1,8 @@
 include ../../components/page-title/page-title
 include ../../components/breadcrumbs/breadcrumbs
 
-- var links = [{text: 'Главная', href:'/index.html'}, {text: 'Услуги', href:'#'}]
-
 section.top-line
+  include ../../../blocks/modules/header/header
   .container.top-line__container
-    include ../../../blocks/modules/header/header
     +page-title('Услуги')
     +breadcrumbs

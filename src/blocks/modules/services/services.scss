@@ -2,7 +2,12 @@
   background-color: $white;
   color: $black;
   &__container {
-    padding: rem(100) 0;
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+    @include media-tablet {
+      padding-top: rem(100);
+    padding-bottom: rem(77);
+    }
   }
   &__list {
     margin: 0;

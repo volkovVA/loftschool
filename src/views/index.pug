@@ -3,6 +3,13 @@ include helpers/mixins
 
 block variables
 	- const title = "air-asia"
+	- const currentUrl = '/index.html'
+	-
+		var items = [
+			{name: 'Главная', href: '/index.html'},
+			{name: 'Услуги', href: '/service.html'},
+			{name: 'Отзывы',href: '/page.html'}
+		]
 
 block content
 	.wrapper.main-page-wrapper

@@ -1,13 +1,21 @@
 .inner-section {
   background-color: $white;
   color: $black;
-  padding: rem(100) 0;
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  @include media-tablet {
+    padding-top: rem(83);
+    padding-bottom: rem(103);
+  }
   &--bg--grey {
     background-color: $snowy;
   }
   &__title {
     font-size: rem(48);
     font-weight: 700;
-    margin-bottom: rem(75);
+    margin-bottom: rem(30);
+    @include media-tablet {
+      margin-bottom: rem(63);
+    }
   }
 }

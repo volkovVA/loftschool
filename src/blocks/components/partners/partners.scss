@@ -1,11 +1,13 @@
 .partners {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   &__item {
-    margin-left: rem(20);
-
     &:nth-child(4n + 1) {
       margin-left: 0;
+    }
+    @include media-tablet {
+      margin-left: rem(20);
     }
   }
   &__link {
@@ -15,8 +17,10 @@
     height: rem(100);
     align-items: center;
     justify-content: center;
-    filter: grayscale(100%);
-    transition: ease .2s;
+    @include media-custom(1367px) {
+      filter: grayscale(100%);
+      transition: ease .2s;
+    }
     &:hover {
       filter: grayscale(0);
       transition: ease .2s;

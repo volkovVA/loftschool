@@ -8,10 +8,10 @@ include ../../components/paginator/paginator
   ]
 
 section.news
-  .container.news__container
+  .container
     h2.title.news__title Новости и акции
     ul.news__list
       each card in newsCards
         li.news__item
           +newsCard(card.src, card.alt, card.date, card.title, card.description)
-    +paginator(7)(class="color--theme--white")
+    +paginator(7, 1, 'color--theme--white')
