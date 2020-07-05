@@ -1,5 +1,4 @@
 .news-card {
-  width: rem(320);
   height: rem(391);
   position: relative;
   border-radius: 5px;
@@ -31,7 +30,7 @@
   }
   &__image {
     display: block;
-    height: 100%;
+    min-height: 100%;
     object-fit: cover;
     object-position: center;
     opacity: .7;
@@ -46,17 +45,14 @@
   }
   &__date {
     display: block;
-    font-size: rem(14);
-    font-weight: 400;
     margin-bottom: rem(16);
+    @include font-source (rem(14), 400);
   }
   &__title {
-    font-size: rem(24);
-    font-weight: 700;
     margin-bottom: rem(4);
+    @include font-source (rem(24), 700);
   }
   &__description {
-    font-size: rem(16);
-    font-weight: 400;
+    @include font-source (rem(16), 400);
   }
 }

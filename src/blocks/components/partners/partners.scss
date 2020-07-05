@@ -2,10 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-left: rem(-20);
   &__item {
-    &:nth-child(4n + 1) {
-      margin-left: 0;
-    }
     @include media-tablet {
       margin-left: rem(20);
     }

@@ -8,8 +8,7 @@
   }
   &__display {
     margin-right: 0;
-    font-size: rem(16);
-    font-weight: 400;
+    @include font-source (rem(16), 400);
     @include media-tablet {
       margin-right: rem(23);
     }
@@ -42,7 +41,6 @@
   }
   &__link {
     padding: 5px 10px;
-    font-weight: 700;
-    font-size: rem(16);
+    @include font-source (rem(16), 700);
   }
 }

@@ -26,9 +26,7 @@
     }
   }
   &__link {
-    color: $light-grey;
-    font-weight: 400;
-    font-size: rem(14);
     text-decoration: underline;
+    @include font-source (rem(14), 400, $light-grey);
   }
 }

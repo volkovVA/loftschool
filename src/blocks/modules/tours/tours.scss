@@ -8,23 +8,20 @@
   }
   &__list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    @include media-tablet {
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
   }
   &__item {
     margin-bottom: rem(30);
-    margin-right: rem(15);
-    margin-left: rem(15);
-    &:last-child {
-      margin-bottom: 0;
-    }
-    @include media-laptop {
-      &:first-child {
-        margin-left: 0;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
+    @include media-tablet {
+      margin-right: 15px;
+      margin-left: 15px;
     }
   }
   &__title {
@@ -34,7 +31,7 @@
     &::after {
       content: '';
       position: absolute;
-      background-image: url('../../../img/icons/flame.png');
+      background-image: url('../img/icons/flame.png');
       background-repeat: no-repeat;
       background-size: cover;
       width: rem(21);

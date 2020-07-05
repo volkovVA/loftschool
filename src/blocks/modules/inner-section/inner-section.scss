@@ -11,9 +11,8 @@
     background-color: $snowy;
   }
   &__title {
-    font-size: rem(48);
-    font-weight: 700;
     margin-bottom: rem(30);
+    @include font-source (rem(48), 700);
     @include media-tablet {
       margin-bottom: rem(63);
     }

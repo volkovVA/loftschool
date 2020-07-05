@@ -1,8 +1,8 @@
 extends ../layouts/default
 
 block variables
-	- const title = "Услуги";
-	- const currentUrl = './service.html';
+	- const title = "Отзывы";
+	- const currentUrl = './comment.html';
 	- var links = [{text: 'Главная', href:'./index.html'}, {text: 'Услуги', href:'#'}];
 	-
 		var items = [
@@ -10,12 +10,11 @@ block variables
 			{name: 'Услуги', href: './service.html'},
 			{name: 'Отзывы',href: './comment.html'}
 		]
-	- var topLineTitle = 'Услуги'
+	- var topLineTitle = 'Отзывы'
 
 block content
 	.wrapper
 		include ../../blocks/modules/top-line/top-line
 		main.main
-			include ../../blocks/modules/services/services
-			include ../../blocks/modules/inner-section/inner-section
+			include ../../blocks/modules/comments/comments
 		include ../../blocks/modules/footer/footer

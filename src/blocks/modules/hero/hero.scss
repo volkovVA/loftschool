@@ -19,19 +19,15 @@
   }
   &__title {
     width: rem(304);
-    font-size: rem(36);
-    font-weight: 700;
-    line-height: 1.2;
     margin-bottom: rem(28);
+    @include font-source (rem(36), 700, $lh: 1.2);
     @include media-tablet {
       width: rem(520);
       font-size: rem(72);
     }
   }
   &__info {
-    font-size: rem(18);
-    font-weight: 400;
-    line-height: rem(21);
     margin-bottom: rem(35);
+    @include font-source (rem(18), 400);
   }
 }

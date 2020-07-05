@@ -24,6 +24,7 @@
     font-size: rem(11);
     font-weight: 400;
     text-align: center;
+    @include font-source (rem(11), 400);
     @include media-tablet {
       text-align: right;
     }

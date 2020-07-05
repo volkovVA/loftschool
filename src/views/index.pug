@@ -3,12 +3,12 @@ include helpers/mixins
 
 block variables
 	- const title = "air-asia"
-	- const currentUrl = '/index.html'
+	- const currentUrl = './index.html'
 	-
 		var items = [
-			{name: 'Главная', href: '/index.html'},
-			{name: 'Услуги', href: '/service.html'},
-			{name: 'Отзывы',href: '/page.html'}
+			{name: 'Главная', href: './index.html'},
+			{name: 'Услуги', href: './service.html'},
+			{name: 'Отзывы',href: './comment.html'}
 		]
 
 block content
@@ -20,6 +20,4 @@ block content
 			include ../blocks/modules/news/news
 			include ../blocks/modules/about/about
 		include ../blocks/modules/footer/footer
-block scripts
-	script(src="js/main.js")
-	script(src="js/vendor.js")
+

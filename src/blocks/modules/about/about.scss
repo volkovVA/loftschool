@@ -12,7 +12,7 @@
     bottom: 13%;
     width: rem(488);
     height: rem(502);
-    background-image: url('../../../img/decor/gates.jpg');
+    background-image: url('../img/decor/gates.jpg');
     background-position: center center;
     background-size: cover;
     border-radius: 7px;
@@ -22,15 +22,14 @@
     justify-content: center;
   }
   &__description {
-    width: rem(304);
     min-height: rem(454);
-    background-image: url('../../../img/decor/mountains.jpg');
+    background-image: url('../img/decor/mountains.jpg');
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    padding: rem(10);
     border-radius: 7px;
+    padding: rem(50) rem(30) rem(30) rem(30);
     @include media-tablet {
       padding: rem(70) rem(80) rem(50) rem(95);
       width: rem(780);
@@ -53,11 +52,8 @@
     }
   }
   &__text p {
-    color: $black;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: rem(27);
     margin-bottom: 10px;
+    @include font-source (rem(16), 400, $black);
     &::last-child {
       margin-bottom: 0;
     }

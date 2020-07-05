@@ -1,8 +1,8 @@
 .main-page-wrapper {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../img/bg/hero.png') center top no-repeat, url('../../img/bg/bottom-pic.jpg') center bottom 10% no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/bg/hero.png') center top no-repeat, url('../img/bg/bottom-pic.jpg') center bottom 10% no-repeat;
 }
 
-.title {
+.section-title {
   font-size: rem(36);
   font-weight: 700;
 }

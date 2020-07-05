@@ -1,0 +1,52 @@
+.comment-card {
+  width: rem(555);
+  border-radius: 4px;
+  background-color: $snowy;
+  padding: rem(45) rem(29) rem(33) rem(25);
+  &__header {
+    display: flex;
+    margin-bottom: rem(30);
+  }
+  &__avatar {
+    width: rem(139);
+    height: rem(139);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__img {
+    object-fit: cover;
+    object-position: center;
+  }
+  &__user {
+    padding-left: rem(20);
+  }
+  &__name {
+    margin-bottom: rem(10);
+    @include font-source (rem(24), 700, $graphite);
+  }
+  &__tour {
+    background-color: $turquoise;
+    padding: rem(8) rem(14);
+    text-align: center;
+    border-radius: rem(20);
+    @include font-source (rem(13), 400, $dark-grey);
+  }
+  &__title {
+    color: $graphite;
+    font-size: rem(30);
+    font-weight: 700;
+    margin-bottom: rem(25);
+    @include font-source (rem(30), 700, $graphite);
+  }
+  &__text {
+    line-height: 27px;
+    margin-bottom: rem(50);
+    @include font-source (rem(16), 400, $pearl-dark-gray);
+  }
+  &__date {
+    color: $graphite;
+    font-size: 14px;
+    font-weight: 400;
+    @include font-source (rem(14), 400, $graphite);
+  }
+}

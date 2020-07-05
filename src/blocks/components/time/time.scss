@@ -1,11 +1,10 @@
 .time {
   display: none;
   text-align: center;
-  font-size: rem(13);
-  font-weight: 400;
   text-decoration: underline;
   position: relative;
   z-index: 1;
+  @include font-source (rem(13), 400);
   @include media-tablet {
     text-align: right;
     display: block;
@@ -48,7 +47,7 @@
   &__days, &__lunch {
     color: $black;
     font-size: rem(13);
-    line-height: rem(21);
+    @include font-source (rem(13), 400, $black);
   }
   &__days {
     font-weight: 700;

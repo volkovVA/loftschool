@@ -1,5 +1,3 @@
 .page-title {
-  line-height: 1;
-  font-weight: 700;
-  font-size: rem(72);
+  @include font-source (rem(72), 700);
 }

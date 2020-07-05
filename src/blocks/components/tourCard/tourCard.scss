@@ -1,11 +1,10 @@
 .tour-card {
   color: $black;
   background-color: $white;
-  width: 305px;
   border-radius: 7px;
   overflow: hidden;
   box-shadow:4px 4px 12px 0px rgba(225,225,225,.3);
-  @include media-tablet {
+  @include media-tablet{
     width: rem(360);
   }
   &__header {
@@ -33,9 +32,8 @@
     padding: rem(21) rem(40) rem(33) rem(21);
   }
   &__title {
-    font-size: rem(24);
-    font-weight: 700;
     margin-bottom: rem(23);
+    @include font-source (rem(23), 700);
   }
   &__details {
     display: flex;
@@ -46,11 +44,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    font-size: rem(16);
-    font-weight: 400;
-    line-height: rem(21);
-    color: $grey;
     padding-left: rem(42);
+    @include font-source (rem(16), 400, $grey);
     &:before {
       content: '';
       position: absolute;
@@ -66,18 +61,16 @@
       margin-right: rem(20);
     }
     &--duration:before {
-      background-image: url('../../../img/icons/offers/calendar.png');
+      background-image: url('../img/icons/offers/calendar.png');
     }
     &--feed:before {
-      background-image: url('../../../img/icons/offers/meal.png');
+      background-image: url('../img/icons/offers/meal.png');
       width: rem(38);
     }
   }
   &__description {
-    font-size: rem(14);
-    font-weight: 400;
-    line-height: rem(21);
     margin-bottom: rem(25);
+    @include font-source (rem(14), 400);
   }
   &__btn {
     display: inline-block;

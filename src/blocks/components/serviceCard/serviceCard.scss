@@ -10,6 +10,8 @@
     height: 330px;
     @include media-tablet {
       width: rem(458);
+    }
+    @include media-laptop {
       margin-right: rem(57);
     }
   }
@@ -24,19 +26,15 @@
     padding-top: rem(14);
   }
   &__title {
-    font-size: rem(30);
-    font-weight: 700;
     margin-bottom: rem(28);
+    @include font-source (rem(30), 700);
     @include media-tablet {
       font-size: rem(36);
     }
   }
   &__description {
-    font-size: rem(16);
-    font-weight: 400;
-    line-height: 1.7;
-    color: $dark-grey;
     margin-bottom: rem(50);
+    @include font-source (rem(16), 400, $dark-grey, 1.7);
   }
   &__btn {
     transition: ease .5s;

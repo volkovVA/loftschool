@@ -1,0 +1,13 @@
+mixin commentCard(src, alt, name, tour, title, text, date)
+  article.comment-card
+    .comment-card__header
+      .comment-card__avatar
+        img.comment-card__img(src= src alt= alt)
+      .comment-card__user
+        .comment-card__name= name
+        .comment-card__tour= tour
+    .comment-card__content
+      h3.comment-card__title= title
+      .comment-card__text
+        p= text
+      .comment-card__date= date

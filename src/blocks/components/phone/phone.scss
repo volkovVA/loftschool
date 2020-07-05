@@ -1,7 +1,6 @@
 .phone {
   font-style: normal;
   &__number {
-    font-size: rem(26);
-    font-weight: 400;
+    @include font-source (rem(26), 400);
   }
 }

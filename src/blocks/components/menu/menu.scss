@@ -13,8 +13,7 @@
   }
   &__link {
     transition: ease .2s;
-    font-weight: 400;
-    font-size: rem(14);
+    @include font-source (rem(14), 400);
     &:hover {
       color: $red;
       transition: ease .2s;
