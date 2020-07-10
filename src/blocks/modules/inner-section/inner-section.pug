@@ -12,7 +12,16 @@ include ../../components/partners/partners
     {href: 'https://pegast.ru/', src: 'img/icons/partners/pegas.png', alt: 'логотип авиакомпании пегас туристик'}
   ]
 
-section.inner-section.inner-section--bg--grey
-  .container
-    h2.inner-section__title Партнеры
-    +partners
+if currentUrl === './service.html'
+  section.inner-section.inner-section--bg--grey.inner-section--padding
+    .container
+      h2.inner-section__title Партнеры
+      +partners
+if currentUrl === './comment.html'
+  section.inner-section.inner-section--bg--pink.inner-section--bg--decor
+    .container
+      h2.inner-section__title.inner-section__title--width.inner-section__title--color--white Подберем тур по вашим пожеланиям
+  section.inner-section.inner-section--bg--grey.inner-section--padding
+    .container
+      h2.inner-section__title Оставьте отзыв
+      include ../../modules/form/form

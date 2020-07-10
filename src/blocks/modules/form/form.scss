@@ -1,0 +1,73 @@
+.form {
+  &__row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(25);
+    &--btn {
+      justify-content: flex-end;
+      align-items: center;
+    }
+    @include media-tablet {
+      flex-direction: row;
+    }
+  }
+  &__col {
+    flex: 1;
+    margin-bottom: rem(10);
+    @include media-tablet {
+      margin-right: rem(30);
+    }
+    &--mr--0 {
+      margin-right: 0;
+    }
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    padding: rem(23) 0 rem(17) rem(27);
+  }
+  &__textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    min-height: rem(230);
+    padding: rem(28) 0 0 rem(27);
+  }
+  &__text {
+    @include font-source (rem(18), 400, $graphite);
+    margin-bottom: rem(20);
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include media-tablet {
+      justify-content: start;
+    }
+  }
+  &__item {
+    margin-right: rem(5);
+    margin-bottom: rem(5);
+    &:last-child {
+      margin-right: 0;
+    }
+    & .direction {
+      background-color: $gainsborough;
+    }
+    &--active .direction {
+      background-color: $turquoise;
+    }
+  }
+  &__text {
+    margin-right: rem(15);
+  }
+  &__btn {
+    margin-bottom: rem(10);
+    &:last-child {
+      margin-right: 0;
+    }
+    @include media-tablet {
+      margin-right: rem(18);
+    }
+  }
+}

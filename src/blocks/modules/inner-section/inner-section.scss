@@ -1,20 +1,59 @@
 .inner-section {
+  position: relative;
   background-color: $white;
   color: $black;
-  padding-top: rem(50);
-  padding-bottom: rem(50);
-  @include media-tablet {
-    padding-top: rem(83);
-    padding-bottom: rem(103);
+  &--padding {
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+    @include media-tablet {
+      padding-top: rem(90);
+      padding-bottom: rem(115);
+    }
   }
   &--bg--grey {
     background-color: $snowy;
   }
+  &--bg--pink {
+    background-image: url('../img/bg/middleline.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: rem(360);
+    display: flex;
+    align-items: center;
+  }
+  &--bg--decor {
+    &::after {
+      content: url('../../../img/decor/couple.png');
+      height: rem(300);
+      position: absolute;
+      bottom: -2%;
+      right: 0;
+      background-size: cover;
+      @include media-laptop {
+        right: 10%;
+      }
+    }
+  }
   &__title {
+    position: relative;
+    z-index: 2;
     margin-bottom: rem(30);
     @include font-source (rem(48), 700);
     @include media-tablet {
       margin-bottom: rem(63);
+    }
+    &--width {
+      max-width: 50%;
+      font-size: rem(36);
+      @include media-tablet {
+        font-size: rem(48);
+      }
+    }
+    &--color--white {
+      color: $white;
+      @include media-tablet {
+        margin-bottom: 0;
+      }
     }
   }
 }

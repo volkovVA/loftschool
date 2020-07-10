@@ -15,14 +15,26 @@
       flex-direction: row;
     }
   }
+  &__logo {
+    margin-bottom: rem(15);
+    @include media-laptop {
+      margin-bottom: 0;
+    }
+  }
   &__menu {
+    margin-bottom: rem(15);
     @include media-laptop {
       margin-right: rem(215);
+      margin-bottom: 0;
+    }
+  }
+  &__socials {
+    margin-bottom: rem(15);
+    @include media-laptop {
+      margin-bottom: 0;
     }
   }
   &__text {
-    font-size: rem(11);
-    font-weight: 400;
     text-align: center;
     @include font-source (rem(11), 400);
     @include media-tablet {

@@ -17,11 +17,13 @@
     }
   }
   &__menu {
+    margin-bottom: rem(15);
     @include media-tablet {
       margin-right: auto;
     }
   }
   &__logo {
+    margin-bottom: rem(15);
     @include media-tablet {
       margin-right: rem(66);
     }

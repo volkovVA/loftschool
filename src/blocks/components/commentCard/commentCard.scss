@@ -1,42 +1,61 @@
 .comment-card {
-  width: rem(555);
   border-radius: 4px;
   background-color: $snowy;
-  padding: rem(45) rem(29) rem(33) rem(25);
+  padding: rem(15);
+  @include media-tablet {
+    width: rem(555);
+    padding: rem(45) rem(29) rem(33) rem(25);
+  }
   &__header {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: rem(30);
+    @include media-tablet {
+      flex-direction: row;
+    }
   }
-  &__avatar {
-    width: rem(139);
-    height: rem(139);
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  &__img {
-    object-fit: cover;
-    object-position: center;
+  &__photo {
+    margin-bottom: rem(10);
+    @include media-tablet {
+      margin-bottom: 0;
+    }
   }
   &__user {
     padding-left: rem(20);
   }
   &__name {
-    margin-bottom: rem(10);
-    @include font-source (rem(24), 700, $graphite);
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    margin-bottom: rem(20);
+    @include font-source (rem(24), 700, $blue);
+    &::after {
+      content: url('../../../img/icons/socials/vk-blue.png');
+      height: rem(30);
+      padding-left: 8px;
+    }
+    @include media-tablet {
+      margin-bottom: rem(10);
+    }
   }
-  &__tour {
-    background-color: $turquoise;
-    padding: rem(8) rem(14);
+  &__tegs {
     text-align: center;
-    border-radius: rem(20);
-    @include font-source (rem(13), 400, $dark-grey);
+    @include media-tablet {
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
   }
   &__title {
     color: $graphite;
-    font-size: rem(30);
     font-weight: 700;
     margin-bottom: rem(25);
-    @include font-source (rem(30), 700, $graphite);
+    text-align: center;
+    @include font-source (rem(25), 700, $graphite);
+    @include media-tablet {
+      text-align: left;
+      font-size: rem(30);
+    }
   }
   &__text {
     line-height: 27px;

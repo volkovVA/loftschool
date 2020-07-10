@@ -1,0 +1,32 @@
+include ../../components/directionTour/directionTour.pug
+include ../../components/formBtn/formBtn.pug
+
+- let formTours = ['Остров обезьян', 'Тур по Тайланду', 'Водопад Янг-бей', 'Тур по Индонезии', 'Никакими', 'Тур по Бали', 'Другое']
+
+form.form(action="")
+  .form__row
+    .form__col
+      input.form__input(name='name' type='text' placeholder='Игорь Петрович')
+    .form__col.form__col--mr--0
+      input.form__input(name='name' type='text' placeholder='Ссылка на профиль VK')
+  .form__row
+    .form__col.form__col--mr--0
+      textarea.form__textarea(name='comment' placeholder='Напишите свой честный отзыв ;)')
+  .form__row
+    .form__text Какими услугами компании пользуетесь?
+    ul.form__list
+      each tour, index in formTours
+        if index === 2
+          li.form__item.form__item--active
+            +tour(tour)
+        else
+          li.form__item
+            +tour(tour)
+  .form__row.form__row--btn
+    .form__btn
+      +formBtn('Очистить')(class='form-btn--black')
+    .form__btn
+      +formBtn('Отправить')(class='form-btn--red')
+
+
+

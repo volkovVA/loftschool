@@ -1,12 +1,24 @@
 .comments {
+  background-color: $white;
+  color: $black;
+  &__container {
+    padding: rem(100) 0 rem(90);
+  }
   &__list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    column-count: 1;
+    column-gap: rem(30);
+    margin-bottom: rem(60);
+    @include media-laptop {
+      display: block;
+      column-count: 2;
+    }
   }
   &__item {
-    margin-right: rem(30);
     margin-bottom: rem(20);
+    display: inline-flex;
     &:nth-child(2n) {
       margin-right: 0;
     }
