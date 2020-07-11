@@ -26,7 +26,7 @@
   }
   &__title {
     position: relative;
-    margin-bottom: rem(50);
+    margin: 0 auto rem(50);
     width: rem(300);
     &::after {
       content: '';
@@ -38,6 +38,10 @@
       height: rem(28);
       top: 21%;
       right: 0;
+    }
+    @include media-laptop {
+      margin: 0;
+      margin-bottom: rem(50);
     }
   }
 }

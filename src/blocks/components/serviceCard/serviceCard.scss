@@ -24,12 +24,18 @@
   &__content {
     flex: 1;
     padding-top: rem(14);
+    display: flex;
+    flex-direction: column;
   }
   &__title {
+    align-self: center;
     margin-bottom: rem(28);
     @include font-source (rem(30), 700);
     @include media-tablet {
       font-size: rem(36);
+    }
+    @include media-laptop {
+      align-self: flex-start;
     }
   }
   &__description {
@@ -37,11 +43,15 @@
     @include font-source (rem(16), 400, $dark-grey, 1.7);
   }
   &__btn {
+    align-self: center;
     transition: ease .5s;
     &:hover {
       background-color: $red;
       color: $white;
       transition: ease .5s;
+    }
+    @include media-laptop {
+      align-self: flex-start;
     }
   }
 }

@@ -2,7 +2,10 @@
   background-color: $white;
   color: $black;
   &__container {
-    padding: rem(100) 0 rem(90);
+    padding: rem(50) 0;
+    @include media-laptop {
+      padding: rem(100) 0 rem(90);
+    }
   }
   &__list {
     display: flex;

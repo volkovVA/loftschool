@@ -30,6 +30,8 @@
   }
   &__content {
     padding: rem(21) rem(40) rem(33) rem(21);
+    display: flex;
+    flex-direction: column;
   }
   &__title {
     margin-bottom: rem(23);
@@ -73,13 +75,16 @@
     @include font-source (rem(14), 400);
   }
   &__btn {
-    display: inline-block;
+    align-self: center;
     padding: rem(16) rem(28);
     transition: ease .5s;
     &:hover {
       background-color: $red;
       color: $white;
       transition: ease .5s;
+    }
+    @include media-laptop {
+      align-self: flex-start;
     }
   }
 }

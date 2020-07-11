@@ -38,9 +38,11 @@
     position: relative;
     z-index: 2;
     margin-bottom: rem(30);
+    text-align: center;
     @include font-source (rem(48), 700);
-    @include media-tablet {
+    @include media-laptop {
       margin-bottom: rem(63);
+      text-align: left;
     }
     &--width {
       max-width: 50%;

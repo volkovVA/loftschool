@@ -1,9 +1,11 @@
 .top-line {
-  min-height: rem(412);
+  max-height: rem(412);
+  height: 100vh;
   background-color: $bg;
   display: flex;
   flex-direction: column;
   background-image: url('../img/bg/headline.jpg');
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   &__container {

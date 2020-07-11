@@ -42,7 +42,7 @@
     flex-wrap: wrap;
     justify-content: center;
     @include media-tablet {
-      justify-content: start;
+      justify-content: flex-start;
     }
   }
   &__item {
