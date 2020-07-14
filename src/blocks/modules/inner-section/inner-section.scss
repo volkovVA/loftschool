@@ -23,14 +23,20 @@
   }
   &--bg--decor {
     &::after {
-      content: url('../../../img/decor/couple.png');
+      content: url('../img/decor/couple.png');
       height: rem(300);
       position: absolute;
       bottom: -2%;
-      right: 0;
+      right: -50%;
       background-size: cover;
       @include media-laptop {
-        right: 10%;
+        right: 20%;
+      }
+      @include bg-2x {
+        background-image: url('../img/decor/2x/couple@2x.png');
+      }
+      @include bg-3x {
+        background-image: url('../img/decor/3x/couple@3x.png');
       }
     }
   }

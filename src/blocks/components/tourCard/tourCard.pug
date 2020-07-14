@@ -1,9 +1,9 @@
 include ../../components/btn/btn
 
-mixin tourCard(src, alt, title, duration, feed, description, href)
+mixin tourCard(src, srcRetina, alt, title, duration, feed, description, href)
   article.tour-card
     .tour-card__header
-      img.tour-card__img(src= src alt= alt)
+      img.tour-card__img(src= src srcset= srcRetina alt= alt)
     .tour-card__content
       h3.tour-card__title= title
       ul.tour-card__details

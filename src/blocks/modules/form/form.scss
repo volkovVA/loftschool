@@ -46,16 +46,13 @@
     }
   }
   &__item {
-    margin-right: rem(5);
-    margin-bottom: rem(5);
+    margin-right: rem(15);
+    margin-bottom: rem(15);
     &:last-child {
       margin-right: 0;
     }
     & .direction {
       background-color: $gainsborough;
-    }
-    &--active .direction {
-      background-color: $turquoise;
     }
   }
   &__text {
@@ -68,6 +65,27 @@
     }
     @include media-tablet {
       margin-right: rem(18);
+    }
+  }
+  &__check {
+    position: relative;
+    cursor: pointer;
+    &:focus-within {
+      outline: 2px solid $black;
+    }
+    &-input {
+      position: absolute;
+      top: 0;
+      left: -99999px;
+      &:checked + .form__check-text {
+        background-color: $turquoise;
+      }
+    }
+    &-text {
+      border-radius: 17px;
+      background-color: $gainsborough;
+      padding: 5px 10px;
+      @include font-source (rem(13), 400, $graphite);
     }
   }
 }

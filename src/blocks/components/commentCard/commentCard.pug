@@ -1,11 +1,11 @@
 include ../../components/directionTour/directionTour.pug
 include ../../components/avatar/avatar.pug
 
-mixin commentCard(src, alt, href, name, tour, title, text, date)
+mixin commentCard(src, srcRetina, alt, href, name, tour, title, text, date)
   article.comment-card
     .comment-card__header
       .comment-card__photo
-        +avatar(src, alt)
+        +avatar(src, srcRetina, alt)
       .comment-card__user
         a.comment-card__name(href= href)= name
         .comment-card__tegs
@@ -14,4 +14,4 @@ mixin commentCard(src, alt, href, name, tour, title, text, date)
       h3.comment-card__title= title
       .comment-card__text
         p= text
-      time.comment-card__date= date
+      span.comment-card__date= date

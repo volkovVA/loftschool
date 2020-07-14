@@ -27,17 +27,11 @@
   &__title {
     position: relative;
     margin: 0 auto rem(50);
-    width: rem(300);
     &::after {
-      content: '';
-      position: absolute;
-      background-image: url('../img/icons/flame.png');
-      background-repeat: no-repeat;
-      background-size: cover;
+      content: url('../img/icons/flame.png');
+      padding-left: 10px;
       width: rem(21);
       height: rem(28);
-      top: 21%;
-      right: 0;
     }
     @include media-laptop {
       margin: 0;

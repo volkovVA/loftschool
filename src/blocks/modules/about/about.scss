@@ -24,7 +24,7 @@
   &__description {
     min-height: rem(454);
     background-image: url('../img/decor/mountains.jpg');
-    background-position: center top;
+    background-position: right top;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -35,7 +35,14 @@
       width: rem(780);
     }
     @include media-laptop {
+      background-position: center top;
       margin-left: auto;
+    }
+    @include bg-2x {
+      background-image: url('../img/decor/2x/mountains@2x.png');
+    }
+    @include bg-3x {
+      background-image: url('../img/decor/3x/mountains@3x.png');
     }
   }
   &__title {

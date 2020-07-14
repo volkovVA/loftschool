@@ -3,29 +3,29 @@ extends ../layouts/default
 block variables
 	- const title = "Услуги";
 	- const currentUrl = './service.html';
-	- var links = [{text: 'Главная', href:'./index.html'}, {text: 'Услуги', href:'#'}];
+	- const links = [{text: 'Главная', href:'./index.html'}, {text: 'Услуги', href:'#'}];
 	-
-		var items = [
+		const items = [
 			{name: 'Главная', href: './index.html'},
 			{name: 'Услуги', href: './service.html'},
 			{name: 'Отзывы',href: './comment.html'}
 		]
-	- var topLineTitle = 'Услуги'
+	- const topLineTitle = 'Услуги'
 	-
-		var partners = [
-			{href: 'https://www.pobeda.aero/ru', src: 'img/icons/partners/pobeda.png', alt: 'логотип авиакомпании победа'},
-			{href: 'https://www.s7.ru/', src: 'img/icons/partners/s7.png', alt: 'логотип авиакомпании s seven'},
-			{href: 'https://sletat.ru/', src: 'img/icons/partners/lets-fly.png', alt: 'логотип слетать ру'},
-			{href: 'https://www.lufthansa.com', src: 'img/icons/partners/lufthansa.png', alt: 'логотип авиакомпании люфтганза'},
-			{href: 'https://www.airbaltic.com', src: 'img/icons/partners/airbaltic.png', alt: 'логотип авиакомпании эйрбалтик'},
-			{href: 'https://www.flypgs.com/ru', src: 'img/icons/partners/pegasus.png', alt: 'логотип компании пегас'},
-			{href: 'https://www.uralairlines.ru/', src: 'img/icons/partners/ural.png', alt: 'логотип авиакомпании уральские авиалинии'},
-			{href: 'https://pegast.ru/', src: 'img/icons/partners/pegas.png', alt: 'логотип авиакомпании пегас туристик'}
+		const partners = [
+			{href: 'https://www.pobeda.aero/ru', src: 'img/icons/partners/pobeda.png', srcRetina: 'img/icons/partners/2x/pobeda@2x.png 1.25x, img/icons/partners/3x/pobeda@3x.png 2.25x', alt: 'логотип авиакомпании победа'},
+			{href: 'https://www.s7.ru/', src: 'img/icons/partners/s7.png', srcRetina: 'img/icons/partners/2x/s7@2x.png 1.25x, img/icons/partners/3x/s7@3x.png 2.25x', alt: 'логотип авиакомпании s seven'},
+			{href: 'https://sletat.ru/', src: 'img/icons/partners/lets-fly.png', srcRetina: 'img/icons/partners/2x/lets-fly@2x.png 1.25x, img/icons/partners/3x/lets-fly@3x.png 2.25x', alt: 'логотип слетать ру'},
+			{href: 'https://www.lufthansa.com', src: 'img/icons/partners/lufthansa.png', srcRetina: 'img/icons/partners/2x/lufthansa@2x.png 1.25x, img/icons/partners/3x/lufthansa@3x.png 2.25x', alt: 'логотип авиакомпании люфтганза'},
+			{href: 'https://www.airbaltic.com', src: 'img/icons/partners/airbaltic.png', srcRetina: 'img/icons/partners/2x/airbaltic@2x.png 1.25x, img/icons/partners/3x/airbaltic@3x.png 2.25x', alt: 'логотип авиакомпании эйрбалтик'},
+			{href: 'https://www.flypgs.com/ru', src: 'img/icons/partners/pegasus.png', srcRetina: 'img/icons/partners/2x/pegasus@2x.png 1.25x, img/icons/partners/3x/pegasus@3x.png 2.25x', alt: 'логотип компании пегас'},
+			{href: 'https://www.uralairlines.ru/', src: 'img/icons/partners/ural.png', srcRetina: 'img/icons/partners/2x/ural@2x.png 1.25x, img/icons/partners/3x/ural@3x.png 2.25x', alt: 'логотип авиакомпании уральские авиалинии'},
+			{href: 'https://pegast.ru/', src: 'img/icons/partners/pegas.png', srcRetina: 'img/icons/partners/2x/pegas@2x.png 1.25x, img/icons/partners/3x/pegas@3x.png 2.25x', alt: 'логотип авиакомпании пегас туристик'}
 		]
 	-
-		var serviceCards = [
-			{src: 'img/content/service/waterfall.jpg', alt: 'водопад янг-бей', title: 'Водопад Янг-бей', href: '#'},
-			{src: 'img/content/service/monkeys.jpg', alt: 'остров обезьян', title: 'Остров Обезьян', href: '#'}
+		const serviceCards = [
+			{src: 'img/content/service/waterfall.jpg', srcRetina: 'img/content/service/2x/waterfall@2x.png 1.25x, img/content/service/3x/waterfall@3x.png 2.25x', alt: 'водопад янг-бей', title: 'Водопад Янг-бей', href: '#'},
+			{src: 'img/content/service/monkeys.jpg', srcRetina: 'img/content/service/2x/waterfall@2x.png 1.25x, img/content/service/3x/waterfall@3x.png 2.25x', alt: 'остров обезьян', title: 'Остров Обезьян', href: '#'}
 		]
 
 block content

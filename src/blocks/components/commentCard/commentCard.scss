@@ -31,7 +31,7 @@
     margin-bottom: rem(20);
     @include font-source (rem(24), 700, $blue);
     &::after {
-      content: url('../../../img/icons/socials/vk-blue.png');
+      content: url('../img/icons/socials/vk-blue.png');
       height: rem(30);
       padding-left: 8px;
     }

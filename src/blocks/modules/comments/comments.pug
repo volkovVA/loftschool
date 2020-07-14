@@ -6,5 +6,5 @@ section.comments
     ul.comments__list
       each card in commentCards
         li.comments__item
-          +commentCard(card.src, card.alt, card.href, card.name, card.tour, card.title, card.text, card.date)
+          +commentCard(card.src, card.srcRetina, card.alt, card.href, card.name, card.tour, card.title, card.text, card.date)
     +paginator(7, 1, 'color--theme--black')

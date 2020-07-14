@@ -1,4 +1,4 @@
--var i = 0
+-let i = 0
 
 mixin paginator(amount, active, theme)
   .paginator
@@ -7,7 +7,7 @@ mixin paginator(amount, active, theme)
       - for (var index = 1; index <= amount; index++)
         if (index === active)
           li.paginator__item.paginator__item--active(class= theme)
-            a.paginator__link(href= href)= ++i
+            a.paginator__link(href= href tabindex="0")= ++i
         else
           li.paginator__item
-            a.paginator__link(href= href)= ++i
+            a.paginator__link(href= href tabindex="0")= ++i

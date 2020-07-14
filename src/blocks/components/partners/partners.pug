@@ -3,4 +3,4 @@ mixin partners
     each partner in partners
       li.partners__item
         a.partners__link(href= partner.href)
-          img.partners__icon(src= partner.src alt= partner.alt)
+          img.partners__icon(src= partner.src srcset= partner.srcRetina alt= partner.alt)

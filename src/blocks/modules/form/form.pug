@@ -1,9 +1,8 @@
-include ../../components/directionTour/directionTour.pug
 include ../../components/formBtn/formBtn.pug
 
-- let formTours = ['Остров обезьян', 'Тур по Тайланду', 'Водопад Янг-бей', 'Тур по Индонезии', 'Никакими', 'Тур по Бали', 'Другое']
+- const formTours = ['Остров обезьян', 'Тур по Тайланду', 'Водопад Янг-бей', 'Тур по Индонезии', 'Никакими', 'Тур по Бали', 'Другое']
 
-form.form(action="")
+form.form
   .form__row
     .form__col
       input.form__input(name='name' type='text' placeholder='Игорь Петрович')
@@ -15,13 +14,11 @@ form.form(action="")
   .form__row
     .form__text Какими услугами компании пользуетесь?
     ul.form__list
-      each tour, index in formTours
-        if index === 2
-          li.form__item.form__item--active
-            +tour(tour)
-        else
-          li.form__item
-            +tour(tour)
+      each tour in formTours
+        li.form__item
+          label.form__check
+            input.form__check-input(type="checkbox" name="tegs" id="")
+            span.form__check-text= tour
   .form__row.form__row--btn
     .form__btn
       +formBtn('Очистить')(class='form-btn--black')
