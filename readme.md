@@ -43,12 +43,12 @@
 ```
 
 ## Посмотреть [PORTFOLIO](https://volkovva.github.io/portfolio/)
-![portfolio](screenshots/demo.png "portfolio")
-![portfolio](screenshots/demo2.png "portfolio")
+![portfolio](portfolio/screenshots/demo.png "portfolio")
+![portfolio](portfolio/screenshots/demo2.png "portfolio")
 
 ## Посмотреть [ADMIN-PANEL](https://volkovva.github.io/portfolio/admin/#/login)
-![portfolio](screenshots/demo3.png "portfolio")
-![portfolio](screenshots/demo4.png "portfolio")
+![portfolio](portfolio/screenshots/demo3.png "portfolio")
+![portfolio](portfolio/screenshots/demo4.png "portfolio")
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/), а так же
 [последняя версия Yarn](https://yarnpkg.com/ru/docs/install)
