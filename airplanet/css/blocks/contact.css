@@ -1,0 +1,82 @@
+.contact {
+    margin-right: 20px;
+    color: #fff;
+}
+
+.contact__phone {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.time {
+    position: relative;
+}
+
+.time__line {
+    font-weight: 700;
+    text-decoration: underline;
+    text-align: right;
+    opacity: .7;
+}
+
+.time__line:hover {
+    opacity: 1;
+    cursor: default;
+}
+
+.time__table {
+    position: absolute;
+    top: 35px;
+    right: 4px;
+    left: -9999px;
+    width: 160px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 7px 7px 12px rgba(0,0,0,0.25);
+    background: #fff;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.time:hover .time__table {
+    left: 0;
+    opacity: 1;
+}
+
+.time__table:before {
+    content: '';
+    display: block;
+    height: 30px;
+    left: 0;
+    right: 0;
+    top: -29px;
+    position: absolute;
+}
+
+.time__table:after{
+    content: ''; 
+    position: absolute;
+    left: 146px;
+    top: -21px;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom: 14px solid #fff;
+}
+
+.time__table--days {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #396ac7;
+}
+
+.time__table--lunch {
+    text-align: center;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #000;
+}

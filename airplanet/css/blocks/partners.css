@@ -1,0 +1,22 @@
+.partners {
+    margin-top: 10px;
+}
+
+.partners__company {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+
+.partners__item {
+    width: 250px;
+    height: 100px;
+    text-align: center;
+    filter: grayscale(1.2); 
+}  
+
+.partners__item:hover {
+    filter: none;
+} 

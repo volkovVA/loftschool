@@ -1,0 +1,41 @@
+.footer {
+    background-color: #4b73b5;
+}
+
+.footer__container {
+    align-items: center;
+    justify-content: space-between;
+    height: 77px;
+}
+
+.footer-center {
+    width: 500px;
+}
+
+.footer-right {
+    width: 300px;
+}
+
+ .footer__description {
+    width: 225px;
+    margin-top: 5px;
+    margin-left: 19px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.8rem; 
+ }
+
+ .footer__description--link {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: underline;
+ }
+
+ .footer__description--author {
+     font-weight: 700;
+ }
+
+ .footer__team {
+    margin-top: 80px;
+}

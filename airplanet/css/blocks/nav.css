@@ -1,0 +1,72 @@
+.sidebar {
+    position: relative;
+    width: 18%;
+    margin-top: 30px;
+}
+
+.nav {
+    padding-left: 20px;
+}
+
+.nav__link {
+    position: relative;
+    padding-left:25px;
+    color: #4b73b5;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 2.5px;
+}
+
+.nav__link:before {
+    content:"";
+    display: block; 
+    position:absolute; 
+    left:0;
+    top: 50%; 
+    transform: translate(-50%,-50%);
+    width:20px; 
+    height:20px;
+    background: center center / contain no-repeat; 
+}
+
+.nav__link--team:before {
+    width: 23px;
+}
+
+.nav__item--active .nav__link {
+    color: black;
+}
+
+.nav__link:hover {
+    color: #000;
+}
+
+.nav__link--main:before {
+    background:url(../../img/nav_sprite.png) -96px -10px;
+}
+.nav__link--feed:before { 
+    background:url(../../img/nav_sprite.png) -10px -48px;
+}
+.nav__link--team:before {
+    background:url(../../img/nav_sprite.png) -10px -10px;
+}
+.nav__link--main:hover:before {
+    background-position: -96px -48px;
+}
+.nav__link--feed:hover:before { 
+    background-position: -50px -48px;
+}
+.nav__link--team:hover:before {
+    background-position: -53px -10px;
+}
+
+.nav__item--active .nav__link--main:before {
+    background-position: -96px -48px;
+}
+.nav__item--active .nav__link--feed:before { 
+    background-position: -50px -48px;
+}
+.nav__item--active .nav__link--team:before {
+    background-position: -53px -10px;
+}

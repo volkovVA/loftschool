@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 131.1 104" enable-background="new 0 0 131.1 104" xml:space="preserve">
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="80.208" y1="22.106" x2="107.5458" y2="22.106">
+		<stop  offset="0" style="stop-color:#64C08A"/>
+		<stop  offset="0.5" style="stop-color:#00A550"/>
+		<stop  offset="1" style="stop-color:#00914C"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M80.2,19.8c0,0,9.5-8.1,6.9-19.8c0,0,27.1,16.3,18.9,44.2L80.2,19.8z"/>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-1.000000e-05" y1="53.3555" x2="131.0937" y2="53.3555">
+		<stop  offset="0" style="stop-color:#2BC4F3"/>
+		<stop  offset="0.5" style="stop-color:#00AEEE"/>
+		<stop  offset="1" style="stop-color:#0095DA"/>
+	</linearGradient>
+	<path fill="url(#SVGID_2_)" d="M0,3.3c0,0,32.6,9.2,42.2,46.6c0,0,15.4-11.9,33-8.8c0,0-44.4,14.5-58.9,62.9
+		c0,0,37.8-59,114.8-50.4c0,0-14.5-13.4-25.1-9.5C106,44.2,78.7-3.3,0,3.3z"/>
+</g>
+<g>
+	<path fill="#2C353D" d="M61.5,83.4l3.9,8.4c0.5,1.2,1,2.3,1.4,3.5h0.1c0.3-1,0.7-2.2,1.2-3.6l3.1-8.3h2.7l-4.1,10.1
+		c-1.1,2.6-2.3,5.6-3.7,7.5c-1.3,1.6-2.7,2.4-4.5,2.4c-0.6,0-1.1-0.1-1.4-0.2l0.3-2.1c0.2,0.1,0.5,0.1,0.9,0.1c2,0,3.2-2,3.8-3.4
+		c0.2-0.4,0.1-0.7-0.1-1.2l-6.5-13.2H61.5z"/>
+	<path fill="#2C353D" d="M78.9,83.6c1.2-0.2,2.8-0.4,4.9-0.4c2.5,0,4.3,0.6,5.5,1.6c1.1,0.9,1.7,2.4,1.7,4.1c0,1.8-0.5,3.2-1.5,4.2
+		c-1.3,1.4-3.5,2.2-6,2.2c-0.8,0-1.5,0-2-0.2v7.9h-2.5V83.6z M81.4,93.1c0.6,0.1,1.3,0.2,2.1,0.2c3.1,0,4.9-1.5,4.9-4.2
+		c0-2.6-1.8-3.8-4.6-3.8c-1.1,0-2,0.1-2.4,0.2V93.1z"/>
+	<path fill="#2C353D" d="M98.1,96.9l-2,6.2h-2.6l6.7-19.6h3.1l6.7,19.6h-2.7l-2.1-6.2H98.1z M104.5,94.9l-1.9-5.7
+		c-0.4-1.3-0.7-2.4-1-3.6h-0.1c-0.3,1.2-0.6,2.4-1,3.6l-1.9,5.7H104.5z"/>
+	<path fill="#2C353D" d="M129.5,83.4V103H127V85.5h-6.5v5.9c0,4.3-0.2,9-2.9,10.9c-0.7,0.5-1.9,0.9-3,0.9l-0.3-2
+		c0.8-0.1,1.6-0.6,2.1-1c1.6-1.5,1.7-5.4,1.7-8.5v-8.3H129.5z"/>
+</g>
+</svg>
