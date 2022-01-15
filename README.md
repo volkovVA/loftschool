@@ -1,32 +1,24 @@
 # air-asia
 
-## Тестовый адаптивный многостраничный сайт туров в Азию.
+## Test adaptive multi-page website of tours to Asia.
 
-Сайт сверстан во время стажировки помощником наставника в LoftSchool
+The site was checked during an internship as an assistant mentor at LoftSchool
 
-***Цель***: Углубить знания по **Pug** с применением различных возможностей шаблонизатора. Закрепить знания по работе с **SCSS** и **БЭМ-методологии**. Практика **адаптивной** верстки.
+***Goal***: Deepen knowledge of **Pug** using various template engine features. Consolidate knowledge on working with **SCSS** и **BEM methodology**. Practice **adaptive** layout.
 
-### Стек:
-* Для написания кода разметки использовался шаблонизатор **Pug**
-  с применением миксинов, циклов, переменных, наследование шаблонов.
-* Стили написаны на препроцессоре **SCSS**. Использованы переменные,
-  миксины, функция, медиазапросы на миксинах.
-* Сайт сверстан по **БЭМ-методологии**. Схема Flex - блоку соответствует
-  отдельная директория, элементы и модификаторы реализованы в файлах блока.
+### Stack:
+* The template engine **Pug** was used to write the markup code using mixin, loops, variables, template inheritance.
+* The styles are written in the **SCSS** preprocessor. Variables, mixins, function, media queries on mixins are used.
+* The site is built according to **BEM methodology**. Flex scheme - a block corresponds to a separate directory, elements and modifiers are implemented in the block files.
+
+## Live Demo: [Air Asia](https://volkovva.github.io/loftschool/air-asia/)
 
 ![air-asia](air-asia/screenshots/demo.png "demo air-asia")
 
-### Установка зависимостей
-```
-yarn
-```
+## Project Installation
 
-### Запуск сервера для разработки проекта
-```
-yarn run dev
-```
-
-### Cобрать проект с оптимизацией без запуска сервера
-```
-yarn run build
-```
+| Script | Destination |
+| ------ | ----------- |
+| yarn | Setting Dependencies |
+| yarn run dev | Starting a server for project development |
+| yarn run build | Build a project with optimization without running the server |
