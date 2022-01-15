@@ -14,8 +14,7 @@
 * Сайт сверстан по **БЭМ-методологии**. Схема Flex - блоку соответствует
   отдельная директория, элементы и модификаторы реализованы в файлах блока.
 
-## Посмотреть по ссылке: [AIR-ASIA](https://volkovva.github.io/air-asia/index.html)
-![air-asia](src/screenshots/demo.png "demo air-asia")
+![air-asia](air-asia/screenshots/demo.png "demo air-asia")
 
 ### Установка зависимостей
 ```
