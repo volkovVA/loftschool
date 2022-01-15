@@ -1,0 +1,29 @@
+.breadcrumbs {
+  margin-top: 25px;
+}
+
+.breadcrumbs__list {
+    display: flex;
+}
+
+.breadcrumbs__link {
+  color: rgba(178, 73, 48, 0.8);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.breadcrumbs__item:first-letter {
+    text-transform: uppercase;
+}
+
+.breadcrumbs__item:after {
+    content: "/";
+}
+
+.breadcrumbs__item--active:after {
+  display: none;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: rgba(34, 31, 31, 0.8);
+}

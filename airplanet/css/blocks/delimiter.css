@@ -1,0 +1,25 @@
+.delimiter {
+    height: 171px;
+    margin-top: 60px;
+    color: #fff;
+    background-color: #4bb56b;
+    background-image: url(../../../img/mark.png);
+    background-size: auto 100%;
+}
+
+.delimiter__container {
+    height: 171px;
+    justify-content: center;
+    align-items: center;
+}
+
+.delimiter__text {
+    width: 620px;
+    font-size: 1.2rem;
+}
+
+.delimiter__application {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+}

@@ -1,0 +1,122 @@
+.crew {
+    margin-top: 10px;
+}
+
+.crew__list {
+    display: flex;
+    flex-wrap: wrap;
+    background: url(../../../img/nebo.jpg) center center;
+}
+
+.crew__member {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px 50px;
+    font-size: 0.8rem;
+    border: 1px solid #999;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.crew__member--alex {
+    animation: slideRight 0.6s linear;
+}
+.crew__member--boris {
+    animation: slideLeft 0.6s linear;
+}
+.crew__member--inna {
+    animation: slideDown 1s linear;
+}
+.crew__member--elena {
+    animation: slideTop 1s linear; 
+}
+.crew__member--elina {
+    animation: slideRight 1.2s linear; 
+}
+.crew__member--yura {
+    animation: slideLeft 1.2s linear; 
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}  
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}   
+
+.crew__avatar {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.crew__img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: all 0.3s ease-out;
+}
+
+.crew__avatar--background {
+    position: absolute;
+    background-color: rgba(75,115,181,.5);
+    left: 0;
+    top: 0;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    opacity: 1;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.crew__avatar:hover .crew__avatar--background {
+    opacity: 0;
+}
+
+.crew__avatar:hover .crew__img {
+    transform: scale(1.1);
+}
+
+.crew__name {
+    margin-top: 16px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;   
+}
+
+.crew__title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #4b73b5;
+}
+
+.crew__description {
+    padding: 5px;
+    text-align: center;
+}

@@ -1,0 +1,117 @@
+.tariff__list {
+    display: flex;
+}
+
+.tariff__logo {
+    width: 68px;
+    height: 68px;
+    margin: 20px auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #4b73b5;
+}
+
+.tariff__img {
+    position: relative; 
+    top: 50%;
+    -webkit-transform: translateY(-50%); 
+    -ms-transform: translateY(-50%); 
+    transform: translateY(-50%); 
+}
+
+.tariff__name {
+    position: relative;
+    margin-right: 20px;
+    width: 275px;
+    padding-top: 30px;
+    box-shadow: 0 5px 12px 0 #cfcfcf;
+    transition: 0.3s;
+}
+
+
+.tariff__name--none {
+    background-color: #4b73b5;
+}
+
+.tariff__name:last-child {
+    margin-right: 0;
+}
+
+.tariff__name:hover {
+    -webkit-transform: translateY(-7px);
+    transform: translateY(-7px);
+    transition: 0.3s;
+}
+
+.action {
+    position: absolute;
+    top: -28px;
+    left: -58px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.tariff__action {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.tariff__title {
+    color: #212121;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 3px;
+}
+
+.tariff__description {
+    color: #212121;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 30px;
+    list-style-type: disc;
+}
+
+.tariff__desc {
+    text-align: center;
+}
+
+.tariff__desc--list {
+    padding-left: 65px;
+}
+
+.tariff__item {
+    margin-top: 5px; 
+    list-style-type: disc;
+}
+
+.tariff__price {
+    position: relative;
+    margin-top: 80px;
+    padding-bottom: 20px;
+    color: #212121;
+    font-weight: 600;
+    font-size: 4rem;
+    text-align: center;
+    background: #eaeaea;
+}
+
+.tariff__price:before {
+    position: absolute; 
+    left: 0; 
+    top: -50px;
+    content: "";
+    height: 0; 
+    width: 0;
+    border-bottom: 50px solid #eaeaea;
+    border-left: 135px solid transparent;
+    border-right: 135px solid transparent;
+    }
+
+.tariff__price:first-letter {
+    font-size: 2rem;
+}
