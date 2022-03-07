@@ -1,0 +1,108 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	min-width: rem(397px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url("../img/fon.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;      
+	background-attachment: fixed;      
+}
+
+.calc {	
+	width: rem(397px);
+	height: rem(490px);
+	background: linear-gradient(45deg, rgba(230,230,230,1) 0%, rgba(250,250,250,1) 100%);
+	padding: rem(10px);
+	border-radius: rem(15px);
+	box-shadow: 1px 30px 90px -20px $black;
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+	}
+	&__input {
+		width: rem(377px);
+		height: rem(70px);
+		margin-bottom: rem(15px);
+		padding: 0px rem(10px);
+		font-family: 'digital';
+		font-size: rem(50px);
+		border-radius: rem(6px);
+		background-color: $black;
+		color: $white;
+		text-align: right;
+	}
+	&__model {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		font-size: 1.3rem;
+		color: $black;
+		font-weight: 700;
+		text-shadow: 0px 2px 3px rgba(0,0,0,0.4),
+             0px 6px 10px rgba(0,0,0,0.1),
+             0px 16px 20px rgba(0,0,0,0.1);
+	}
+	&__img {
+		width: rem(50px);
+		height: rem(50px);
+	}
+	&__btn {
+		width: rem(90px);
+		height: rem(60px);
+		font-weight: 700;
+		background: $white;
+		background: -webkit-linear-gradient(bottom, #fff, #e8e8e8);
+		background: -moz-linear-gradient(bottom, #fff, #e8e8e8);
+		background: linear-gradient(to top, #fff, #e8e8e8);
+		font-size: rem(27px);
+		text-transform: uppercase;
+		border: 2px solid $lightgrey; 
+		border-radius: rem(15px);
+		-moz-border-radius:rem(15px);
+		-webkit-border-radius:rem(15px);
+		cursor: pointer;
+		outline: none;
+		&-equal {
+			height: rem(125px);
+		}
+		&-null {
+			width: rem(182px);
+		}
+		&:hover {
+			background: $white;
+			background: -moz-linear-gradient(0deg, rgba(255,255,255,1) 0%, $lightblue 60%, $blue 100%);
+			background: -webkit-linear-gradient(0deg, rgba(255,255,255,1) 0%, $lightblue 60%, $blue 100%);
+			background: linear-gradient(0deg, rgba(255,255,255,1) 0%, $lightblue 60%, $blue 100%);
+			box-shadow:0 1px 0 rgba(255,255,255,.6), inset 0 1px 0 rgba(255,255,255,.3)
+		}
+		&-clear:hover {
+			background: rgb(255,255,255);
+			background: -moz-linear-gradient(0deg, rgba(255,255,255,1) 0%, $lightpink 60%, $pink 100%);
+			background: -webkit-linear-gradient(0deg, rgba(255,255,255,1) 0%, $lightpink 60%, $pink 100%);
+			background: linear-gradient(0deg, rgba(255,255,255,1) 0%, $lightpink 60%, $pink 100%);
+		}
+		&:active {
+			box-shadow:0 1px 1px rgba(255,255,255,.5), inset 0 1px 4px rgba(0,0,100,.5);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
